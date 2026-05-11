@@ -10,6 +10,7 @@ namespace WebApplication3.Extensions
         {
 
             var items = new List<Item>();
+            var orders = new List<Item>();
 
             var idCounter = 1L;
 
@@ -24,6 +25,16 @@ namespace WebApplication3.Extensions
             })
 
         .WithTags("Items");
+
+
+            app.MapGet("/orders", () =>
+            {
+
+                return Results.Ok(orders);
+
+            })
+
+       .WithTags("Orders");
 
 
             // GET by id

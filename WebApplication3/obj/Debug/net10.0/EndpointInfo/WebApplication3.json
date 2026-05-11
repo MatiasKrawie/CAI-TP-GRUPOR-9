@@ -111,6 +111,18 @@
           }
         }
       }
+    },
+    "/orders": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -164,6 +176,9 @@
   "tags": [
     {
       "name": "Items"
+    },
+    {
+      "name": "Orders"
     }
   ]
 }
