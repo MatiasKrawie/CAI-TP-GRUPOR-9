@@ -1,0 +1,6 @@
+Agregar: app.UseCustomRequestLogging();
+app.UseMiddleware<CorrelationIdMiddleware>();
+
+app.UseCustomRequestLogging();
+
+Modificar Exception Handlers: agregar: correlationId = context.Items["X-Correlation-Id"]
