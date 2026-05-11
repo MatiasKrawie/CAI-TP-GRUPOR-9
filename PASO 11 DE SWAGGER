@@ -44,3 +44,8 @@ Probar que funcione todo:
 +GET BY ID: copiar GUID y probar
 -Duplicado: POST mismo nombre+ categoria y deveria devolver 409 PRD-003
 +Delete: devolver 204
+
+- Reemplazar en Logging: .WriteTo.File(
+    formatter: new Serilog.Formatting.Json.JsonFormatter(),
+    path: "logs/audit.json",
+y agregar using Serilog.Formatting.Json;// json estructurado real
