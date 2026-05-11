@@ -1,0 +1,46 @@
+Modificar el .csproj: abrir el Products.API.csproj y agregar lo siguiente, en property group quedando asi:
+<PropertyGroup>// genera XML comments para swagger
+  <TargetFramework>net8.0</TargetFramework>
+  <Nullable>enable</Nullable>
+  <ImplicitUsings>enable</ImplicitUsings>
+
+  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  <NoWarn>$(NoWarn);1591</NoWarn>
+</PropertyGroup>
+
+En el program.cs agregar: using System.Reflection;
+using Microsoft.OpenApi.Models;
+
+builder.Services.AddSwaggerGen(options => // el swagger muestra descripcion, summaries y se ve mas profesional
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Products API",
+        Version = "v1",
+        Description = "Microservicio de productos para ECommerce",
+        Contact = new OpenApiContact
+        {
+            Name = "Grupo CAI",
+            Email = "grupo@uba.ar"
+        }
+    });
+
+    var xmlFilename =
+        $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+
+    options.IncludeXmlComments(
+        Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
+
+Probar que funcione todo:
+- POST: {
+  "nombre": "Notebook Dell",
+  "descripcion": "Laptop",
+  "precio": 1500,
+  "stock": 5,
+  "categoria": "Electrónica"
+}
++GET: /api/products
++GET BY ID: copiar GUID y probar
+-Duplicado: POST mismo nombre+ categoria y deveria devolver 409 PRD-003
++Delete: devolver 204
