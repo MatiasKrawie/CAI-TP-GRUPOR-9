@@ -1,0 +1,26 @@
+using Microsoft.Data.Sqlite;
+using Dapper;
+
+namespace Products.API.Database;
+
+public static class DatabaseInitializer
+{
+    public static void Initialize(string connectionString)
+    {
+        using var connection = new SqliteConnection(connectionString);
+
+        connection.Open();
+
+        connection.Execute("""
+            CREATE TABLE IF NOT EXISTS products (
+                id TEXT PRIMARY KEY,
+                nombre TEXT NOT NULL,
+                descripcion TEXT,
+                precio REAL NOT NULL,
+                stock INTEGER NOT NULL,
+                categoria TEXT NOT NULL,
+                fecha_creacion TEXT NOT NULL
+            );
+        """);
+    }
+}
