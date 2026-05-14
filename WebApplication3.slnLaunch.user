@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "WebApplication3\\WebApplication3.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Sales.Api\\Sales.Api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

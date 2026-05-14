@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/items": {
+    "/products": {
       "get": {
         "tags": [
-          "Items"
+          "WebApplication3"
         ],
         "responses": {
           "200": {
@@ -18,13 +18,13 @@
       },
       "post": {
         "tags": [
-          "Items"
+          "WebApplication3"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateItemRequest"
+                "$ref": "#/components/schemas/Product"
               }
             }
           },
@@ -37,10 +37,10 @@
         }
       }
     },
-    "/items/{id}": {
+    "/products/{id}": {
       "get": {
         "tags": [
-          "Items"
+          "WebApplication3"
         ],
         "parameters": [
           {
@@ -49,59 +49,7 @@
             "required": true,
             "schema": {
               "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Items"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateItemRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Items"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
+              "format": "int32"
             }
           }
         ],
@@ -112,10 +60,30 @@
         }
       }
     },
-    "/orders": {
-      "get": {
+    "/products/{id}/reduce-stock": {
+      "patch": {
         "tags": [
-          "Orders"
+          "WebApplication3"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "quantity",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -127,31 +95,13 @@
   },
   "components": {
     "schemas": {
-      "CreateItemRequest": {
+      "Product": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "price": {
-            "type": "number",
-            "format": "double"
-          },
-          "stock": {
+          "id": {
             "type": "integer",
             "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpdateItemRequest": {
-        "type": "object",
-        "properties": {
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -175,10 +125,7 @@
   },
   "tags": [
     {
-      "name": "Items"
-    },
-    {
-      "name": "Orders"
+      "name": "WebApplication3"
     }
   ]
 }
