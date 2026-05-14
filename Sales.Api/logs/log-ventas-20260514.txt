@@ -101,3 +101,75 @@
 2026-05-14 02:50:14.285 -03:00 [INF] Writing value of type '<>f__AnonymousType1`2' as Json.
 2026-05-14 02:50:14.289 -03:00 [INF] Executed endpoint 'HTTP: POST /sales'
 2026-05-14 02:50:14.298 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7057/sales - 400 null application/json; charset=utf-8 145.1984ms
+2026-05-14 13:45:33.208 -03:00 [INF] Now listening on: https://localhost:7057
+2026-05-14 13:45:33.385 -03:00 [INF] Now listening on: http://localhost:5012
+2026-05-14 13:45:33.431 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-14 13:45:33.953 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-14 13:45:33.971 -03:00 [INF] Hosting environment: Development
+2026-05-14 13:45:33.973 -03:00 [INF] Content root path: C:\Users\OGRIBOV\Documents\GitHub\CAI-TP-GRUPOR-9\Sales.Api
+2026-05-14 13:45:40.156 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.html - null null
+2026-05-14 13:45:41.127 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.html - 304 null null 978.8693ms
+2026-05-14 13:45:41.602 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-14 13:45:41.718 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - null null
+2026-05-14 13:45:41.866 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.css - null null
+2026-05-14 13:45:41.922 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui-bundle.js - null null
+2026-05-14 13:45:41.976 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-14 13:45:42.076 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.js - null null
+2026-05-14 13:45:42.098 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.js - 304 null null 22.152ms
+2026-05-14 13:45:42.103 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-05-14 13:45:42.183 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui-standalone-preset.js - 304 null null 206.703ms
+2026-05-14 13:45:42.183 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.css - 304 null null 316.427ms
+2026-05-14 13:45:42.185 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - 304 null null 467.4691ms
+2026-05-14 13:45:42.212 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui-bundle.js - 304 null null 289.5553ms
+2026-05-14 13:45:42.366 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14923 application/javascript; charset=utf-8 763.7955ms
+2026-05-14 13:45:42.508 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 405.3064ms
+2026-05-14 13:45:46.403 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-05-14 13:45:46.693 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 289.3388ms
+2026-05-14 13:57:13.079 -03:00 [INF] Now listening on: https://localhost:7057
+2026-05-14 13:57:15.506 -03:00 [INF] Now listening on: http://localhost:5012
+2026-05-14 13:57:15.649 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-14 13:57:17.595 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-14 13:57:17.599 -03:00 [INF] Hosting environment: Development
+2026-05-14 13:57:17.600 -03:00 [INF] Content root path: C:\Users\OGRIBOV\Documents\GitHub\CAI-TP-GRUPOR-9\Sales.Api
+2026-05-14 13:57:19.416 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.html - null null
+2026-05-14 13:57:20.615 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.html - 304 null null 1205.1968ms
+2026-05-14 13:57:22.196 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-14 13:57:22.454 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - null null
+2026-05-14 13:57:22.522 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.css - null null
+2026-05-14 13:57:22.527 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-14 13:57:23.711 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.js - null null
+2026-05-14 13:57:22.553 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui-bundle.js - null null
+2026-05-14 13:57:23.754 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - 304 null null 1299.5899ms
+2026-05-14 13:57:23.769 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui-standalone-preset.js - 304 null null 1242.4378ms
+2026-05-14 13:57:23.794 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.css - 304 null null 1272.1957ms
+2026-05-14 13:57:23.800 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.js - 304 null null 89.16ms
+2026-05-14 13:57:23.810 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-05-14 13:57:23.865 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui-bundle.js - 304 null null 1312.1084ms
+2026-05-14 13:57:23.944 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14923 application/javascript; charset=utf-8 1747.9397ms
+2026-05-14 13:57:27.909 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 4099.0859ms
+2026-05-14 13:57:28.076 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-05-14 13:57:28.105 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.7978ms
+2026-05-14 14:08:56.915 -03:00 [INF] Now listening on: https://localhost:7057
+2026-05-14 14:08:57.193 -03:00 [INF] Now listening on: http://localhost:5012
+2026-05-14 14:08:57.217 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-14 14:08:57.677 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-14 14:08:57.732 -03:00 [INF] Hosting environment: Development
+2026-05-14 14:08:57.734 -03:00 [INF] Content root path: C:\Users\OGRIBOV\Documents\GitHub\CAI-TP-GRUPOR-9\Sales.Api
+2026-05-14 14:09:05.261 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.html - null null
+2026-05-14 14:09:08.670 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.html - 304 null null 3421.2115ms
+2026-05-14 14:09:09.429 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.css - null null
+2026-05-14 14:09:09.429 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - null null
+2026-05-14 14:09:10.734 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui-bundle.js - null null
+2026-05-14 14:09:10.968 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.css - 304 null null 1533.0243ms
+2026-05-14 14:09:11.259 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-14 14:09:11.564 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - 304 null null 2134.5156ms
+2026-05-14 14:09:11.598 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui-standalone-preset.js - 304 null null 338.4674ms
+2026-05-14 14:09:11.801 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui-bundle.js - 304 null null 1067.1418ms
+2026-05-14 14:09:11.977 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.js - null null
+2026-05-14 14:09:12.086 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-14 14:09:12.329 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-05-14 14:09:12.553 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14923 application/javascript; charset=utf-8 466.5934ms
+2026-05-14 14:09:12.558 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.js - 304 null null 580.7276ms
+2026-05-14 14:09:12.617 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 287.1381ms
+2026-05-14 14:09:27.446 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-05-14 14:09:27.493 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 47.8634ms

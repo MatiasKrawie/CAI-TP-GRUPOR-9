@@ -3,6 +3,8 @@ using Dapper;
 using WebApplication1;
 using Serilog;
 
+//ESTE ES EL PROYECTO DE PRODUCTO
+
 var builder = WebApplication.CreateBuilder(args);
 
 // --- CONFIGURACIÓN DE SERILOG ---

@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="Cart.Api/Cart.Api.csproj" Id="8f053b58-b29f-4a67-af9a-ad3c929b5c5e" />
   <Project Path="Sales.Api/Sales.Api.csproj" Id="f23ef9e2-6f48-4f18-8d1d-775d15c5cf8e" />
+  <Project Path="Users.Api/Users.Api.csproj" Id="bb2c49e6-dd65-46cb-9edd-018423914363" />
   <Project Path="WebApplication3/WebApplication3.csproj" />
 </Solution>
