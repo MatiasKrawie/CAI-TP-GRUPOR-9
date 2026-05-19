@@ -1,0 +1,122 @@
+2026-05-19 12:24:09.621 -03:00 [INF] Now listening on: https://localhost:7137
+2026-05-19 12:24:09.765 -03:00 [INF] Now listening on: http://localhost:5248
+2026-05-19 12:24:09.863 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-19 12:24:10.326 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 12:24:10.333 -03:00 [INF] Hosting environment: Development
+2026-05-19 12:24:10.334 -03:00 [INF] Content root path: C:\Users\OGRIBOV\Documents\GitHub\CAI-TP-GRUPOR-9\WebApplication3
+2026-05-19 12:24:27.779 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.html - null null
+2026-05-19 12:24:28.964 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.html - 304 null null 1215.9104ms
+2026-05-19 12:24:29.441 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - null null
+2026-05-19 12:24:29.544 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.css - null null
+2026-05-19 12:24:29.586 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - null null
+2026-05-19 12:24:31.269 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - 304 null null 1828.1283ms
+2026-05-19 12:24:31.442 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.css - 304 null null 1898.8564ms
+2026-05-19 12:24:31.599 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - 304 null null 2013.3638ms
+2026-05-19 12:24:32.018 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-19 12:24:35.857 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.js - null null
+2026-05-19 12:24:35.862 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 12:24:35.899 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.js - 304 null null 41.6493ms
+2026-05-19 12:24:35.962 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - 304 null null 3943.4603ms
+2026-05-19 12:24:36.004 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_vs/browserLink - null null
+2026-05-19 12:24:37.203 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1341.3622ms
+2026-05-19 12:24:37.503 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1499.4993ms
+2026-05-19 12:24:45.295 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - null null
+2026-05-19 12:24:45.329 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.7658ms
+2026-05-19 12:24:45.981 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/favicon-32x32.png - null null
+2026-05-19 12:24:45.990 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/favicon-32x32.png - 200 628 image/png 8.5728ms
+2026-05-19 12:26:32.784 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/products/2 - null null
+2026-05-19 12:26:32.964 -03:00 [INF] Executing endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:26:33.015 -03:00 [INF] Consultando producto con ID: 2
+2026-05-19 12:26:33.265 -03:00 [INF] Setting HTTP status code 200.
+2026-05-19 12:26:33.271 -03:00 [INF] Writing value of type 'Product' as Json.
+2026-05-19 12:26:33.305 -03:00 [INF] Executed endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:26:33.309 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/products/2 - 200 null application/json; charset=utf-8 527.2788ms
+2026-05-19 12:27:14.282 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7137/products/2 - null null
+2026-05-19 12:27:14.290 -03:00 [INF] Executing endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:27:14.293 -03:00 [INF] Consultando producto con ID: 2
+2026-05-19 12:27:14.319 -03:00 [INF] Setting HTTP status code 200.
+2026-05-19 12:27:14.325 -03:00 [INF] Writing value of type 'Product' as Json.
+2026-05-19 12:27:14.357 -03:00 [INF] Executed endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:27:14.361 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7137/products/2 - 200 null application/json; charset=utf-8 78.897ms
+2026-05-19 12:34:29.097 -03:00 [INF] Now listening on: https://localhost:7137
+2026-05-19 12:34:29.411 -03:00 [INF] Now listening on: http://localhost:5248
+2026-05-19 12:34:29.543 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-19 12:34:31.342 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 12:34:31.607 -03:00 [INF] Hosting environment: Development
+2026-05-19 12:34:31.780 -03:00 [INF] Content root path: C:\Users\OGRIBOV\Documents\GitHub\CAI-TP-GRUPOR-9\WebApplication3
+2026-05-19 12:34:35.080 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.html - null null
+2026-05-19 12:34:38.979 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.html - 304 null null 3982.9767ms
+2026-05-19 12:34:39.579 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - null null
+2026-05-19 12:34:39.582 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.css - null null
+2026-05-19 12:34:39.589 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - null null
+2026-05-19 12:34:41.552 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - 304 null null 1973.3448ms
+2026-05-19 12:34:41.644 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-19 12:34:41.703 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.css - 304 null null 2120.856ms
+2026-05-19 12:34:41.744 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - 304 null null 100.3077ms
+2026-05-19 12:34:41.747 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.js - null null
+2026-05-19 12:34:41.780 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.js - 304 null null 33.7363ms
+2026-05-19 12:34:41.768 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - 304 null null 2179.0362ms
+2026-05-19 12:34:41.878 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 12:34:41.911 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_vs/browserLink - null null
+2026-05-19 12:34:42.902 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1024.351ms
+2026-05-19 12:34:42.958 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1047.0534ms
+2026-05-19 12:34:50.562 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - null null
+2026-05-19 12:34:50.606 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.1147ms
+2026-05-19 12:35:45.666 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/products/2 - null null
+2026-05-19 12:35:46.967 -03:00 [INF] Executing endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:35:47.157 -03:00 [INF] Consultando producto con ID: 2
+2026-05-19 12:35:47.338 -03:00 [INF] Setting HTTP status code 200.
+2026-05-19 12:35:47.341 -03:00 [INF] Writing value of type 'Product' as Json.
+2026-05-19 12:35:47.352 -03:00 [INF] Executed endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:35:47.355 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/products/2 - 200 null application/json; charset=utf-8 1689.0527ms
+2026-05-19 12:36:22.371 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7137/products/2 - null null
+2026-05-19 12:36:22.380 -03:00 [INF] Executing endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:36:22.387 -03:00 [INF] Consultando producto con ID: 2
+2026-05-19 12:36:22.395 -03:00 [INF] Setting HTTP status code 200.
+2026-05-19 12:36:22.398 -03:00 [INF] Writing value of type 'Product' as Json.
+2026-05-19 12:36:22.430 -03:00 [INF] Executed endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:36:22.434 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7137/products/2 - 200 null application/json; charset=utf-8 62.7678ms
+2026-05-19 12:38:01.582 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7137/products/963 - null null
+2026-05-19 12:38:01.593 -03:00 [INF] Executing endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:38:01.595 -03:00 [INF] Consultando producto con ID: 963
+2026-05-19 12:38:01.598 -03:00 [WRN] Producto 963 no encontrado
+2026-05-19 12:38:02.094 -03:00 [INF] Executed endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:38:21.509 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7137/products/963 - 404 null application/json; charset=utf-8 19928.0838ms
+2026-05-19 12:39:41.118 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7137/products/1 - null null
+2026-05-19 12:39:41.126 -03:00 [INF] Executing endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:39:41.130 -03:00 [INF] Consultando producto con ID: 1
+2026-05-19 12:39:41.139 -03:00 [INF] Setting HTTP status code 200.
+2026-05-19 12:39:41.145 -03:00 [INF] Writing value of type 'Product' as Json.
+2026-05-19 12:39:41.152 -03:00 [INF] Executed endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:39:41.155 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7137/products/1 - 200 null application/json; charset=utf-8 37.06ms
+2026-05-19 12:45:05.598 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7137/products/1 - null null
+2026-05-19 12:45:05.607 -03:00 [INF] Executing endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:45:05.609 -03:00 [INF] Consultando producto con ID: 1
+2026-05-19 12:45:05.666 -03:00 [INF] Setting HTTP status code 200.
+2026-05-19 12:45:05.668 -03:00 [INF] Writing value of type 'Product' as Json.
+2026-05-19 12:45:05.671 -03:00 [INF] Executed endpoint 'HTTP: GET /products/{id}'
+2026-05-19 12:45:05.673 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7137/products/1 - 200 null application/json; charset=utf-8 77.3467ms
+2026-05-19 17:11:04.673 -03:00 [INF] Now listening on: https://localhost:7137
+2026-05-19 17:11:05.203 -03:00 [INF] Now listening on: http://localhost:5248
+2026-05-19 17:11:05.261 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-19 17:11:08.448 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 17:11:08.567 -03:00 [INF] Hosting environment: Development
+2026-05-19 17:11:08.570 -03:00 [INF] Content root path: C:\Users\OGRIBOV\Documents\GitHub\CAI-TP-GRUPOR-9\WebApplication3
+2026-05-19 17:11:22.794 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.html - null null
+2026-05-19 17:11:34.590 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.html - 304 null null 11945.0765ms
+2026-05-19 17:11:36.179 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - null null
+2026-05-19 17:11:37.808 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - null null
+2026-05-19 17:11:36.247 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.css - null null
+2026-05-19 17:11:45.676 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - 304 null null 9495.8997ms
+2026-05-19 17:11:45.677 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.css - 304 null null 9430.2014ms
+2026-05-19 17:11:45.830 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - 304 null null 8022.5548ms
+2026-05-19 17:11:47.479 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 17:11:47.489 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.js - null null
+2026-05-19 17:11:48.084 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-19 17:11:48.093 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_vs/browserLink - null null
+2026-05-19 17:11:48.159 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 680.1998ms
+2026-05-19 17:11:48.170 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.js - 304 null null 685.5208ms
+2026-05-19 17:11:48.187 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - 304 null null 103.4493ms
+2026-05-19 17:11:48.649 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_vs/browserLink - 200 null text/javascript; charset=UTF-8 555.8095ms
+2026-05-19 17:11:57.312 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - null null
+2026-05-19 17:12:03.662 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6350.3348ms

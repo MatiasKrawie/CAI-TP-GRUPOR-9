@@ -58,6 +58,19 @@ app.MapPost("/cart", async (CartItem item, IHttpClientFactory clientFactory, ICo
     if (!prodRes.IsSuccessStatusCode)
         throw new NotFoundException("CART-001", $"El producto {item.ProductId} no existe en el catálogo.");
 
+    // --- VALIDACIÓN DE STOCK CORREGIDA ---
+    // En lugar de <dynamic>, leemos los datos usando nuestro ProductDto
+    var producto = await prodRes.Content.ReadFromJsonAsync<ProductDto>();
+
+    // Leemos la propiedad con la 'S' mayúscula del DTO de forma segura
+    int stockDisponible = producto?.Stock ?? 0;
+
+    if (item.Quantity > stockDisponible)
+    {
+        throw new NotFoundException("CART-003", $"Stock insuficiente. Intentaste agregar {item.Quantity} pero solo quedan {stockDisponible} unidades.");
+    }
+    // ------------------------------------
+
     // 2. Validar que el Usuario existe (Llamada a Users API)
     var userUrl = config.GetValue<string>("UserServiceUrl") ?? "";
     var userRes = await client.GetAsync($"{userUrl}/users/{item.UserId}");
@@ -73,6 +86,8 @@ app.MapPost("/cart", async (CartItem item, IHttpClientFactory clientFactory, ICo
     return Results.StatusCode(201);
 });
 
+
+
 // DELETE: Vaciar carrito (Lo usaremos cuando se concrete la compra)
 app.MapDelete("/cart/{userId}", async (int userId) =>
 {
@@ -82,3 +97,12 @@ app.MapDelete("/cart/{userId}", async (int userId) =>
 });
 
 app.Run();
+
+
+public class ProductDto
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public decimal Price { get; set; }
+    public int Stock { get; set; } // <--- C# mapea automáticamente sin importar si el JSON viene con 'stock' o 'Stock'
+}
