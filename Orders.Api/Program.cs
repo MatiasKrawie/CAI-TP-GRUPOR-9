@@ -38,37 +38,51 @@ using (var connection = new SqliteConnection("Data Source=orders.db"))
         )");
 }
 
-// 4. ENDPOINT: PROCESAR UNA COMPRA (Checkout)
+// 4. ENDPOINT: PROCESAR UNA COMPRA (Checkout con Precios y Stock Reales)
 app.MapPost("/orders", async (OrderRequest request, IHttpClientFactory clientFactory, IConfiguration config) =>
 {
     var client = clientFactory.CreateClient();
+    var cartUrl = config.GetValue<string>("CartServiceUrl") ?? "";
+    var productUrl = config.GetValue<string>("ProductServiceUrl") ?? "";
 
     // Paso A: Consultar el carrito del usuario (Llamada a Cart API)
-    var cartUrl = config.GetValue<string>("CartServiceUrl") ?? "";
     var cartRes = await client.GetAsync($"{cartUrl}/cart/{request.UserId}");
-
     if (!cartRes.IsSuccessStatusCode)
     {
         throw new NotFoundException("ORDER-001", $"No se pudo obtener el carrito del usuario {request.UserId}.");
     }
 
     var cartItems = await cartRes.Content.ReadFromJsonAsync<List<CartItemDto>>();
-
-    // Si el carrito está vacío, no hay nada que comprar
     if (cartItems == null || !cartItems.Any())
     {
         throw new NotFoundException("ORDER-002", $"El carrito del usuario {request.UserId} está vacío.");
     }
 
-    // Paso B: Calcular el monto total hardcodeado por ahora (ejemplo: $100 por ítem)
-    // En un sistema real, acá llamarías a Products API para traer los precios reales
+    // --- ¡NUEVO! Paso B: Calcular el monto total consultando a Products API ---
     decimal totalAmount = 0;
     foreach (var item in cartItems)
     {
-        totalAmount += (100 * item.Quantity);
+        // Llamamos a Products API para buscar el precio actual y real del producto
+        var productRes = await client.GetAsync($"{productUrl}/products/{item.ProductId}");
+
+        if (!productRes.IsSuccessStatusCode)
+        {
+            throw new NotFoundException("ORDER-005", $"El producto {item.ProductId} en el carrito ya no existe en el catálogo.");
+        }
+
+        // Leemos el producto dinámicamente para extraer su precio
+        var product = await productRes.Content.ReadFromJsonAsync<ProductPriceDto>();
+
+        if (product == null)
+        {
+            throw new NotFoundException("ORDER-006", $"No se pudieron leer los detalles del producto {item.ProductId}.");
+        }
+
+        // Sumamos al total: Precio Real Fijo x Cantidad
+        totalAmount += (product.Price * item.Quantity);
     }
 
-    // Paso C: Registrar la Orden en nuestra base de datos local
+    // Paso C.1: Registrar la Orden en nuestra base de datos local de Órdenes
     using var connection = new SqliteConnection("Data Source=orders.db");
     var orderId = await connection.QuerySingleAsync<int>(@"
         INSERT INTO Orders (UserId, TotalAmount) 
@@ -76,23 +90,43 @@ app.MapPost("/orders", async (OrderRequest request, IHttpClientFactory clientFac
         SELECT last_insert_rowid();",
         new { UserId = request.UserId, TotalAmount = totalAmount });
 
-    // Paso D: Mandar a vaciar el carrito (Opcional por ahora)
-    // Acá iría un HTTP DELETE a la Cart API para limpiar el carrito, lo dejamos para después.
+    // Paso C.2: Descontar el stock real en Products API
+    foreach (var item in cartItems)
+    {
+        var stockRes = await client.PutAsJsonAsync($"{productUrl}/products/{item.ProductId}/reduce-stock", new { Quantity = item.Quantity });
+        if (!stockRes.IsSuccessStatusCode)
+        {
+            var errorText = await stockRes.Content.ReadAsStringAsync();
+            throw new NotFoundException("ORDER-004", $"No se pudo descontar stock para el producto {item.ProductId}. Detalle: {errorText}");
+        }
+    }
+
+    // Paso D: Mandar a vaciar el carrito automáticamente
+    var deleteRes = await client.DeleteAsync($"{cartUrl}/cart/{request.UserId}/clear");
+    if (!deleteRes.IsSuccessStatusCode)
+    {
+        throw new NotFoundException("ORDER-003", $"La orden se creó pero no se pudo vaciar el carrito.");
+    }
 
     // Retornamos la orden creada de forma prolija
     return Results.Json(new
     {
-        Message = "¡Compra realizada con éxito!",
+        Message = "¡Compra realizada con éxito con precios reales, stock descontado y carrito vaciado!",
         OrderId = orderId,
         UserId = request.UserId,
         Total = totalAmount
     }, statusCode: 201);
 });
-
 app.Run();
 
 // --- DTO AUXILIAR PARA RECIBIR LA PETICIÓN ---
 public class OrderRequest
 {
     public int UserId { get; set; }
+}
+// DTO para mapear el precio real que nos devuelve la API de Productos
+public class ProductPriceDto
+{
+    public int Id { get; set; }
+    public decimal Price { get; set; }
 }

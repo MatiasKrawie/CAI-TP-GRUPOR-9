@@ -83,7 +83,12 @@ app.MapPost("/cart", async (CartItem item, IHttpClientFactory clientFactory, ICo
         "INSERT INTO CartItems (UserId, ProductId, Quantity) VALUES (@UserId, @ProductId, @Quantity)",
         item);
 
-    return Results.StatusCode(201);
+    return Results.Json(new
+    {
+        Message = $"Producto {item.ProductId} agregado al carrito con éxito.",
+        UserId = item.UserId,
+        Quantity = item.Quantity
+    }, statusCode: 201);
 });
 
 
@@ -94,6 +99,18 @@ app.MapDelete("/cart/{userId}", async (int userId) =>
     using var connection = new SqliteConnection("Data Source=cart.db");
     await connection.ExecuteAsync("DELETE FROM CartItems WHERE UserId = @UserId", new { UserId = userId });
     return Results.NoContent();
+});
+
+
+// DELETE: Vaciar el carrito de un usuario después de comprar
+app.MapDelete("/cart/{userId}/clear", async (int userId) =>
+{
+    using var connection = new SqliteConnection("Data Source=cart.db");
+
+    // Borramos todos los productos que pertenezcan a ese usuario
+    await connection.ExecuteAsync("DELETE FROM CartItems WHERE UserId = @UserId", new { UserId = userId });
+
+    return Results.NoContent(); // Devuelve un código 204 (Vacío pero Exitoso)
 });
 
 app.Run();

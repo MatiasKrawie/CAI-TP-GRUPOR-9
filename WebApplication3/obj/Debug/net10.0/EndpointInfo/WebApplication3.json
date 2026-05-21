@@ -90,6 +90,37 @@
             "description": "OK"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "WebApplication3"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReduceStockRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },
@@ -115,6 +146,16 @@
             "format": "double"
           },
           "stock": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReduceStockRequest": {
+        "type": "object",
+        "properties": {
+          "quantity": {
             "type": "integer",
             "format": "int32"
           }

@@ -103,8 +103,46 @@ app.MapPatch("/products/{id}/reduce-stock", async (int id, int quantity) =>
     return affectedRows == 0 ? Results.BadRequest("Stock insuficiente o producto no encontrado") : Results.Ok();
 });
 
+// PUT: Descontar stock real al vender
+app.MapPut("/products/{id}/reduce-stock", async (int id, ReduceStockRequest request) =>
+{
+using var connection = new SqliteConnection("Data Source=products.db");
 
+// 1. Buscamos el stock actual
+var product = await connection.QuerySingleOrDefaultAsync<dynamic>(
+    "SELECT Stock FROM Products WHERE Id = @Id", new { Id = id });
+
+if (product == null) return Results.NotFound(new { Message = "Producto no encontrado." });
+
+int currentStock = (int)product.Stock;
+
+// 2. Validamos si hay suficiente stock físico
+if (currentStock < request.Quantity)
+{
+return Results.BadRequest(new { Message = $"No hay suficiente stock. Quedan {currentStock} unidades." });
+}
+
+// 3. Restamos el stock
+int newStock = currentStock - request.Quantity;
+await connection.ExecuteAsync(
+    "UPDATE Products SET Stock = @Stock WHERE Id = @Id",
+    new { Stock = newStock, Id = id });
+
+    // ... Código del endpoint PUT (el de reduce-stock) ...
+
+    return Results.Json(new
+    {
+        Message = "Stock actualizado correctamente.",
+        NewStock = newStock
+    }, statusCode: 200);
+}); // <-- ASEGURATE de que el PUT cierre con }); acá en la línea 135/136
 
 app.MapHealthChecks("/health");
 
-app.Run();
+app.Run(); // <-- Línea 139: Ahora el compilador ya sabe que todo está cerrado arriba
+
+// --- DTO auxiliar para el body del PUT ---
+public class ReduceStockRequest
+{
+    public int Quantity { get; set; }
+}
