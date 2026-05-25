@@ -1,18 +1,33 @@
 ﻿using Microsoft.Data.Sqlite;
-using Dapper; // Asegúrate de instalar el paquete NuGet 'Dapper'
+using Microsoft.Extensions.Configuration;
+using Dapper; 
 
 namespace WebApplication3.Data
 {
-    public static class DatabaseInitializer
+    public class DatabaseInitializer
+
+
     {
-        public static void Initialize(string connectionString)
+
+        private readonly string connectionString;
+
+       
+        public DatabaseInitializer(IConfiguration configuration)
+        {
+            connectionString = configuration.GetConnectionString("DefaultConnection")
+                                ?? "Data Source=app.db";
+        }
+        
+        public void Initialize()
+
+
         {
             using var connection = new SqliteConnection(connectionString);
             connection.Open();
 
             // Usamos Execute de Dapper para crear la tabla
             connection.Execute("""
-                CREATE TABLE IF NOT EXISTS items (
+                CREATE TABLE IF NOT EXISTS products (
                     id          INTEGER PRIMARY KEY AUTOINCREMENT,
                     name        TEXT    NOT NULL,
                     description TEXT,
