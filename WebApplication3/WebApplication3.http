@@ -1,6 +1,6 @@
 @WebApplication3_HostAddress = http://localhost:5248
 
-GET {{WebApplication3_HostAddress}}/items
+GET {{WebApplication3_HostAddress}}/products
 Accept: application/json
 
 ###

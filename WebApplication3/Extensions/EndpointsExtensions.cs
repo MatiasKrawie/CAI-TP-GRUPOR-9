@@ -1,147 +1,79 @@
 ﻿using WebApplication3.Models;
+using WebApplication3.Data.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication3.Extensions
+
 {
     public static class EndpointsExtensions
     {
 
-        public static void MapItemEndpoints(this WebApplication app)
+        public static void MapProductEndpoints(this WebApplication app)
 
         {
 
-            var items = new List<Item>();
-            var orders = new List<Item>();
-
-            var idCounter = 1L;
-
 
             // GET all
-            
-            app.MapGet("/items", () =>
+            app.MapGet("/products", async (ProductRepository repo) =>
             {
-
-                return Results.Ok(items);
-
+                var products = await repo.GetAllAsync();
+                return Results.Ok(products);
             })
+            .WithTags("Products");
 
-        .WithTags("Items");
-
-
-            app.MapGet("/orders", () =>
-            {
-
-                return Results.Ok(orders);
-
-            })
-
-       .WithTags("Orders");
 
 
             // GET by id
-            app.MapGet("/items/{id}", (long id) =>
+            app.MapGet("/products/{id}", async (int id, ProductRepository repo) =>
             {
-
-                var item = items.FirstOrDefault(i => i.Id == id);
-
-                return item is not null ? Results.Ok(item) : Results.NotFound();
-
+                var product = await repo.GetByIdAsync(id);
+                return product is not null ? Results.Ok(product) : Results.NotFound();
             })
-
-        .WithTags("Items");
+                      .WithTags("Products");
 
 
             // POST
-            app.MapPost("/items", (CreateItemRequest req) =>
+            app.MapPost("/products", async (CreateProductRequest req, ProductRepository repo) =>
             {
-
-                var item = new Item
+                // Validación básica
+                if (string.IsNullOrWhiteSpace(req.Name))
                 {
+                    return Results.BadRequest("El nombre es obligatorio.");
+                }
+          
+                var nuevoProduct = await repo.CreateAsync(req);
 
-                    Id = idCounter++,
-
-                    Name = req.Name,
-
-                    Description = req.Description,
-
-                    Price = (double)req.Price,
-
-                    Stock = req.Stock,
-
-                    CreatedAt = DateTime.UtcNow.ToString("o")
-
-                };
-
-
-                items.Add(item);
-
-
-                return Results.Ok(item);
-
+                return Results.Created($"/products/{nuevoProduct.Id}", nuevoProduct);
             })
-
-        .WithTags("Items");
-
+            .WithTags("Products");
 
             // PUT
-            app.MapPut("/items/{id}", (long id, UpdateItemRequest req) =>
+            app.MapPut("/products/{id}", async (int id, UpdateProductRequest req, ProductRepository repo) =>
             {
-
-                var existing = items.FirstOrDefault(i => i.Id == id);
-
-
-                if (existing is null)
-
-                    return Results.NotFound();
-
-
-                var updated = existing with
+                if (string.IsNullOrWhiteSpace(req.Name))
                 {
-
-                    Name = req.Name,
-
-                    Description = req.Description,
-
-                    Price = (double)req.Price,
-
-                    Stock = req.Stock,
-
-                    UpdatedAt = DateTime.UtcNow.ToString("o")
-
-                };
-
-
-                items.Remove(existing);
-
-                items.Add(updated);
-
-
-                return Results.Ok(updated);
-
+                    return Results.BadRequest("El nombre es obligatorio.");
+                }
+               
+                var productActualizado = await repo.UpdateAsync(id, req);
+               
+                return productActualizado is not null
+                    ? Results.Ok(productActualizado)
+                    : Results.NotFound($"No se encontró ningún Producto con el ID {id}.");
             })
-
-        .WithTags("Items");
+            .WithTags("Products");
 
 
             // DELETE
-            app.MapDelete("/items/{id}", (long id) =>
+            app.MapDelete("/products/{id}", async (int id, ProductRepository repo) =>
             {
+                var productEliminado = await repo.DeleteAsync(id);
 
-                var item = items.FirstOrDefault(i => i.Id == id);
-
-
-                if (item is null)
-
-                    return Results.NotFound();
-
-
-                items.Remove(item);
-
-
-                return Results.Ok();
-
+                return productEliminado is not null
+                    ? Results.Ok(productEliminado)
+                    : Results.NotFound($"No se encontró ningún Producto con el ID {id} para eliminar.");
             })
-
-        .WithTags("Items");
+            .WithTags("Products");
 
         }
 

@@ -1,7 +1,7 @@
 ﻿namespace WebApplication3.Models
 {
     // ── Entidad principal ─────────────────────────
-    public record Item{
+    public record Product{
 
     public long Id { get; init; }
 
@@ -22,7 +22,7 @@
 
 // ── Request para crear un ítem (POST) ─────────────────────────────────────
 
-public record CreateItemRequest(
+public record CreateProductRequest(
 
 string Name,
 
@@ -33,7 +33,7 @@ string Name,
     int Stock);
 
 // ── Request para actualizar un ítem (PUT) ─────────────────────────────────
- public record UpdateItemRequest(
+ public record UpdateProductRequest(
 
 string Name,
 
