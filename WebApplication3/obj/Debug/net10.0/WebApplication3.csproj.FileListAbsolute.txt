@@ -156,3 +156,4 @@ C:\Users\krawi\source\repos\WebApplication3\WebApplication3\bin\Debug\net10.0\ru
 C:\Users\krawi\source\repos\WebApplication3\WebApplication3\bin\Debug\net10.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\krawi\source\repos\WebApplication3\WebApplication3\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\krawi\source\repos\WebApplication3\WebApplication3\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\krawi\source\repos\WebApplication3\WebApplication3\bin\Debug\net10.0\IdentityModel.dll

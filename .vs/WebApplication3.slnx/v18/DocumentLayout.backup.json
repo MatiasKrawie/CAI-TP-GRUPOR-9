@@ -3,44 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\servicesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\servicesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\data\\healthchecks\\sqlitehealthcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\data\\healthchecks\\sqlitehealthcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\data\\healthchecks\\apistatuscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\data\\healthchecks\\apistatuscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\data\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\data\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\endpointsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\endpointsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\models\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\loggingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\loggingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,17 +62,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
               "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Program.cs",
               "RelativeToolTip": "WebApplication3\\Program.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCQAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T19:00:54.821Z",
               "IsPinned": true,
@@ -68,13 +80,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "EndpointsExtensions.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\EndpointsExtensions.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Extensions\\EndpointsExtensions.cs",
               "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\EndpointsExtensions.cs",
               "RelativeToolTip": "WebApplication3\\Extensions\\EndpointsExtensions.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAQwD8AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAQwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T19:09:38.601Z",
               "IsPinned": true,
@@ -82,54 +94,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ItemRepository.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\Repositories\\ItemRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Data\\Repositories\\ItemRepository.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\Repositories\\ItemRepository.cs",
-              "RelativeToolTip": "WebApplication3\\Data\\Repositories\\ItemRepository.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAkwGgAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ApiStatusCheck.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\HealthChecks\\ApiStatusCheck.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Data\\HealthChecks\\ApiStatusCheck.cs",
+              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\HealthChecks\\ApiStatusCheck.cs",
+              "RelativeToolTip": "WebApplication3\\Data\\HealthChecks\\ApiStatusCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T18:41:49.615Z",
+              "WhenOpened": "2026-05-25T21:20:03.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "SqliteHealthCheck.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\HealthChecks\\SqliteHealthCheck.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Data\\HealthChecks\\SqliteHealthCheck.cs",
+              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\HealthChecks\\SqliteHealthCheck.cs",
+              "RelativeToolTip": "WebApplication3\\Data\\HealthChecks\\SqliteHealthCheck.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T21:16:05.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServicesExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\ServicesExtensions.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Extensions\\ServicesExtensions.cs",
+              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\ServicesExtensions.cs",
+              "RelativeToolTip": "WebApplication3\\Extensions\\ServicesExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T21:03:32.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Products.cs",
+              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Products.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Products.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T19:14:49.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication3\\appsettings.json",
+              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeToolTip": "WebApplication3\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-11T00:15:27.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "WebApplication3.http",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\WebApplication3.http",
               "RelativeDocumentMoniker": "WebApplication3\\WebApplication3.http",
               "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\WebApplication3.http",
               "RelativeToolTip": "WebApplication3\\WebApplication3.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2026-05-10T23:55:16.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DatabaseInitializer.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\DatabaseInitializer.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Data\\DatabaseInitializer.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\DatabaseInitializer.cs",
-              "RelativeToolTip": "WebApplication3\\Data\\DatabaseInitializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T00:26:12.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "MiddlewareExtensions.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\MiddlewareExtensions.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Extensions\\MiddlewareExtensions.cs",
               "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\MiddlewareExtensions.cs",
               "RelativeToolTip": "WebApplication3\\Extensions\\MiddlewareExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T23:37:08.467Z"
+              "WhenOpened": "2026-05-10T23:37:08.467Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -141,44 +193,46 @@
               "RelativeToolTip": "WebApplication3\\Extensions\\LoggingExtensions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T23:25:27.504Z"
+              "WhenOpened": "2026-05-10T23:25:27.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Data\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "WebApplication3\\Data\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T18:41:49.615Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "DatabaseInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\DatabaseInitializer.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Data\\DatabaseInitializer.cs",
+              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\DatabaseInitializer.cs",
+              "RelativeToolTip": "WebApplication3\\Data\\DatabaseInitializer.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T00:26:12.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Ordenes.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Ordenes.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\Ordenes.cs",
               "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Ordenes.cs",
               "RelativeToolTip": "WebApplication3\\Models\\Ordenes.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-26T22:18:50.603Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Items.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Items.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\Items.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Items.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\Items.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAYwBgAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T19:14:49.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\appsettings.json",
-              "RelativeDocumentMoniker": "WebApplication3\\appsettings.json",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\appsettings.json",
-              "RelativeToolTip": "WebApplication3\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-11T00:15:27.95Z",
+              "WhenOpened": "2026-04-26T22:18:50.603Z",
               "EditorCaption": ""
             }
           ]
