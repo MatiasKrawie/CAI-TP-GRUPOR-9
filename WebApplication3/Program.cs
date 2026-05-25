@@ -18,14 +18,15 @@ public partial class Program
         builder.Host.UseSerilog();
 
 
-
-
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
 
         builder.Services.AddTransient<DatabaseInitializer>();
         builder.Services.AddScoped<ProductRepository>();
+
+
+        builder.Services.AddAppHealthChecks();
 
 
         var app = builder.Build();
@@ -37,30 +38,7 @@ public partial class Program
                 .Initialize();
 
 
-        app.UseSerilogRequestLogging();
-
-
-
-
-        // Swagger UI
-
-        if (app.Environment.IsDevelopment())
-
-        {
-
-            app.UseSwagger();
-
-            app.UseSwaggerUI();
-
-        }
-
-
-        app.UseHttpsRedirection();
-
-
-        app.MapProductEndpoints();
-
-
+        app.UseAppPipeline();
 
         app.Run();
 

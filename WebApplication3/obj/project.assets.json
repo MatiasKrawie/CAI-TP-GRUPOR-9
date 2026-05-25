@@ -128,6 +128,19 @@
           }
         }
       },
+      "IdentityModel/5.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/IdentityModel.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/IdentityModel.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "KubernetesClient/19.0.2": {
         "type": "package",
         "dependencies": {
@@ -1244,6 +1257,30 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "IdentityModel/5.2.0": {
+      "sha512": "nuhkbaDH9l5QzNJp2MtP3qio57MPtiRneUN8Ocr7od0JvSYaIe3gBj/vxllr11S/Qvu1AG4GZXoyv5469ewYDA==",
+      "type": "package",
+      "path": "identitymodel/5.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.jpg",
+        "identitymodel.5.2.0.nupkg.sha512",
+        "identitymodel.nuspec",
+        "lib/net461/IdentityModel.dll",
+        "lib/net461/IdentityModel.pdb",
+        "lib/net461/IdentityModel.xml",
+        "lib/net472/IdentityModel.dll",
+        "lib/net472/IdentityModel.pdb",
+        "lib/net472/IdentityModel.xml",
+        "lib/net5.0/IdentityModel.dll",
+        "lib/net5.0/IdentityModel.pdb",
+        "lib/net5.0/IdentityModel.xml",
+        "lib/netstandard2.0/IdentityModel.dll",
+        "lib/netstandard2.0/IdentityModel.pdb",
+        "lib/netstandard2.0/IdentityModel.xml"
       ]
     },
     "KubernetesClient/19.0.2": {
@@ -2776,6 +2813,7 @@
       "AspNetCore.HealthChecks.UI.Client >= 9.0.0",
       "AspNetCore.HealthChecks.UI.InMemory.Storage >= 9.0.0",
       "Dapper >= 2.1.72",
+      "IdentityModel >= 5.2.0",
       "KubernetesClient >= 19.0.2",
       "Microsoft.AspNetCore.OpenApi >= 10.0.7",
       "Microsoft.Data.Sqlite >= 10.0.7",
@@ -2818,7 +2856,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -2837,7 +2874,6 @@
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "AspNetCore.HealthChecks.UI": {
@@ -2855,6 +2891,10 @@
           "Dapper": {
             "target": "Package",
             "version": "[2.1.72, )"
+          },
+          "IdentityModel": {
+            "target": "Package",
+            "version": "[5.2.0, )"
           },
           "KubernetesClient": {
             "target": "Package",

@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[2.1.72, )"
             },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
             "KubernetesClient": {
               "target": "Package",
               "version": "[19.0.2, )"
