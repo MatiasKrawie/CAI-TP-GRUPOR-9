@@ -1,8 +1,8 @@
 <Solution>
   <Folder Name="/docs/" />
   <Project Path="Cart.Api/Cart.Api.csproj" Id="8f053b58-b29f-4a67-af9a-ad3c929b5c5e" />
+  <Project Path="Notifications.Api/Notifications.Api.csproj" Id="9bec5713-60ed-4c69-9d25-d888e5377ce0" />
   <Project Path="Orders.Api/Orders.Api.csproj" Id="87f8d3d0-00fc-4680-a4eb-bdc917a2fbc7" />
-  <Project Path="Sales.Api/Sales.Api.csproj" Id="f23ef9e2-6f48-4f18-8d1d-775d15c5cf8e" />
   <Project Path="Users.Api/Users.Api.csproj" Id="bb2c49e6-dd65-46cb-9edd-018423914363" />
   <Project Path="Products.API/Products.Api.csproj" />
 </Solution>

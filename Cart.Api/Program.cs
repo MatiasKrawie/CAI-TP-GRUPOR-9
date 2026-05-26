@@ -1,21 +1,48 @@
-using Microsoft.Data.Sqlite;
-using Dapper;
-using Cart.Api;
+using Cart.Api.ExceptionHandlers;
+using Cart.Api.Services;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- 1. CONFIGURACIÓN DE SERVICIOS ---
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log-carrito-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+
+builder.Services.AddHttpClient();
+builder.Services.AddControllers();
+
+builder.Services.AddTransient<DatabaseInitializer>();
+builder.Services.AddScoped<ICartService, CartService>();
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHttpClient(); // IMPORTANTE: Para llamar a otras APIs
-builder.Services.AddExceptionHandler<NotFoundExceptionHandler>();
-builder.Services.AddProblemDetails();
+
+builder.Services.AddHealthChecks()
+    .AddCheck<ApiStatusCheck>("api-status")
+    .AddCheck<SqliteHealthCheck>("sqlite-db");
+
+builder.Services.AddHealthChecksUI(setup =>
+{
+    setup.AddHealthCheckEndpoint("API de Carrito", "/health");
+    setup.SetEvaluationTimeInSeconds(5);
+}).AddInMemoryStorage();
 
 var app = builder.Build();
 
-// --- 2. MIDDLEWARE ---
-app.UseExceptionHandler(_ => { });
+app.UseExceptionHandler();
+
+using (var scope = app.Services.CreateScope())
+{
+    var initializer = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
+    initializer.Initialize();
+}
 
 if (app.Environment.IsDevelopment())
 {
@@ -23,103 +50,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// --- 3. INICIALIZACIÓN DE DB ---
-using (var connection = new SqliteConnection("Data Source=cart.db"))
-{
-    connection.Open();
-    connection.Execute(@"
-        CREATE TABLE IF NOT EXISTS CartItems (
-            Id INTEGER PRIMARY KEY AUTOINCREMENT,
-            UserId INTEGER NOT NULL,
-            ProductId INTEGER NOT NULL,
-            Quantity INTEGER NOT NULL
-        )");
-}
+app.UseHttpsRedirection();
+app.MapControllers();
 
-// --- 4. ENDPOINTS ---
-
-// GET: Obtener ítems del carrito por Usuario
-app.MapGet("/cart/{userId}", async (int userId) =>
+app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
 {
-    using var connection = new SqliteConnection("Data Source=cart.db");
-    var items = await connection.QueryAsync<CartItem>(
-        "SELECT * FROM CartItems WHERE UserId = @UserId", new { UserId = userId });
-    return Results.Ok(items);
+    ResponseWriter = HealthChecks.UI.Client.UIResponseWriter.WriteHealthCheckUIResponse
 });
 
-// POST: Agregar al carrito (Con validación externa)
-app.MapPost("/cart", async (CartItem item, IHttpClientFactory clientFactory, IConfiguration config) =>
-{
-    var client = clientFactory.CreateClient();
-
-    // 1. Validar que el Producto existe (Llamada a Products API)
-    var prodUrl = config.GetValue<string>("ProductServiceUrl") ?? "";
-    var prodRes = await client.GetAsync($"{prodUrl}/products/{item.ProductId}");
-    if (!prodRes.IsSuccessStatusCode)
-        throw new NotFoundException("CART-001", $"El producto {item.ProductId} no existe en el catálogo.");
-
-    // --- VALIDACIÓN DE STOCK CORREGIDA ---
-    // En lugar de <dynamic>, leemos los datos usando nuestro ProductDto
-    var producto = await prodRes.Content.ReadFromJsonAsync<ProductDto>();
-
-    // Leemos la propiedad con la 'S' mayúscula del DTO de forma segura
-    int stockDisponible = producto?.Stock ?? 0;
-
-    if (item.Quantity > stockDisponible)
-    {
-        throw new NotFoundException("CART-003", $"Stock insuficiente. Intentaste agregar {item.Quantity} pero solo quedan {stockDisponible} unidades.");
-    }
-    // ------------------------------------
-
-    // 2. Validar que el Usuario existe (Llamada a Users API)
-    var userUrl = config.GetValue<string>("UserServiceUrl") ?? "";
-    var userRes = await client.GetAsync($"{userUrl}/users/{item.UserId}");
-    if (!userRes.IsSuccessStatusCode)
-        throw new NotFoundException("CART-002", $"El usuario {item.UserId} no existe.");
-
-    // 3. Si todo está OK, guardar en la base del carrito
-    using var connection = new SqliteConnection("Data Source=cart.db");
-    await connection.ExecuteAsync(
-        "INSERT INTO CartItems (UserId, ProductId, Quantity) VALUES (@UserId, @ProductId, @Quantity)",
-        item);
-
-    return Results.Json(new
-    {
-        Message = $"Producto {item.ProductId} agregado al carrito con éxito.",
-        UserId = item.UserId,
-        Quantity = item.Quantity
-    }, statusCode: 201);
-});
-
-
-
-// DELETE: Vaciar carrito (Lo usaremos cuando se concrete la compra)
-app.MapDelete("/cart/{userId}", async (int userId) =>
-{
-    using var connection = new SqliteConnection("Data Source=cart.db");
-    await connection.ExecuteAsync("DELETE FROM CartItems WHERE UserId = @UserId", new { UserId = userId });
-    return Results.NoContent();
-});
-
-
-// DELETE: Vaciar el carrito de un usuario después de comprar
-app.MapDelete("/cart/{userId}/clear", async (int userId) =>
-{
-    using var connection = new SqliteConnection("Data Source=cart.db");
-
-    // Borramos todos los productos que pertenezcan a ese usuario
-    await connection.ExecuteAsync("DELETE FROM CartItems WHERE UserId = @UserId", new { UserId = userId });
-
-    return Results.NoContent(); // Devuelve un código 204 (Vacío pero Exitoso)
-});
+app.MapHealthChecksUI(options => options.UIPath = "/health-ui");
 
 app.Run();
-
-
-public class ProductDto
-{
-    public int Id { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public decimal Price { get; set; }
-    public int Stock { get; set; } // <--- C# mapea automáticamente sin importar si el JSON viene con 'stock' o 'Stock'
-}

@@ -3,11 +3,11 @@
     "Name": "Nuevo perfil",
     "Projects": [
       {
-        "Path": "WebApplication3\\Products.Api.csproj",
+        "Path": "Orders.Api\\Orders.Api.csproj",
         "Action": "Start"
       },
       {
-        "Path": "Users.Api\\Users.Api.csproj",
+        "Path": "Products.API\\Products.Api.csproj",
         "Action": "Start"
       },
       {
@@ -15,7 +15,11 @@
         "Action": "Start"
       },
       {
-        "Path": "Orders.Api\\Orders.Api.csproj",
+        "Path": "Users.Api\\Users.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Notifications.Api\\Notifications.Api.csproj",
         "Action": "Start"
       }
     ]

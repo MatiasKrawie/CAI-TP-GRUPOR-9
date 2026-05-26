@@ -1,8 +1,8 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
-      "Dapper/2.1.72": {
+      "Dapper/2.1.79": {
         "type": "package",
         "compile": {
           "lib/net10.0/Dapper.dll": {
@@ -471,15 +471,15 @@
     }
   },
   "libraries": {
-    "Dapper/2.1.72": {
-      "sha512": "ns4mGqQd9a/MhP8m6w556vVlZIa0/MfUu03zrxjZC/jlr1uVCsUac8bkdB+Fs98Llbd56rRSo1eZH5VVmeGZyw==",
+    "Dapper/2.1.79": {
+      "sha512": "8YijbzgTfmqmQOnVNorYM6K++pxqnW3nJ4aC1sRHzxUA2CcuoJ9gsTem3kgBnPRMc38zZHl4Esb6hAezXIEEuw==",
       "type": "package",
-      "path": "dapper/2.1.72",
+      "path": "dapper/2.1.79",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Dapper.png",
-        "dapper.2.1.72.nupkg.sha512",
+        "dapper.2.1.79.nupkg.sha512",
         "dapper.nuspec",
         "lib/net10.0/Dapper.dll",
         "lib/net10.0/Dapper.xml",
@@ -1240,7 +1240,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Dapper >= 2.1.72",
+      "Dapper >= 2.1.79",
       "Microsoft.AspNetCore.OpenApi >= 10.0.8",
       "Microsoft.Data.Sqlite >= 10.0.8",
       "Serilog.AspNetCore >= 10.0.0",
@@ -1294,7 +1294,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
@@ -1303,7 +1303,7 @@
         "dependencies": {
           "Dapper": {
             "target": "Package",
-            "version": "[2.1.72, )"
+            "version": "[2.1.79, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
@@ -1349,7 +1349,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
