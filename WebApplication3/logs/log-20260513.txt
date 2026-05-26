@@ -1,0 +1,9 @@
+2026-05-13 20:22:53.847 -03:00 [INF] Now listening on: https://localhost:7137
+2026-05-13 20:22:54.052 -03:00 [INF] Now listening on: http://localhost:5248
+2026-05-13 20:22:54.100 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-13 20:22:54.480 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 20:22:54.517 -03:00 [INF] Hosting environment: Development
+2026-05-13 20:22:54.519 -03:00 [INF] Content root path: C:\Users\OGRIBOV\Documents\GitHub\CAI-TP-GRUPOR-9\WebApplication3
+2026-05-13 20:23:07.915 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/ - null null
+2026-05-13 20:23:08.361 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/ - 404 null null 473.6202ms
+2026-05-13 20:23:08.375 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7137/, Response status code: 404
