@@ -201,20 +201,6 @@
   },
   "components": {
     "schemas": {
-      "OrderItemRequest": {
-        "type": "object",
-        "properties": {
-          "productoId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "cantidad": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "OrderItemResponse": {
         "type": "object",
         "properties": {
@@ -239,13 +225,6 @@
           "usuarioId": {
             "type": "integer",
             "format": "int32"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrderItemRequest"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

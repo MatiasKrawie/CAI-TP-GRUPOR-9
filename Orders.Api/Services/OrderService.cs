@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using k8s.KubeConfigModels;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using Orders.Api.DTOs;
@@ -30,7 +29,7 @@ namespace Orders.Api.Services
             _clientFactory = clientFactory;
             _cartUrl = configuration.GetValue<string>("CartServiceUrl") ?? "";
             _productUrl = configuration.GetValue<string>("ProductServiceUrl") ?? "";
-            _notificationUrl =configuration.GetValue<string>("NotificationServiceUrl") ?? "";
+            _notificationUrl = configuration.GetValue<string>("NotificationServiceUrl") ?? "";
             _usersUrl = configuration["UserServiceUrl"] ?? "https://localhost:7058";
         }
 
@@ -106,23 +105,40 @@ namespace Orders.Api.Services
             return response;
         }
 
-        //POST
+        //  POST 
         public async Task<OrderResponse> CreateAsync(OrderRequest request)
         {
             var client = _clientFactory.CreateClient();
 
            
-            if (request.Items == null || !request.Items.Any())
-                throw new NotFoundException("ORD-002", 400, "Los datos de la orden son inválidos. La lista de productos está vacía.");
+            await ValidateUserExistsAsync(request.UsuarioId);
 
-            //await ValidateUserExistsAsync(userId);
+            
+            HttpResponseMessage cartRes;
+            try
+            {
+                cartRes = await client.GetAsync($"{_cartUrl}/api/cart/{request.UsuarioId}");
+            }
+            catch
+            {
+                throw new NotFoundException("ORD-007", 500, "Error de comunicación con Cart.API al recuperar el carrito.");
+            }
+
+            if (!cartRes.IsSuccessStatusCode)
+                throw new NotFoundException("ORD-002", 404, $"No se encontró un carrito activo para el usuario {request.UsuarioId}.");
+
+            
+            var carrito = await cartRes.Content.ReadFromJsonAsync<CartResponse>();
+
+            if (carrito == null || carrito.Items == null || !carrito.Items.Any())
+                throw new NotFoundException("ORD-002", 400, "El carrito del usuario está vacío. No se puede generar una orden.");
 
             decimal totalAmount = 0;
             var productosActualizados = new List<(ProductDetailDto Prod, int CantidadAComprar)>();
             var detallesParaGuardar = new List<OrderItemResponse>();
 
             
-            foreach (var item in request.Items)
+            foreach (var item in carrito.Items)
             {
                 var productRes = await client.GetAsync($"{_productUrl}/api/products/{item.ProductoId}");
                 if (!productRes.IsSuccessStatusCode)
@@ -132,51 +148,46 @@ namespace Orders.Api.Services
                 if (product == null)
                     throw new NotFoundException("ORD-004", 404, "Producto no encontrado al crear la orden.");
 
-               
                 if (product.Stock < item.Cantidad)
                     throw new NotFoundException("ORD-005", 422, $"Stock insuficiente para uno o más productos. Producto: {product.Name}");
 
                 totalAmount += (product.Price * item.Cantidad);
                 productosActualizados.Add((product, item.Cantidad));
 
-               
                 detallesParaGuardar.Add(new OrderItemResponse
                 {
                     ProductoId = product.Id,
                     Cantidad = item.Cantidad,
-                    PrecioUnitario = product.Price 
+                    PrecioUnitario = product.Price
                 });
             }
 
-            
             int nuevaOrdenId;
             var fechaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
+            
             using var conn = CreateConnection();
             if (conn.State == ConnectionState.Closed) conn.Open();
             using var transaction = conn.BeginTransaction();
 
             try
             {
-                
                 string sqlOrden = @"
-            INSERT INTO Ordenes (UsuarioId, Total, Estado, FechaCreacion) 
-            VALUES (@UsuarioId, @Total, 'Pendiente', @FechaCreacion);";
+                    INSERT INTO Ordenes (UsuarioId, Total, Estado, FechaCreacion) 
+                    VALUES (@UsuarioId, @Total, 'Pendiente', @FechaCreacion);";
 
                 await conn.ExecuteAsync(sqlOrden, new
                 {
                     UsuarioId = request.UsuarioId,
                     Total = totalAmount,
                     FechaCreacion = fechaActual
-                }, transaction); 
+                }, transaction);
 
-               
                 nuevaOrdenId = await conn.QuerySingleAsync<int>("SELECT last_insert_rowid();", transaction: transaction);
 
-               
                 string sqlDetalle = @"
-            INSERT INTO OrdenDetalles (OrdenId, ProductoId, Cantidad, PrecioUnitario) 
-            VALUES (@OrdenId, @ProductoId, @Cantidad, @PrecioUnitario);";
+                    INSERT INTO OrdenDetalles (OrdenId, ProductoId, Cantidad, PrecioUnitario) 
+                    VALUES (@OrdenId, @ProductoId, @Cantidad, @PrecioUnitario);";
 
                 foreach (var detalle in detallesParaGuardar)
                 {
@@ -186,7 +197,7 @@ namespace Orders.Api.Services
                         ProductoId = detalle.ProductoId,
                         Cantidad = detalle.Cantidad,
                         PrecioUnitario = detalle.PrecioUnitario
-                    }, transaction); 
+                    }, transaction);
                 }
 
                 transaction.Commit();
@@ -194,11 +205,10 @@ namespace Orders.Api.Services
             catch (Exception ex)
             {
                 transaction.Rollback();
-                
-                throw new NotFoundException("ORD-007", 500, $"Error real: {ex.Message} -> {ex.InnerException?.Message}");
+                throw new NotFoundException("ORD-007", 500, $"Error real en base de datos: {ex.Message} -> {ex.InnerException?.Message}");
             }
 
-
+            
             foreach (var prodInfo in productosActualizados)
             {
                 int stockRestante = prodInfo.Prod.Stock - prodInfo.CantidadAComprar;
@@ -209,12 +219,10 @@ namespace Orders.Api.Services
                     throw new NotFoundException("ORD-007", 500, $"Error interno. No se pudo actualizar el stock del producto {prodInfo.Prod.Id}.");
             }
 
-
+            
             await client.DeleteAsync($"{_cartUrl}/api/cart/{request.UsuarioId}");
 
             
-
-
             var dataNotificacion = new
             {
                 UsuarioId = request.UsuarioId,
@@ -230,7 +238,6 @@ namespace Orders.Api.Services
                 throw new NotFoundException("ORD-007", 500, $"Falla al notificar. Código HTTP: {respuestaNotification.StatusCode} -> Cuerpo: {contenidoError}");
             }
 
-
             return await GetByIdAsync(nuevaOrdenId);
         }
 
@@ -241,7 +248,6 @@ namespace Orders.Api.Services
 
             try
             {
-
                 response = await client.GetAsync($"{_usersUrl}/api/users/{userId}");
             }
             catch
@@ -253,12 +259,10 @@ namespace Orders.Api.Services
                 throw new NotFoundException("CRT-001", 404, $"El usuario con ID {userId} no existe en el sistema.");
         }
 
-
         public async Task<OrderResponse> UpdateStatusAsync(int id, string nuevoEstado)
         {
-            var ordenActual = await GetByIdAsync(id); 
+            var ordenActual = await GetByIdAsync(id);
 
-            
             if (ordenActual.Estado == "Cancelada" || ordenActual.Estado == "Confirmada")
                 throw new NotFoundException("ORD-006", 409, "El estado de la orden no puede ser modificado.");
 
