@@ -130,6 +130,24 @@ namespace Products.API.Services
             return await GetByIdAsync(id);
         }
 
+        //PUT STOCK
+        public async Task UpdateStockAsync(int id, int nuevoStock)
+        {
+            using var conn = CreateConnection(); 
+            if (conn.State == ConnectionState.Closed) conn.Open();
+
+           
+            string sql = "UPDATE products SET stock = @Stock WHERE Id = @Id;";
+
+            int filasAfectadas = await conn.ExecuteAsync(sql, new { Stock = nuevoStock, Id = id });
+
+            
+            if (filasAfectadas == 0)
+            {
+                throw new ProductException("PRD-001", 404, $"No se encontró el producto con ID {id} para actualizar su stock.");
+            }
+        }
+
         public async Task<bool> DeleteAsync(int id)
         {
             using var conn = CreateConnection();

@@ -19,6 +19,10 @@ namespace Products.API.Services
         // 4. PUT /api/products/{id}
         Task<Product> UpdateAsync(int id, UpdateProductRequest request);
 
+
+        // 4. PUT /api/products/{id}/stock
+        Task UpdateStockAsync(int id, int nuevoStock);
+
         // 5. DELETE /api/products/{id}
         Task<bool> DeleteAsync(int id);
     }

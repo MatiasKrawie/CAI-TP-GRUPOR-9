@@ -88,5 +88,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Products.API.Controllers.ProductsController",
+    "Method": "UpdateStock",
+    "RelativePath": "api/products/{id}/stock",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "nuevoStock",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

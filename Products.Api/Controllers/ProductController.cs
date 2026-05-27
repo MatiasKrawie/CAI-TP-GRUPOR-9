@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Products.API.DTOs;
+using Products.API.Exceptions;
 using Products.API.Services;
 using System;
 using System.Linq;
@@ -130,6 +131,18 @@ namespace Products.API.Controllers
             };
 
             return Ok(response);
+        }
+
+
+        [HttpPut("{id}/stock")]
+        public async Task<IActionResult> UpdateStock(int id, [FromBody] int nuevoStock)
+        {
+            if (nuevoStock < 0)
+                return BadRequest(new { message = "El stock no puede ser menor a cero." });
+
+            await _productService.UpdateStockAsync(id, nuevoStock);
+
+            return NoContent();
         }
 
         // 5. DELETE: /api/products/{id}

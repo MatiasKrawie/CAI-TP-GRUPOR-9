@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using k8s.KubeConfigModels;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using Orders.Api.DTOs;
@@ -21,6 +22,7 @@ namespace Orders.Api.Services
         private readonly string _cartUrl;
         private readonly string _productUrl;
         private readonly string _notificationUrl;
+        private readonly string _usersUrl;
 
         public OrderService(IConfiguration configuration, IHttpClientFactory clientFactory)
         {
@@ -29,6 +31,7 @@ namespace Orders.Api.Services
             _cartUrl = configuration.GetValue<string>("CartServiceUrl") ?? "";
             _productUrl = configuration.GetValue<string>("ProductServiceUrl") ?? "";
             _notificationUrl =configuration.GetValue<string>("NotificationServiceUrl") ?? "";
+            _usersUrl = configuration["UserServiceUrl"] ?? "https://localhost:7058";
         }
 
         private IDbConnection CreateConnection() => new SqliteConnection(_connectionString);
@@ -103,6 +106,7 @@ namespace Orders.Api.Services
             return response;
         }
 
+        //POST
         public async Task<OrderResponse> CreateAsync(OrderRequest request)
         {
             var client = _clientFactory.CreateClient();
@@ -110,6 +114,8 @@ namespace Orders.Api.Services
            
             if (request.Items == null || !request.Items.Any())
                 throw new NotFoundException("ORD-002", 400, "Los datos de la orden son inválidos. La lista de productos está vacía.");
+
+            //await ValidateUserExistsAsync(userId);
 
             decimal totalAmount = 0;
             var productosActualizados = new List<(ProductDetailDto Prod, int CantidadAComprar)>();
@@ -192,14 +198,15 @@ namespace Orders.Api.Services
                 throw new NotFoundException("ORD-007", 500, $"Error real: {ex.Message} -> {ex.InnerException?.Message}");
             }
 
-            
+
             foreach (var prodInfo in productosActualizados)
             {
-                prodInfo.Prod.Stock -= prodInfo.CantidadAComprar;
+                int stockRestante = prodInfo.Prod.Stock - prodInfo.CantidadAComprar;
 
-                var updateStockRes = await client.PutAsJsonAsync($"{_productUrl}/api/products/{prodInfo.Prod.Id}", prodInfo.Prod);
+                var updateStockRes = await client.PutAsJsonAsync($"{_productUrl}/api/products/{prodInfo.Prod.Id}/stock", stockRestante);
+
                 if (!updateStockRes.IsSuccessStatusCode)
-                    throw new NotFoundException("ORD-007", 500, "Error interno al procesar la orden. No se pudo actualizar el stock.");
+                    throw new NotFoundException("ORD-007", 500, $"Error interno. No se pudo actualizar el stock del producto {prodInfo.Prod.Id}.");
             }
 
 
@@ -217,7 +224,6 @@ namespace Orders.Api.Services
 
             var respuestaNotification = await client.PostAsJsonAsync($"{_notificationUrl}/api/notifications/send", dataNotificacion);
 
-            // 🔥 CAMBIAMOS ESTO TEMPORALMENTE: Si no es exitoso, rompemos para ver el error en Postman
             if (!respuestaNotification.IsSuccessStatusCode)
             {
                 var contenidoError = await respuestaNotification.Content.ReadAsStringAsync();
@@ -228,7 +234,26 @@ namespace Orders.Api.Services
             return await GetByIdAsync(nuevaOrdenId);
         }
 
-       
+        private async Task ValidateUserExistsAsync(int userId)
+        {
+            var client = _clientFactory.CreateClient();
+            HttpResponseMessage response;
+
+            try
+            {
+
+                response = await client.GetAsync($"{_usersUrl}/api/users/{userId}");
+            }
+            catch
+            {
+                throw new NotFoundException("CRT-005", 500, "Error de comunicación con Users.API.");
+            }
+
+            if (!response.IsSuccessStatusCode)
+                throw new NotFoundException("CRT-001", 404, $"El usuario con ID {userId} no existe en el sistema.");
+        }
+
+
         public async Task<OrderResponse> UpdateStatusAsync(int id, string nuevoEstado)
         {
             var ordenActual = await GetByIdAsync(id); 

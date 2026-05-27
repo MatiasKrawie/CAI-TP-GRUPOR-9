@@ -122,5 +122,22 @@ namespace Users.Api.Services
                 Email = usuario.Email
             };
         }
+
+        public async Task<UserResponse> GetByIdAsync(int id)
+        {
+            using var conn = CreateConnection();
+
+           
+            string sql = "SELECT Id, Nombre, Apellido, Email, FechaRegistro, Activo FROM Usuarios WHERE Id = @Id";
+            var usuario = await conn.QueryFirstOrDefaultAsync<UserResponse>(sql, new { Id = id });
+
+            
+            if (usuario == null)
+            {
+                throw new NotFoundException("USR-006", 404, $"El usuario con ID {id} no fue encontrado.");
+            }
+
+            return usuario;
+        }
     }
 }

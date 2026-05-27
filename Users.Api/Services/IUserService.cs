@@ -7,5 +7,7 @@ namespace Users.Api.Services
     {
         Task<UserResponse> RegisterAsync(RegisterRequest request);
         Task<LoginResponse> LoginAsync(LoginRequest request);
+
+        Task<UserResponse> GetByIdAsync(int id);
     }
 }

@@ -18,18 +18,21 @@ namespace Cart.Api.Services
         private readonly string _connectionString;
         private readonly IHttpClientFactory _clientFactory;
         private readonly string _productUrl;
+        private readonly string _usersUrl;
 
         public CartService(IConfiguration configuration, IHttpClientFactory clientFactory)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection") ?? "Data Source=cart.db";
             _clientFactory = clientFactory;
             _productUrl = configuration["ProductServiceUrl"] ?? "https://localhost:7137";
+            _usersUrl = configuration["UserServiceUrl"] ?? "https://localhost:7058";
         }
 
         private IDbConnection CreateConnection() => new SqliteConnection(_connectionString);
 
         public async Task<CartResponse> GetByUserIdAsync(int userId)
         {
+            await ValidateUserExistsAsync(userId);
             using var conn = CreateConnection();
 
             var cartExists = await conn.QueryFirstOrDefaultAsync<int?>(
@@ -47,7 +50,8 @@ namespace Cart.Api.Services
             if (request.Cantidad <= 0)
                 throw new NotFoundException("CRT-004", 400, "Cantidad inválida.");
 
-           
+            await ValidateUserExistsAsync(userId);
+
             var product = await FetchProductFromApiAsync(request.ProductoId);
 
             using var conn = CreateConnection();
@@ -99,6 +103,7 @@ namespace Cart.Api.Services
             if (request.Cantidad <= 0)
                 throw new NotFoundException("CRT-004", 400, "Cantidad inválida.");
 
+            await ValidateUserExistsAsync(userId);
             using var conn = CreateConnection();
 
             var cartExists = await conn.QueryFirstOrDefaultAsync<int?>(
@@ -128,6 +133,7 @@ namespace Cart.Api.Services
 
         public async Task RemoveItemAsync(int userId, int productId)
         {
+            await ValidateUserExistsAsync(userId);
             using var conn = CreateConnection();
 
             var cartExists = await conn.QueryFirstOrDefaultAsync<int?>(
@@ -149,6 +155,7 @@ namespace Cart.Api.Services
 
         public async Task ClearCartAsync(int userId)
         {
+            await ValidateUserExistsAsync(userId);
             using var conn = CreateConnection();
 
             var cartExists = await conn.QueryFirstOrDefaultAsync<int?>(
@@ -194,6 +201,25 @@ namespace Cart.Api.Services
                 throw new NotFoundException("CRT-002", 404, "Producto no encontrado.");
 
             return product;
+        }
+
+        private async Task ValidateUserExistsAsync(int userId)
+        {
+            var client = _clientFactory.CreateClient();
+            HttpResponseMessage response;
+
+            try
+            {
+               
+                response = await client.GetAsync($"{_usersUrl}/api/users/{userId}");
+            }
+            catch
+            {
+                throw new NotFoundException("CRT-005", 500, "Error de comunicación con Users.API.");
+            }
+
+            if (!response.IsSuccessStatusCode)
+                throw new NotFoundException("CRT-001", 404, $"El usuario con ID {userId} no existe en el sistema.");
         }
 
         private async Task<CartResponse> GetCartResponseInternalAsync(IDbConnection conn, int userId)

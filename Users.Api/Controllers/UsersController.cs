@@ -6,7 +6,7 @@ using Users.Api.Services;
 namespace Users.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")] 
+    [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -32,6 +32,17 @@ namespace Users.Api.Controllers
             var loginExitoso = await _userService.LoginAsync(request);
             // Retorna 200 OK
             return Ok(loginExitoso);
+        }
+
+        //GET /api/users/id
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            
+            var usuario = await _userService.GetByIdAsync(id);
+
+            
+            return Ok(usuario);
         }
     }
 }

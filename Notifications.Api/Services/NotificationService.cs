@@ -1,14 +1,15 @@
 ﻿using Dapper;
+using k8s.KubeConfigModels;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
+using Notifications.Api.DTOs;
+using Notifications.Api.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Notifications.Api.DTOs;
-using Notifications.Api.Exceptions;
 
 namespace Notifications.Api.Services
 {
@@ -22,7 +23,7 @@ namespace Notifications.Api.Services
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection") ?? "Data Source=notifications.db";
             _clientFactory = clientFactory;
-            _usersUrl = configuration["UserServiceUrl"] ?? "https://localhost:7122"; 
+            _usersUrl = configuration["UserServiceUrl"] ?? "https://localhost:7058"; 
         }
 
         private IDbConnection CreateConnection() => new SqliteConnection(_connectionString);
@@ -37,22 +38,9 @@ namespace Notifications.Api.Services
             if (request.Tipo != "Email" && request.Tipo != "SMS" && request.Tipo != "Push")
                 throw new NotFoundException("NTF-002", 400, "Los datos de la notificación son inválidos. Tipo no reconocido.");
 
-            
-            var client = _clientFactory.CreateClient();
-            HttpResponseMessage userRes;
-            try
-            {
-                userRes = await client.GetAsync($"{_usersUrl}/api/users/{request.UsuarioId}");
-            }
-            catch
-            {
-                throw new NotFoundException("NTF-004", 500, "Error de comunicación con Users.API.");
-            }
+            await ValidateUserExistsAsync(request.UsuarioId);
 
-            if (!userRes.IsSuccessStatusCode)
-                throw new NotFoundException("NTF-001", 404, "El usuario destinatario no fue encontrado.");
 
-           
             using var conn = CreateConnection();
             string sqlInsert = @"
                 INSERT INTO Notificaciones (UsuarioId, Mensaje, Tipo, Estado, FechaEnvio)
@@ -77,6 +65,25 @@ namespace Notifications.Api.Services
             {
                 throw new NotFoundException("NTF-004", 500, "Error interno al procesar y guardar la notificación.");
             }
+        }
+
+        private async Task ValidateUserExistsAsync(int userId)
+        {
+            var client = _clientFactory.CreateClient();
+            HttpResponseMessage response;
+
+            try
+            {
+
+                response = await client.GetAsync($"{_usersUrl}/api/users/{userId}");
+            }
+            catch
+            {
+                throw new NotFoundException("CRT-005", 500, "Error de comunicación con Users.API.");
+            }
+
+            if (!response.IsSuccessStatusCode)
+                throw new NotFoundException("CRT-001", 404, $"El usuario con ID {userId} no existe en el sistema.");
         }
 
         public async Task<IEnumerable<NotificationResponse>> GetNotificationsByUserIdAsync(int userId)
