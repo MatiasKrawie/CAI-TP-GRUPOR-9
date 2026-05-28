@@ -207,11 +207,13 @@
           },
           "price": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "stock": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "category": {
             "type": "string",
@@ -233,11 +235,13 @@
           },
           "price": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "stock": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "category": {
             "type": "string",

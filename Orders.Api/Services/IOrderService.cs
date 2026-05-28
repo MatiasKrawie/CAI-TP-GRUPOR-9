@@ -13,6 +13,9 @@ namespace Orders.Api.Services
         // GET /api/orders/{id}
         Task<OrderResponse> GetByIdAsync(int id);
 
+        // GET /api/orders/{productoId}
+        Task<bool> HasOrdersAsync(int productoId);
+
         // POST /api/orders
         Task<OrderResponse> CreateAsync(OrderRequest request);
 

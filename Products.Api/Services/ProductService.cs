@@ -16,10 +16,15 @@ namespace Products.API.Services
     public class ProductService : IProductService
     {
         private readonly string _connectionString;
+        private readonly IHttpClientFactory _clientFactory;
+        private readonly string _ordersUrl;
 
-        public ProductService(IConfiguration configuration)
+        public ProductService(IConfiguration configuration, IHttpClientFactory clientFactory)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection") ?? "Data Source=products.db";
+            _clientFactory = clientFactory;
+
+            _ordersUrl = configuration["OrdersServiceUrl"] ?? "https://localhost:7040";
         }
 
         private IDbConnection CreateConnection() => new SqliteConnection(_connectionString);
@@ -150,22 +155,41 @@ namespace Products.API.Services
 
         public async Task<bool> DeleteAsync(int id)
         {
-            using var conn = CreateConnection();
+            var client = _clientFactory.CreateClient();
+            HttpResponseMessage response;
 
-
-            var tieneOrdenes = await conn.ExecuteScalarAsync<int>(
-                 "SELECT COUNT(1) FROM Ordenes WHERE product_id = @Id", new { Id = id });
-
-            if (tieneOrdenes > 0)
+            try
             {
-                throw new ProductException("PRD-004", 409, "El producto tiene órdenes activas y no puede eliminarse.");
+                response = await client.GetAsync($"{_ordersUrl}/api/orders/internal/check-product/{id}");
+            }
+            catch (Exception ex)
+            {
+                throw new ProductException("PRD-007", 500, $"Error de comunicación con Orders.Api: {ex.Message}");
             }
 
-            var filasAfectadas = await conn.ExecuteAsync("DELETE FROM products WHERE id = @Id", new { Id = id });
+            if (response.IsSuccessStatusCode)
+            {
+
+                bool tieneOrdenes = await response.Content.ReadFromJsonAsync<bool>();
+
+                if (tieneOrdenes)
+                {
+                    throw new ProductException("PRD-004", 409, "El producto tiene órdenes activas y no puede eliminarse.");
+                }
+            }
+
+            using var conn = CreateConnection();
+            if (conn.State == ConnectionState.Closed) conn.Open();
 
             
 
-            // PRD-004: El producto tiene órdenes activas
+            var filasAfectadas = await conn.ExecuteAsync("DELETE FROM products WHERE id = @Id", new { Id = id });
+
+            if (filasAfectadas == 0)
+            {
+                throw new ProductException("PRD-001", 404, $"No se encontró el producto con ID {id} para eliminar.");
+            }
+
             return filasAfectadas > 0;
         }
     }

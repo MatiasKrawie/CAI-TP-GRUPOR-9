@@ -14,7 +14,11 @@ builder.Host.UseSerilog();
 
 
 builder.Services.AddHttpClient();
-builder.Services.AddControllers(); 
+builder.Services.AddControllers()
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options.SuppressModelStateInvalidFilter = true;
+    });
 
 builder.Services.AddTransient<DatabaseInitializer>();
 builder.Services.AddScoped<IProductService, ProductService>();

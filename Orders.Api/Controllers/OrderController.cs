@@ -34,6 +34,16 @@ namespace Orders.Api.Controllers
             return Ok(orden);
         }
 
+        [HttpGet("internal/check-product/{productoId}")]
+        [ApiExplorerSettings(IgnoreApi = true)] 
+        public async Task<IActionResult> CheckProductHasOrders(int productoId)
+        {
+            bool tieneOrdenes = await _orderService.HasOrdersAsync(productoId);
+            return Ok(tieneOrdenes);
+        }
+
+
+
 
         [HttpPost]
         public async Task<ActionResult<OrderResponse>> Create([FromBody] OrderRequest request)

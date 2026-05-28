@@ -64,8 +64,25 @@ namespace Products.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateProductRequest request)
         {
-           
-            if (string.IsNullOrWhiteSpace(request.Name) || request.Price <= 0 || request.Stock <= 0)
+
+                if (!ModelState.IsValid || request == null)
+                {
+                    var problemDetails = new ProblemDetails
+                    {
+                        Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                        Title = "Bad Request",
+                        Status = StatusCodes.Status400BadRequest,
+                        Detail = "La estructura del cuerpo de la petición o los campos no cumplen las reglas.",
+                        Instance = HttpContext.Request.Path
+                    };
+
+                    problemDetails.Extensions["errorCode"] = "PRD-002";
+                    problemDetails.Extensions["errorMessage"] = "Los datos del producto son inválidos.";
+
+                    return BadRequest(problemDetails);
+                }
+
+                if (string.IsNullOrWhiteSpace(request.Name) || request.Price < 0 || request.Stock < 0 )
             {
                 var problemDetails = new ProblemDetails
                 {
@@ -102,8 +119,28 @@ namespace Products.API.Controllers
         // 4. PUT: /api/products/{id}
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateProductRequest request)
+
         {
-            if (string.IsNullOrWhiteSpace(request.Name) || request.Price <= 0 || request.Stock <= 0)
+            if (!ModelState.IsValid || request == null)
+            {
+                var problemDetails = new ProblemDetails
+                {
+                    Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    Title = "Bad Request",
+                    Status = StatusCodes.Status400BadRequest,
+                    Detail = "La estructura del cuerpo de la petición o los campos no cumplen las reglas.",
+                    Instance = HttpContext.Request.Path
+                };
+
+                problemDetails.Extensions["errorCode"] = "PRD-002";
+                problemDetails.Extensions["errorMessage"] = "Los datos del producto son inválidos.";
+
+                return BadRequest(problemDetails);
+            }
+
+
+
+            if (string.IsNullOrWhiteSpace(request.Name) || request.Price < 0 || request.Stock < 0)
             {
                 var problemDetails = new ProblemDetails
                 {

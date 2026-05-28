@@ -105,6 +105,18 @@ namespace Orders.Api.Services
             return response;
         }
 
+        public async Task<bool> HasOrdersAsync(int productoId)
+        {
+            using var conn = CreateConnection();
+            if (conn.State == ConnectionState.Closed) conn.Open();
+
+            
+            string sql = "SELECT COUNT(1) FROM OrdenDetalles WHERE ProductoId = @ProductoId;";
+            int conteo = await conn.ExecuteScalarAsync<int>(sql, new { ProductoId = productoId });
+
+            return conteo > 0;
+        }
+
         //  POST 
         public async Task<OrderResponse> CreateAsync(OrderRequest request)
         {
