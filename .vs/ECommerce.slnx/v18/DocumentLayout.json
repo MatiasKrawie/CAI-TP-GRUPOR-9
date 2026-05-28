@@ -3,28 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\dtos\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\dtos\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\blockuserresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\blockuserresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\blockuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\blockuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\cart.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BEC5713-60ED-4C69-9D25-D888E5377CE0}|Notifications.Api\\Notifications.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\notifications.api\\notifications.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9BEC5713-60ED-4C69-9D25-D888E5377CE0}|Notifications.Api\\Notifications.Api.csproj|solutionrelative:notifications.api\\notifications.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\dtos\\productrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\dtos\\productrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BEC5713-60ED-4C69-9D25-D888E5377CE0}|Notifications.Api\\Notifications.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\notifications.api\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,20 +67,24 @@
       "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\cart.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\dtos\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\dtos\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\dtos\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BEC5713-60ED-4C69-9D25-D888E5377CE0}|Notifications.Api\\Notifications.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\notifications.api\\notifications.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9BEC5713-60ED-4C69-9D25-D888E5377CE0}|Notifications.Api\\Notifications.Api.csproj|solutionrelative:notifications.api\\notifications.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\cart.api\\services\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,20 +99,8 @@
       "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\dtos\\productrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\dtos\\productrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\services\\apistatuscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\services\\apistatuscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\products.api\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4397ED62-4BF0-4931-67A9-E0D68B263AE3}|Products.API\\Products.Api.csproj|solutionrelative:products.api\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\orders.api\\dtos\\orderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -105,22 +129,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\users.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\krawi\\downloads\\cai-tp-grupor-9-owen\\cai-tp-grupor-9-owen\\cart.api\\cart.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -282,17 +290,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "CartService.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\CartService.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Services\\CartService.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\CartService.cs",
               "RelativeToolTip": "Cart.Api\\Services\\CartService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAzwCIAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAA+wCgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T19:34:05.002Z",
               "IsPinned": true,
@@ -300,13 +308,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "NotificationService.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Services\\NotificationService.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Services\\NotificationService.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Services\\NotificationService.cs",
               "RelativeToolTip": "Notifications.Api\\Services\\NotificationService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAIA6wCIAAABuAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAADgvyIAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T15:19:41.428Z",
               "IsPinned": true,
@@ -314,13 +322,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Users.Api\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\UserService.cs",
               "RelativeToolTip": "Users.Api\\Services\\UserService.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAADwv4gAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAkwIoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T18:56:35.868Z",
               "IsPinned": true,
@@ -334,7 +342,7 @@
               "RelativeDocumentMoniker": "Products.Api\\Services\\ProductService.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Services\\ProductService.cs",
               "RelativeToolTip": "Products.Api\\Services\\ProductService.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAADgvz4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAAGcAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T14:46:42.54Z",
               "IsPinned": true,
@@ -342,13 +350,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Services\\OrderService.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Services\\OrderService.cs",
               "RelativeToolTip": "Orders.Api\\Services\\OrderService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAowLoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T17:29:13.356Z",
               "IsPinned": true,
@@ -356,319 +364,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CartResponse.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\CartResponse.cs",
-              "RelativeDocumentMoniker": "Orders.Api\\DTOs\\CartResponse.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\CartResponse.cs",
-              "RelativeToolTip": "Orders.Api\\DTOs\\CartResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BlockUserResponse.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\BlockUserResponse.cs",
+              "RelativeDocumentMoniker": "Users.Api\\DTOs\\BlockUserResponse.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\BlockUserResponse.cs",
+              "RelativeToolTip": "Users.Api\\DTOs\\BlockUserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T18:24:13.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Orders.Api\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Orders.Api\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwCYAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T17:25:40.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderRequest.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderRequest.cs",
-              "RelativeDocumentMoniker": "Orders.Api\\DTOs\\OrderRequest.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderRequest.cs",
-              "RelativeToolTip": "Orders.Api\\DTOs\\OrderRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T17:25:57.284Z",
+              "WhenOpened": "2026-05-28T00:54:52.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CartResponse.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\CartResponse.cs",
-              "RelativeDocumentMoniker": "Cart.Api\\DTOs\\CartResponse.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\CartResponse.cs",
-              "RelativeToolTip": "Cart.Api\\DTOs\\CartResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Title": "BlockUserRequest.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\BlockUserRequest.cs",
+              "RelativeDocumentMoniker": "Users.Api\\DTOs\\BlockUserRequest.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\BlockUserRequest.cs",
+              "RelativeToolTip": "Users.Api\\DTOs\\BlockUserRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T19:29:50.503Z",
+              "WhenOpened": "2026-05-28T00:53:26.165Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Notifications.Api",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Notifications.Api.csproj",
-              "RelativeDocumentMoniker": "Notifications.Api\\Notifications.Api.csproj",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Notifications.Api.csproj",
-              "RelativeToolTip": "Notifications.Api\\Notifications.Api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-26T20:16:00.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Users.Api\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Users.Api\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwCYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:58:38.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\IUserService.cs",
               "RelativeDocumentMoniker": "Users.Api\\Services\\IUserService.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\IUserService.cs",
               "RelativeToolTip": "Users.Api\\Services\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T18:56:16.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Notifications.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\appsettings.json",
-              "RelativeToolTip": "Notifications.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-26T22:22:00.462Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Users.Api\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Users.Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-27T15:17:19.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ICartService.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\ICartService.cs",
-              "RelativeDocumentMoniker": "Cart.Api\\Services\\ICartService.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\ICartService.cs",
-              "RelativeToolTip": "Cart.Api\\Services\\ICartService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Users.Api\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAYwCgAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T19:33:45.1Z",
+              "WhenOpened": "2026-05-26T18:58:38.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Users.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Program.cs",
-              "RelativeToolTip": "Users.Api\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:52:33.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ApiStatusCheck.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\ApiStatusCheck.cs",
-              "RelativeDocumentMoniker": "Users.Api\\Services\\ApiStatusCheck.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\ApiStatusCheck.cs",
-              "RelativeToolTip": "Users.Api\\Services\\ApiStatusCheck.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T19:02:06.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProductRequest.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\DTOs\\ProductRequest.cs",
-              "RelativeDocumentMoniker": "Products.Api\\DTOs\\ProductRequest.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\DTOs\\ProductRequest.cs",
-              "RelativeToolTip": "Products.Api\\DTOs\\ProductRequest.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA7wBAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:41:12.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Products.Api\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Products.Api\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAowJAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:43:02.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Services\\IProductService.cs",
-              "RelativeDocumentMoniker": "Products.Api\\Services\\IProductService.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Services\\IProductService.cs",
-              "RelativeToolTip": "Products.Api\\Services\\IProductService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:45:45.866Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OrderResponse.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderResponse.cs",
-              "RelativeDocumentMoniker": "Orders.Api\\DTOs\\OrderResponse.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderResponse.cs",
-              "RelativeToolTip": "Orders.Api\\DTOs\\OrderResponse.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAiwCMAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T17:26:07.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SqliteHealthCheck.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\SqliteHealthCheck.cs",
-              "RelativeDocumentMoniker": "Users.Api\\Services\\SqliteHealthCheck.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\SqliteHealthCheck.cs",
-              "RelativeToolTip": "Users.Api\\Services\\SqliteHealthCheck.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T19:02:17.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DatabaseInitializer.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\DatabaseInitializer.cs",
-              "RelativeDocumentMoniker": "Users.Api\\Services\\DatabaseInitializer.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\DatabaseInitializer.cs",
-              "RelativeToolTip": "Users.Api\\Services\\DatabaseInitializer.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:52:54.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Users.Api\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Models\\User.cs",
-              "RelativeToolTip": "Users.Api\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:55:53.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "GlobalExceptionHandler.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
-              "RelativeDocumentMoniker": "Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
-              "RelativeToolTip": "Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwCIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:57:18.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 6,
               "Title": "UserResponse.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\UserResponse.cs",
               "RelativeDocumentMoniker": "Users.Api\\DTOs\\UserResponse.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\UserResponse.cs",
               "RelativeToolTip": "Users.Api\\DTOs\\UserResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T18:55:12.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "NotFoundException.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Exceptions\\NotFoundException.cs",
-              "RelativeDocumentMoniker": "Users.Api\\Exceptions\\NotFoundException.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Exceptions\\NotFoundException.cs",
-              "RelativeToolTip": "Users.Api\\Exceptions\\NotFoundException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:59:21.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "Users.Api\\DTOs\\RegisterRequest.cs",
-              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\RegisterRequest.cs",
-              "RelativeToolTip": "Users.Api\\DTOs\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:53:37.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 7,
               "Title": "LoginResponse.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\LoginResponse.cs",
               "RelativeDocumentMoniker": "Users.Api\\DTOs\\LoginResponse.cs",
               "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\LoginResponse.cs",
               "RelativeToolTip": "Users.Api\\DTOs\\LoginResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T18:55:32.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 8,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\LoginRequest.cs",
               "RelativeDocumentMoniker": "Users.Api\\DTOs\\LoginRequest.cs",
@@ -681,7 +455,267 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "Users.Api\\DTOs\\RegisterRequest.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\DTOs\\RegisterRequest.cs",
+              "RelativeToolTip": "Users.Api\\DTOs\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T18:53:37.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductRequest.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\DTOs\\ProductRequest.cs",
+              "RelativeDocumentMoniker": "Products.Api\\DTOs\\ProductRequest.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\DTOs\\ProductRequest.cs",
+              "RelativeToolTip": "Products.Api\\DTOs\\ProductRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T14:41:12.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Products.Api\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Products.Api\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAewGcAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T14:43:02.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Services\\IProductService.cs",
+              "RelativeDocumentMoniker": "Products.Api\\Services\\IProductService.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Services\\IProductService.cs",
+              "RelativeToolTip": "Products.Api\\Services\\IProductService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T14:45:45.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Notifications.Api",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Notifications.Api.csproj",
+              "RelativeDocumentMoniker": "Notifications.Api\\Notifications.Api.csproj",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Notifications.Api.csproj",
+              "RelativeToolTip": "Notifications.Api\\Notifications.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-26T20:16:00.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Orders.Api\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwCYAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T17:25:40.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartResponse.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\CartResponse.cs",
+              "RelativeDocumentMoniker": "Cart.Api\\DTOs\\CartResponse.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\CartResponse.cs",
+              "RelativeToolTip": "Cart.Api\\DTOs\\CartResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T19:29:50.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrderRequest.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderRequest.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\DTOs\\OrderRequest.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderRequest.cs",
+              "RelativeToolTip": "Orders.Api\\DTOs\\OrderRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T17:25:57.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CartResponse.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\CartResponse.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\DTOs\\CartResponse.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\CartResponse.cs",
+              "RelativeToolTip": "Orders.Api\\DTOs\\CartResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T18:24:13.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Notifications.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\appsettings.json",
+              "RelativeToolTip": "Notifications.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-26T22:22:00.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Users.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Users.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-27T15:17:19.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ICartService.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\ICartService.cs",
+              "RelativeDocumentMoniker": "Cart.Api\\Services\\ICartService.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\ICartService.cs",
+              "RelativeToolTip": "Cart.Api\\Services\\ICartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T19:33:45.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Program.cs",
+              "RelativeToolTip": "Users.Api\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T18:52:33.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ApiStatusCheck.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\ApiStatusCheck.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Services\\ApiStatusCheck.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\ApiStatusCheck.cs",
+              "RelativeToolTip": "Users.Api\\Services\\ApiStatusCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T19:02:06.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "OrderResponse.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderResponse.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\DTOs\\OrderResponse.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\DTOs\\OrderResponse.cs",
+              "RelativeToolTip": "Orders.Api\\DTOs\\OrderResponse.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAiwCMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T17:26:07.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SqliteHealthCheck.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\SqliteHealthCheck.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Services\\SqliteHealthCheck.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\SqliteHealthCheck.cs",
+              "RelativeToolTip": "Users.Api\\Services\\SqliteHealthCheck.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T19:02:17.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DatabaseInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\DatabaseInitializer.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Services\\DatabaseInitializer.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Services\\DatabaseInitializer.cs",
+              "RelativeToolTip": "Users.Api\\Services\\DatabaseInitializer.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T18:52:54.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Models\\User.cs",
+              "RelativeToolTip": "Users.Api\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T18:55:53.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 30,
+              "Title": "GlobalExceptionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
+              "RelativeDocumentMoniker": "Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
+              "RelativeToolTip": "Users.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T18:57:18.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "Users.Api\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T18:59:21.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "Cart.Api",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Cart.Api.csproj",
               "RelativeDocumentMoniker": "Cart.Api\\Cart.Api.csproj",
@@ -694,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\appsettings.json",
               "RelativeDocumentMoniker": "Orders.Api\\appsettings.json",
@@ -707,7 +741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Services\\IOrderService.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Services\\IOrderService.cs",
@@ -720,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Program.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Program.cs",
@@ -733,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "GlobalExceptionHandler.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
               "RelativeDocumentMoniker": "Orders.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
@@ -746,7 +780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Notifications.Api\\Properties\\launchSettings.json",
@@ -759,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Program.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Program.cs",
@@ -772,7 +806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "SqliteHealthChecks.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Services\\SqliteHealthChecks.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Services\\SqliteHealthChecks.cs",
@@ -785,7 +819,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "DatabaseInitializer.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Services\\DatabaseInitializer.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Services\\DatabaseInitializer.cs",
@@ -798,7 +832,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "ApiStatusCheck.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Services\\ApiStatusCheck.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Services\\ApiStatusCheck.cs",
@@ -811,7 +845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Models\\Order.cs",
@@ -824,7 +858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "Orders.Api\\Exceptions\\NotFoundException.cs",
@@ -837,7 +871,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "SqliteHealthCheck.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Services\\SqliteHealthCheck.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Services\\SqliteHealthCheck.cs",
@@ -850,7 +884,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "INotificationService.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Services\\INotificationService.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Services\\INotificationService.cs",
@@ -863,7 +897,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "DatabaseInitializer.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Services\\DatabaseInitializer.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Services\\DatabaseInitializer.cs",
@@ -876,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "ApiStatusCheck.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Services\\ApiStatusCheck.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Services\\ApiStatusCheck.cs",
@@ -889,7 +923,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Models\\Notification.cs",
@@ -902,7 +936,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 49,
               "Title": "GlobalExceptionHandler.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
@@ -915,7 +949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 50,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Exceptions\\NotFoundException.cs",
@@ -928,7 +962,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 51,
               "Title": "NotificationRequest.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\DTOs\\NotificationRequest.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\DTOs\\NotificationRequest.cs",
@@ -941,7 +975,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 52,
               "Title": "NotificationsController.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\Controllers\\NotificationsController.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\Controllers\\NotificationsController.cs",
@@ -954,7 +988,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 53,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Program.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Program.cs",
@@ -967,7 +1001,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 54,
               "Title": "SqliteHealthCheck.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\SqliteHealthCheck.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Services\\SqliteHealthCheck.cs",
@@ -980,7 +1014,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 55,
               "Title": "DatabaseInitializer.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\DatabaseInitializer.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Services\\DatabaseInitializer.cs",
@@ -993,7 +1027,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 56,
               "Title": "ApiStatusCheck.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Services\\ApiStatusCheck.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Services\\ApiStatusCheck.cs",
@@ -1006,7 +1040,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "CartHeader.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Models\\CartHeader.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Models\\CartHeader.cs",
@@ -1019,7 +1053,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 58,
               "Title": "CartItemRequest.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\CartItemRequest.cs",
               "RelativeDocumentMoniker": "Cart.Api\\DTOs\\CartItemRequest.cs",
@@ -1032,7 +1066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 59,
               "Title": "CartDetail.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Models\\CartDetail.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Models\\CartDetail.cs",
@@ -1045,7 +1079,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 60,
               "Title": "GlobalExceptionHandler.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
               "RelativeDocumentMoniker": "Cart.Api\\ExceptionsHandlers\\GlobalExceptionHandler.cs",
@@ -1058,7 +1092,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 61,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Exceptions\\NotFoundException.cs",
@@ -1071,7 +1105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 62,
               "Title": "UpdateCantidadRequest.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\UpdateCantidadRequest.cs",
               "RelativeDocumentMoniker": "Cart.Api\\DTOs\\UpdateCantidadRequest.cs",
@@ -1084,7 +1118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 63,
               "Title": "ProductDetailDto.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\ProductDetailDto.cs",
               "RelativeDocumentMoniker": "Cart.Api\\DTOs\\ProductDetailDto.cs",
@@ -1097,7 +1131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 64,
               "Title": "CartItemResponse.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\DTOs\\CartItemResponse.cs",
               "RelativeDocumentMoniker": "Cart.Api\\DTOs\\CartItemResponse.cs",
@@ -1110,7 +1144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 65,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "Cart.Api\\Controllers\\CartController.cs",
@@ -1123,7 +1157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 66,
               "Title": "NotificationResponse.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Notifications.Api\\DTOs\\NotificationResponse.cs",
               "RelativeDocumentMoniker": "Notifications.Api\\DTOs\\NotificationResponse.cs",
@@ -1136,7 +1170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "Orders.Api",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Orders.Api.csproj",
               "RelativeDocumentMoniker": "Orders.Api\\Orders.Api.csproj",
@@ -1149,7 +1183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.Api\\Program.cs",
               "RelativeDocumentMoniker": "Products.Api\\Program.cs",
@@ -1162,7 +1196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "Users.Api",
               "DocumentMoniker": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Users.Api.csproj",
               "RelativeDocumentMoniker": "Users.Api\\Users.Api.csproj",

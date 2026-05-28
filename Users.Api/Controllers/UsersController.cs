@@ -21,7 +21,7 @@ namespace Users.Api.Controllers
         public async Task<ActionResult<UserResponse>> Register([FromBody] RegisterRequest request)
         {
             var usuarioCreado = await _userService.RegisterAsync(request);
-            // Retorna 201 Created
+            
             return StatusCode(201, usuarioCreado);
         }
 
@@ -30,8 +30,16 @@ namespace Users.Api.Controllers
         public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginRequest request)
         {
             var loginExitoso = await _userService.LoginAsync(request);
-            // Retorna 200 OK
+            
             return Ok(loginExitoso);
+        }
+
+        //PUT
+        [HttpPut("{id}/block")]
+        public async Task<IActionResult> BlockUser(int id, [FromBody] BlockUserRequest request)
+        {
+            var resultado = await _userService.UpdateAsync(id, request);
+            return Ok(resultado);
         }
 
         //GET /api/users/id

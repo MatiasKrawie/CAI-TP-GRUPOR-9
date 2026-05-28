@@ -154,7 +154,7 @@ namespace Products.API.Services
 
 
             var tieneOrdenes = await conn.ExecuteScalarAsync<int>(
-                 "SELECT COUNT(1) FROM Orders WHERE product_id = @Id", new { Id = id });
+                 "SELECT COUNT(1) FROM Ordenes WHERE product_id = @Id", new { Id = id });
 
             if (tieneOrdenes > 0)
             {

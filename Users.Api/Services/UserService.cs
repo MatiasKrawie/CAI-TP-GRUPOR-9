@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.CodeAnalysis;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -25,7 +26,7 @@ namespace Users.Api.Services
         {
             
             if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password) ||
-                string.IsNullOrWhiteSpace(request.Nombre))
+                string.IsNullOrWhiteSpace(request.Nombre) || string.IsNullOrWhiteSpace(request.Apellido))
             {
                 throw new NotFoundException("USR-002", 400, "Los datos del usuario son inválidos.");
             }
@@ -121,6 +122,42 @@ namespace Users.Api.Services
                 Apellido = usuario.Apellido,
                 Email = usuario.Email
             };
+        }
+
+        public async Task<BlockUserResponse> UpdateAsync(int id, BlockUserRequest request)
+        {
+            using var conn = CreateConnection();
+            if (conn.State == ConnectionState.Closed) conn.Open();
+
+            string sql = @"
+                    UPDATE Usuarios 
+                    SET BloqueoFraude = @BloqueoFraude
+                    WHERE Id = @Id;";
+
+            var filasAfectadas = await conn.ExecuteAsync(sql, new
+            {
+                BloqueoFraude = request.BloqueoFraude, 
+                Id = id
+            });
+
+
+            if (filasAfectadas == 0)
+            {
+                throw new NotFoundException("USR-006", 404, $"El usuario con ID {id} no fue encontrado para aplicar el bloqueo.");
+            }
+
+            var usuarioActualizado = await GetByIdAsync(id);
+
+            return new BlockUserResponse
+            {
+                Id = usuarioActualizado.Id,
+                Nombre = usuarioActualizado.Nombre,
+                Apellido = usuarioActualizado.Apellido,
+                Email = usuarioActualizado.Email,
+                Activo = usuarioActualizado.Activo,
+                BloqueoFraude = request.BloqueoFraude 
+            };
+
         }
 
         public async Task<UserResponse> GetByIdAsync(int id)

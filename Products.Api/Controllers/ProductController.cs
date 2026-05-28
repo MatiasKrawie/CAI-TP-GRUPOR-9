@@ -65,7 +65,7 @@ namespace Products.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateProductRequest request)
         {
            
-            if (string.IsNullOrWhiteSpace(request.Name) || request.Price <= 0 || request.Stock < 0)
+            if (string.IsNullOrWhiteSpace(request.Name) || request.Price <= 0 || request.Stock <= 0)
             {
                 var problemDetails = new ProblemDetails
                 {
@@ -103,7 +103,7 @@ namespace Products.API.Controllers
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateProductRequest request)
         {
-            if (string.IsNullOrWhiteSpace(request.Name) || request.Price <= 0 || request.Stock < 0)
+            if (string.IsNullOrWhiteSpace(request.Name) || request.Price <= 0 || request.Stock <= 0)
             {
                 var problemDetails = new ProblemDetails
                 {
