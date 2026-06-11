@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Orders.Api.DTOs;
+using Orders.Api.Exceptions;
 using Orders.Api.Services;
 using System;
 using System.Collections.Generic;
@@ -64,8 +65,27 @@ namespace Orders.Api.Controllers
                 return BadRequest(new { Error = "El campo nuevoEstado es obligatorio." });
             }
 
-            var ordenActualizada = await _orderService.UpdateStatusAsync(id, request.NuevoEstado);
-            return Ok(ordenActualizada);
+            try
+            {
+                var ordenActualizada = await _orderService.UpdateStatusAsync(id, request.NuevoEstado);
+                return Ok(ordenActualizada);
+            }
+            catch (NotFoundException ex) when (ex.ErrorCode == "ORD-006")
+            {
+                var problemDetails = new ProblemDetails
+                {
+                    Type = "https://tools.ietf.org/html/rfc7231#section-6.5.9",
+                    Title = "Conflict",
+                    Status = StatusCodes.Status409Conflict,
+                    Detail = "No se puede modificar el estado.",
+                    Instance = HttpContext.Request.Path 
+                };
+
+                problemDetails.Extensions["errorCode"] = ex.ErrorCode;
+                problemDetails.Extensions["errorMessage"] = ex.Message; 
+
+                return StatusCode(StatusCodes.Status409Conflict, problemDetails);
+            }
         }
     }
 

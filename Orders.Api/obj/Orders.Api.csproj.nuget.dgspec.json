@@ -74,15 +74,15 @@
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
@@ -94,7 +94,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[10.1.7, )"
+              "version": "[10.2.1, )"
             }
           },
           "imports": [
@@ -116,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

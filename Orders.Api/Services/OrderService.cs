@@ -274,11 +274,62 @@ namespace Orders.Api.Services
         public async Task<OrderResponse> UpdateStatusAsync(int id, string nuevoEstado)
         {
             var ordenActual = await GetByIdAsync(id);
+            string estadoViejo = ordenActual.Estado;
 
-            if (ordenActual.Estado == "Cancelada" || ordenActual.Estado == "Confirmada")
-                throw new NotFoundException("ORD-006", 409, "El estado de la orden no puede ser modificado.");
+            var estadosValidos = new List<string> { "Pendiente", "Confirmada", "Cancelada", "Entregada" };
+
+            if (!estadosValidos.Contains(nuevoEstado))
+            {
+                throw new NotFoundException("ORD-006", 409, $"El estado '{nuevoEstado}' no es un estado válido del sistema. Los estados permitidos son: Pendiente, Confirmada, Cancelada, Entregada.");
+            }
+
+            if (estadoViejo == nuevoEstado)
+            {
+                return ordenActual;
+            }
+
+            bool esTransicionValida = false;
+            string mensajeErrorCustom = "";
+
+            if (estadoViejo == "Pendiente")
+            {
+                if (nuevoEstado == "Confirmada" || nuevoEstado == "Cancelada")
+                {
+                    esTransicionValida = true;
+                }
+                else if (nuevoEstado == "Entregada")
+                {
+                    mensajeErrorCustom = "Una orden en estado 'Pendiente' no puede pasar directamente a 'Entregada' sin ser primero 'Confirmada'.";
+                }
+            }
+            else if (estadoViejo == "Confirmada")
+            {
+                if (nuevoEstado == "Entregada")
+                {
+                    esTransicionValida = true;
+                }
+                else if (nuevoEstado == "Pendiente" || nuevoEstado == "Cancelada")
+                {
+                    mensajeErrorCustom = $"Una orden en estado 'Confirmada' no puede volver a '{nuevoEstado}'.";
+                }
+            }
+            else if (estadoViejo == "Entregada" || estadoViejo == "Cancelada")
+            {
+                mensajeErrorCustom = $"La orden ya se encuentra en el estado final '{estadoViejo}' y no puede ser modificada.";
+            }
+
+            if (!esTransicionValida)
+            {
+                string errorFinal = string.IsNullOrEmpty(mensajeErrorCustom)
+                    ? $"Transición de estado inválida de '{estadoViejo}' a '{nuevoEstado}'."
+                    : mensajeErrorCustom;
+
+                throw new NotFoundException("ORD-006", 409, errorFinal);
+            }
 
             using var conn = CreateConnection();
+            if (conn.State == ConnectionState.Closed) conn.Open();
+
             await conn.ExecuteAsync("UPDATE Ordenes SET Estado = @Estado WHERE Id = @Id", new { Estado = nuevoEstado, Id = id });
 
             return await GetByIdAsync(id);

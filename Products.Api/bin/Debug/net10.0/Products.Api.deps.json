@@ -14,15 +14,15 @@
           "Dapper": "2.1.79",
           "IdentityModel": "5.2.0",
           "KubernetesClient": "19.0.2",
-          "Microsoft.AspNetCore.OpenApi": "10.0.8",
-          "Microsoft.Data.Sqlite": "10.0.8",
+          "Microsoft.AspNetCore.OpenApi": "10.0.9",
+          "Microsoft.Data.Sqlite": "10.0.9",
           "SQLite": "3.13.0",
           "Serilog": "4.3.1",
           "Serilog.AspNetCore": "10.0.0",
           "Serilog.Sinks.Console": "6.1.1",
           "Serilog.Sinks.File": "7.0.0",
-          "Swashbuckle.AspNetCore": "10.1.7",
-          "Swashbuckle.AspNetCore.Swagger": "10.1.7"
+          "Swashbuckle.AspNetCore": "10.2.1",
+          "Swashbuckle.AspNetCore.Swagger": "10.2.1"
         },
         "runtime": {
           "Products.Api.dll": {}
@@ -128,14 +128,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/10.0.8": {
+      "Microsoft.AspNetCore.OpenApi/10.0.9": {
         "dependencies": {
-          "Microsoft.OpenApi": "2.4.1"
+          "Microsoft.OpenApi": "2.7.5"
         },
         "runtime": {
           "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "assemblyVersion": "10.0.8.0",
-            "fileVersion": "10.0.826.23019"
+            "assemblyVersion": "10.0.9.0",
+            "fileVersion": "10.0.926.27113"
           }
         }
       },
@@ -358,21 +358,21 @@
           }
         }
       },
-      "Microsoft.Data.Sqlite/10.0.8": {
+      "Microsoft.Data.Sqlite/10.0.9": {
         "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "10.0.8",
+          "Microsoft.Data.Sqlite.Core": "10.0.9",
           "SQLitePCLRaw.bundle_e_sqlite3": "2.1.11",
           "SQLitePCLRaw.core": "2.1.11"
         }
       },
-      "Microsoft.Data.Sqlite.Core/10.0.8": {
+      "Microsoft.Data.Sqlite.Core/10.0.9": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.1.11"
         },
         "runtime": {
           "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "assemblyVersion": "10.0.8.0",
-            "fileVersion": "10.0.826.23019"
+            "assemblyVersion": "10.0.9.0",
+            "fileVersion": "10.0.926.27113"
           }
         }
       },
@@ -440,11 +440,11 @@
           }
         }
       },
-      "Microsoft.OpenApi/2.4.1": {
+      "Microsoft.OpenApi/2.7.5": {
         "runtime": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
-            "assemblyVersion": "2.4.1.0",
-            "fileVersion": "2.4.1.0"
+            "assemblyVersion": "2.7.5.0",
+            "fileVersion": "2.7.5.0"
           }
         }
       },
@@ -737,40 +737,40 @@
           }
         }
       },
-      "Swashbuckle.AspNetCore/10.1.7": {
+      "Swashbuckle.AspNetCore/10.2.1": {
         "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "10.1.7",
-          "Swashbuckle.AspNetCore.SwaggerGen": "10.1.7",
-          "Swashbuckle.AspNetCore.SwaggerUI": "10.1.7"
+          "Swashbuckle.AspNetCore.Swagger": "10.2.1",
+          "Swashbuckle.AspNetCore.SwaggerGen": "10.2.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "10.2.1"
         }
       },
-      "Swashbuckle.AspNetCore.Swagger/10.1.7": {
+      "Swashbuckle.AspNetCore.Swagger/10.2.1": {
         "dependencies": {
-          "Microsoft.OpenApi": "2.4.1"
+          "Microsoft.OpenApi": "2.7.5"
         },
         "runtime": {
           "lib/net10.0/Swashbuckle.AspNetCore.Swagger.dll": {
-            "assemblyVersion": "10.1.7.0",
-            "fileVersion": "10.1.7.2427"
+            "assemblyVersion": "10.2.1.0",
+            "fileVersion": "10.2.1.2634"
           }
         }
       },
-      "Swashbuckle.AspNetCore.SwaggerGen/10.1.7": {
+      "Swashbuckle.AspNetCore.SwaggerGen/10.2.1": {
         "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "10.1.7"
+          "Swashbuckle.AspNetCore.Swagger": "10.2.1"
         },
         "runtime": {
           "lib/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
-            "assemblyVersion": "10.1.7.0",
-            "fileVersion": "10.1.7.2427"
+            "assemblyVersion": "10.2.1.0",
+            "fileVersion": "10.2.1.2634"
           }
         }
       },
-      "Swashbuckle.AspNetCore.SwaggerUI/10.1.7": {
+      "Swashbuckle.AspNetCore.SwaggerUI/10.2.1": {
         "runtime": {
           "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
-            "assemblyVersion": "10.1.7.0",
-            "fileVersion": "10.1.7.2427"
+            "assemblyVersion": "10.2.1.0",
+            "fileVersion": "10.2.1.2634"
           }
         }
       },
@@ -928,12 +928,12 @@
       "path": "kubernetesclient/19.0.2",
       "hashPath": "kubernetesclient.19.0.2.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.OpenApi/10.0.8": {
+    "Microsoft.AspNetCore.OpenApi/10.0.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cw24xHE2QaWwyEG9GQwFbjboyabub6Vd80DIItUGENzcQOa/BEnTrXsg2GADqWTmY/3ycqk9ToLGjgvF/VRlGA==",
-      "path": "microsoft.aspnetcore.openapi/10.0.8",
-      "hashPath": "microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512"
+      "sha512": "sha512-1ihb8FO9cGgEK1/m3CTtT/SfnynwmiZib0W2pcDVj3KSWk/Sca4VOXEtaptKQc582zpFrzTFiwkGRCglt6H+WQ==",
+      "path": "microsoft.aspnetcore.openapi/10.0.9",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",
@@ -970,19 +970,19 @@
       "path": "microsoft.codeanalysis.workspaces.common/4.5.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.4.5.0.nupkg.sha512"
     },
-    "Microsoft.Data.Sqlite/10.0.8": {
+    "Microsoft.Data.Sqlite/10.0.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iyDWyD6r/SnqgoYYQIlLhxL1ZIGZr+SByMXrJKSA1w7sOt7bPMJmN3h2laqwKqyQkjh/lUPJ7LTXwpvqzhggOQ==",
-      "path": "microsoft.data.sqlite/10.0.8",
-      "hashPath": "microsoft.data.sqlite.10.0.8.nupkg.sha512"
+      "sha512": "sha512-/eBwiZPcNisn0qZX+Zk4YCftlK/vnoWqv7hHnmSk8MjPxFdYYkmPObpogT0MfCCWN6oAIZnMCo0SoOtZlbbmgQ==",
+      "path": "microsoft.data.sqlite/10.0.9",
+      "hashPath": "microsoft.data.sqlite.10.0.9.nupkg.sha512"
     },
-    "Microsoft.Data.Sqlite.Core/10.0.8": {
+    "Microsoft.Data.Sqlite.Core/10.0.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-26t7WDiEjjAls/sFpWvVEFDxt+7Q5VPt6+blU2Lafuj9L8PzAv/GtGV4cqVPtrhWbfD2BX/z2v8hD1qXYtK6Aw==",
-      "path": "microsoft.data.sqlite.core/10.0.8",
-      "hashPath": "microsoft.data.sqlite.core.10.0.8.nupkg.sha512"
+      "sha512": "sha512-iZrONyMKPjxfVZnUktqO30QjzNwAGH+AxM61s8lKQnVhgbQ3bn0hiXI129ZmVicEbIcwljyy2OVsIYUR51ZHKQ==",
+      "path": "microsoft.data.sqlite.core/10.0.9",
+      "hashPath": "microsoft.data.sqlite.core.10.0.9.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/8.0.11": {
       "type": "package",
@@ -1026,12 +1026,12 @@
       "path": "microsoft.extensions.dependencymodel/10.0.0",
       "hashPath": "microsoft.extensions.dependencymodel.10.0.0.nupkg.sha512"
     },
-    "Microsoft.OpenApi/2.4.1": {
+    "Microsoft.OpenApi/2.7.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
-      "path": "microsoft.openapi/2.4.1",
-      "hashPath": "microsoft.openapi.2.4.1.nupkg.sha512"
+      "sha512": "sha512-0FA67RSnRM4tcBKqiqVu/HPdZ9+QOKbmeRjxRUGTCjPU4C0bmUhd97Dso7Yild5P7nOV6GxJ2xrK0Kv/O9xp0w==",
+      "path": "microsoft.openapi/2.7.5",
+      "hashPath": "microsoft.openapi.2.7.5.nupkg.sha512"
     },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
@@ -1138,33 +1138,33 @@
       "path": "sqlitepclraw.provider.e_sqlite3/2.1.11",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.11.nupkg.sha512"
     },
-    "Swashbuckle.AspNetCore/10.1.7": {
+    "Swashbuckle.AspNetCore/10.2.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vgef8DPT411JU5JjHiDbr0WOxsIVuAvegPGtqmm4Na4JRl/264dfBJcGkiPHsAr5P+Vda+qN1rZKRtBl1rF9aA==",
-      "path": "swashbuckle.aspnetcore/10.1.7",
-      "hashPath": "swashbuckle.aspnetcore.10.1.7.nupkg.sha512"
+      "sha512": "sha512-SDU6akgCV/H4jFMRfyJ0mgO5jWOuuAqekvEThXg8c/LjnfNz5Nkaz+RUpeTVJKWIRX4wDKC/6R3ogJ4AsRE32A==",
+      "path": "swashbuckle.aspnetcore/10.2.1",
+      "hashPath": "swashbuckle.aspnetcore.10.2.1.nupkg.sha512"
     },
-    "Swashbuckle.AspNetCore.Swagger/10.1.7": {
+    "Swashbuckle.AspNetCore.Swagger/10.2.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EjLibt/d/QuRv170GoihTbcPUpgzSFm2WKHhnGJFZQ03JYzfuitsM79azaAR8NBwRunU7yScSX6HRE5JUlrEMQ==",
-      "path": "swashbuckle.aspnetcore.swagger/10.1.7",
-      "hashPath": "swashbuckle.aspnetcore.swagger.10.1.7.nupkg.sha512"
+      "sha512": "sha512-ej4inPhiWCq+0utG8yaKhIhE8M3k3R/qRaGhpgDZB+O/s+o62/zRMO1Cn2CtQccsrqPE9PYnzCp6hQGYGpJOyQ==",
+      "path": "swashbuckle.aspnetcore.swagger/10.2.1",
+      "hashPath": "swashbuckle.aspnetcore.swagger.10.2.1.nupkg.sha512"
     },
-    "Swashbuckle.AspNetCore.SwaggerGen/10.1.7": {
+    "Swashbuckle.AspNetCore.SwaggerGen/10.2.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PuubO9BjvNn6U3D9kLpuWKY1JtziWw7SsGBq0age1E50uQjQ8Fzl8s0EwzrLfANqYJNgDnJi9l7N1QxcGVB2Zw==",
-      "path": "swashbuckle.aspnetcore.swaggergen/10.1.7",
-      "hashPath": "swashbuckle.aspnetcore.swaggergen.10.1.7.nupkg.sha512"
+      "sha512": "sha512-JYX6i/y0xEtQWH/hZyfcage1/ldwww83ueD/gBc34uSnMwyvRLUsOpYcxlliFFxFbZMrY6t+R9ENqolE7zTEOg==",
+      "path": "swashbuckle.aspnetcore.swaggergen/10.2.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.10.2.1.nupkg.sha512"
     },
-    "Swashbuckle.AspNetCore.SwaggerUI/10.1.7": {
+    "Swashbuckle.AspNetCore.SwaggerUI/10.2.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iJo3ODyUb/M8Vm8AH1r9y9iAba0w95xsCn3zFVl96ISRHbTDWxi+l7oFVCZqUEdjd97B8VMDPnMliWAdomR8uw==",
-      "path": "swashbuckle.aspnetcore.swaggerui/10.1.7",
-      "hashPath": "swashbuckle.aspnetcore.swaggerui.10.1.7.nupkg.sha512"
+      "sha512": "sha512-vzB8ZAGqXus3fdareJ9GHctaRP9ZL+wW9x8U7s1Y+BWprInFvSg6rpD9VhANNpwXA8fUHqu5Agjl/+hHG1BCQA==",
+      "path": "swashbuckle.aspnetcore.swaggerui/10.2.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.10.2.1.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",

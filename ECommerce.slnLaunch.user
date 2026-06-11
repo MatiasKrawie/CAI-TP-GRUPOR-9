@@ -11,15 +11,15 @@
         "Action": "Start"
       },
       {
-        "Path": "Cart.Api\\Cart.Api.csproj",
-        "Action": "Start"
-      },
-      {
         "Path": "Users.Api\\Users.Api.csproj",
         "Action": "Start"
       },
       {
         "Path": "Notifications.Api\\Notifications.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Cart.Api\\Cart.Api.csproj",
         "Action": "Start"
       }
     ]
