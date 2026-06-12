@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\",
+  "WorkspaceRootPath": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\servicesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\servicesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,12 +22,101 @@
     {
       "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\users.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\extensions\\endpointsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\orders.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\cart.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\orders.api\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\orders.api\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\orders.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87F8D3D0-00FC-4680-A4EB-BDC917A2FBC7}|Orders.Api\\Orders.Api.csproj|solutionrelative:orders.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\cart.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\cart.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\users.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\cart.api\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\cart.api\\notfoundexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\notfoundexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\cart.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F053B58-B29F-4A67-AF9A-AD3C929B5C5E}|Cart.Api\\Cart.Api.csproj|solutionrelative:cart.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\sales.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|solutionrelative:sales.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\users.api\\notfoundexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\notfoundexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\users.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\users.api\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2C49E6-DD65-46CB-9EDD-018423914363}|Users.Api\\Users.Api.csproj|solutionrelative:users.api\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\sales.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|solutionrelative:sales.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\sales.api\\notfoundexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|solutionrelative:sales.api\\notfoundexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\sales.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|solutionrelative:sales.api\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\extensions\\endpointsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\endpointsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,6 +143,54 @@
     {
       "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\krawi\\source\\repos\\webapplication3\\webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\webapplication3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\webapplication3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\sales.api\\sales.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|solutionrelative:sales.api\\sales.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\sales.api\\sales.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|solutionrelative:sales.api\\sales.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\sales.api\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F23EF9E2-6F48-4F18-8D1D-775D15C5CF8E}|Sales.Api\\Sales.Api.csproj|solutionrelative:sales.api\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\extensions\\loggingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\loggingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\models\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\ordenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|c:\\users\\ogribov\\documents\\github\\cai-tp-grupor-9\\webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3349A6-B1F8-5B68-042D-12A657A15BC3}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\extensions\\middlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -62,17 +200,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
+=======
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+>>>>>>> Stashed changes
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Program.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Program.cs",
               "RelativeToolTip": "WebApplication3\\Program.cs",
+<<<<<<< Updated upstream
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAhAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T19:00:54.821Z",
               "IsPinned": true,
@@ -80,21 +230,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 22,
               "Title": "EndpointsExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\EndpointsExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Extensions\\EndpointsExtensions.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Extensions\\EndpointsExtensions.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\EndpointsExtensions.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Extensions\\EndpointsExtensions.cs",
               "RelativeToolTip": "WebApplication3\\Extensions\\EndpointsExtensions.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAQwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T19:09:38.601Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Cart.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\Program.cs",
+              "RelativeToolTip": "Cart.Api\\Program.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEsAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T18:57:37.464Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< Updated upstream
               "Title": "ApiStatusCheck.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\HealthChecks\\ApiStatusCheck.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Data\\HealthChecks\\ApiStatusCheck.cs",
@@ -103,10 +265,21 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T21:20:03.48Z",
+=======
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\Program.cs",
+              "RelativeToolTip": "Orders.Api\\Program.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T19:47:50.884Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 1,
               "Title": "SqliteHealthCheck.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\HealthChecks\\SqliteHealthCheck.cs",
@@ -117,10 +290,34 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T21:16:05.91Z",
               "EditorCaption": ""
+=======
+              "DocumentIndex": 5,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\Order.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\Order.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\Order.cs",
+              "RelativeToolTip": "Orders.Api\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T19:44:03.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartItemDto.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\CartItemDto.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\CartItemDto.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\CartItemDto.cs",
+              "RelativeToolTip": "Orders.Api\\CartItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T19:45:25.836Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< Updated upstream
               "Title": "ServicesExtensions.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\ServicesExtensions.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Extensions\\ServicesExtensions.cs",
@@ -168,36 +365,339 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2026-05-10T23:55:16.774Z",
+=======
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Users.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\Program.cs",
+              "RelativeToolTip": "Users.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:20:46.083Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 4,
-              "Title": "MiddlewareExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\MiddlewareExtensions.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Extensions\\MiddlewareExtensions.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\MiddlewareExtensions.cs",
-              "RelativeToolTip": "WebApplication3\\Extensions\\MiddlewareExtensions.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDIAAAAfAAAAAAAAAA==",
+=======
+              "DocumentIndex": 6,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "Orders.Api\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Orders.Api\\NotFoundException.cs",
+              "RelativeToolTip": "Orders.Api\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T23:37:08.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T19:31:43.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\CartItem.cs",
+              "RelativeDocumentMoniker": "Cart.Api\\CartItem.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\CartItem.cs",
+              "RelativeToolTip": "Cart.Api\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T18:51:46.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Cart.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\appsettings.json",
+              "RelativeToolTip": "Cart.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-14T18:58:11.44Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "LoggingExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\LoggingExtensions.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Extensions\\LoggingExtensions.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Extensions\\LoggingExtensions.cs",
-              "RelativeToolTip": "WebApplication3\\Extensions\\LoggingExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T23:25:27.504Z",
-              "EditorCaption": ""
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Cart.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Cart.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-14T19:24:02.728Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Users.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Users.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-14T17:00:15.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication3\\appsettings.json",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\appsettings.json",
+              "RelativeToolTip": "WebApplication3\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-11T00:15:27.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NotFoundExceptionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\NotFoundExceptionHandler.cs",
+              "RelativeDocumentMoniker": "Cart.Api\\NotFoundExceptionHandler.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\NotFoundExceptionHandler.cs",
+              "RelativeToolTip": "Cart.Api\\NotFoundExceptionHandler.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T18:51:04.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "Cart.Api\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Cart.Api\\NotFoundException.cs",
+              "RelativeToolTip": "Cart.Api\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T18:50:07.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Sales.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Program.cs",
+              "RelativeToolTip": "Sales.Api\\Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIBJwDoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T02:32:09.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "Users.Api\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\NotFoundException.cs",
+              "RelativeToolTip": "Users.Api\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:34:40.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "NotFoundExceptionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\NotFoundExceptionHandler.cs",
+              "RelativeDocumentMoniker": "Users.Api\\NotFoundExceptionHandler.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\NotFoundExceptionHandler.cs",
+              "RelativeToolTip": "Users.Api\\NotFoundExceptionHandler.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA6wBwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:36:00.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\User.cs",
+              "RelativeDocumentMoniker": "Users.Api\\User.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Users.Api\\User.cs",
+              "RelativeToolTip": "Users.Api\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:26:00.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Sales.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\appsettings.json",
+              "RelativeToolTip": "Sales.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-14T05:36:04.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "Sales.Api\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\NotFoundException.cs",
+              "RelativeToolTip": "Sales.Api\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T05:11:38.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "NotFoundExceptionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\NotFoundExceptionHandler.cs",
+              "RelativeDocumentMoniker": "Sales.Api\\NotFoundExceptionHandler.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\NotFoundExceptionHandler.cs",
+              "RelativeToolTip": "Sales.Api\\NotFoundExceptionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T05:12:15.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\NotFoundException.cs",
+              "RelativeToolTip": "WebApplication3\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T01:18:56.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Sales.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Sales.Api.csproj",
+              "RelativeDocumentMoniker": "Sales.Api\\Sales.Api.csproj",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Sales.Api.csproj",
+              "RelativeToolTip": "Sales.Api\\Sales.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-14T02:34:50.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Sales.Api",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Sales.Api.csproj",
+              "RelativeDocumentMoniker": "Sales.Api\\Sales.Api.csproj",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Sales.Api.csproj",
+              "RelativeToolTip": "Sales.Api\\Sales.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-14T03:07:27.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Sale.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Sale.cs",
+              "RelativeDocumentMoniker": "Sales.Api\\Sale.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\Sales.Api\\Sale.cs",
+              "RelativeToolTip": "Sales.Api\\Sale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T02:31:29.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "WebApplication3",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\WebApplication3.csproj",
+              "RelativeDocumentMoniker": "WebApplication3\\WebApplication3.csproj",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\WebApplication3.csproj",
+              "RelativeToolTip": "WebApplication3\\WebApplication3.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-14T03:08:54.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "GlobalExceptionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\GlobalExceptionHandler.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\GlobalExceptionHandler.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\GlobalExceptionHandler.cs",
+              "RelativeToolTip": "WebApplication3\\GlobalExceptionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T01:21:24.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Products.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Products.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Products.cs",
+              "RelativeToolTip": "WebApplication3\\Products.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T23:47:15.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DatabaseInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Data\\DatabaseInitializer.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Data\\DatabaseInitializer.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Data\\DatabaseInitializer.cs",
+              "RelativeToolTip": "WebApplication3\\Data\\DatabaseInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T00:26:12.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "WebApplication3.http",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\WebApplication3.http",
+              "RelativeDocumentMoniker": "WebApplication3\\WebApplication3.http",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\WebApplication3.http",
+              "RelativeToolTip": "WebApplication3\\WebApplication3.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-05-10T23:55:16.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+>>>>>>> Stashed changes
+              "Title": "MiddlewareExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Extensions\\MiddlewareExtensions.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Extensions\\MiddlewareExtensions.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Extensions\\MiddlewareExtensions.cs",
+              "RelativeToolTip": "WebApplication3\\Extensions\\MiddlewareExtensions.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T23:37:08.467Z"
+            },
+            {
+              "$type": "Document",
+<<<<<<< Updated upstream
+              "DocumentIndex": 7,
+=======
+              "DocumentIndex": 30,
+>>>>>>> Stashed changes
+              "Title": "LoggingExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Extensions\\LoggingExtensions.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Extensions\\LoggingExtensions.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Extensions\\LoggingExtensions.cs",
+              "RelativeToolTip": "WebApplication3\\Extensions\\LoggingExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T23:25:27.504Z"
+            },
+            {
+              "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 9,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Data\\Repositories\\ProductRepository.cs",
@@ -225,15 +725,34 @@
             {
               "$type": "Document",
               "DocumentIndex": 12,
+=======
+              "DocumentIndex": 33,
+>>>>>>> Stashed changes
               "Title": "Ordenes.cs",
-              "DocumentMoniker": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Ordenes.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Models\\Ordenes.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\Ordenes.cs",
-              "ToolTip": "C:\\Users\\krawi\\source\\repos\\WebApplication3\\WebApplication3\\Models\\Ordenes.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Models\\Ordenes.cs",
               "RelativeToolTip": "WebApplication3\\Models\\Ordenes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2026-04-26T22:18:50.603Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2026-04-26T22:18:50.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Items.cs",
+              "DocumentMoniker": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Models\\Items.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\Items.cs",
+              "ToolTip": "C:\\Users\\OGRIBOV\\Documents\\GitHub\\CAI-TP-GRUPOR-9\\WebApplication3\\Models\\Items.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\Items.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T19:14:49.529Z"
+>>>>>>> Stashed changes
             }
           ]
         }
