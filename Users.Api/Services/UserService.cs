@@ -56,7 +56,7 @@ namespace Users.Api.Services
 
             return new UserResponse
             {
-                Id = nuevoId, 
+                Id = nuevoId,
                 Nombre = request.Nombre,
                 Apellido = request.Apellido,
                 Email = request.Email,
@@ -67,22 +67,18 @@ namespace Users.Api.Services
 
         public async Task<LoginResponse> LoginAsync(LoginRequest request)
         {
-           
             if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
                 throw new NotFoundException("USR-002", 400, "Los datos del usuario son inválidos.");
 
             using var conn = CreateConnection();
 
-            
             var row = await conn.QueryFirstOrDefaultAsync<dynamic>(
                 "SELECT Id, Nombre, Apellido, Email, PasswordHash, FechaRegistro, Activo, IntentosFallidos, BloqueoFraude FROM Usuarios WHERE Email = @Email",
                 new { Email = request.Email });
 
-            
             if (row == null)
                 throw new NotFoundException("USR-003", 401, "Credenciales incorrectas.");
 
-           
             var usuario = new User
             {
                 Id = Guid.Parse((string)row.Id),
@@ -96,26 +92,21 @@ namespace Users.Api.Services
                 BloqueoFraude = Convert.ToInt32(row.BloqueoFraude)
             };
 
-            
             if (usuario.BloqueoFraude == 1)
                 throw new NotFoundException("USR-005", 403, "Su cuenta fue suspendida por razones de seguridad. Contacte a soporte.");
 
-            
-            if (usuario.Activo == 0)
+            if (usuario.Activo == 0 || usuario.IntentosFallidos >= 3)
                 throw new NotFoundException("USR-004", 403, "Su cuenta fue bloqueada por superar el máximo de intentos fallidos. Contacte a soporte.");
 
-            
             if (usuario.PasswordHash != request.Password)
             {
                 int nuevosIntentos = usuario.IntentosFallidos + 1;
                 int nuevoEstadoActivo = nuevosIntentos >= 3 ? 0 : 1;
 
-                
                 await conn.ExecuteAsync(
                     "UPDATE Usuarios SET IntentosFallidos = @Intentos, Activo = @Activo WHERE Id = @Id",
                     new { Intentos = nuevosIntentos, Activo = nuevoEstadoActivo, Id = usuario.Id.ToString() });
 
-                
                 if (nuevoEstadoActivo == 0)
                 {
                     throw new NotFoundException("USR-004", 403, "Su cuenta fue bloqueada por superar el máximo de intentos fallidos. Contacte a soporte.");
@@ -124,13 +115,11 @@ namespace Users.Api.Services
                 throw new NotFoundException("USR-003", 401, "Credenciales incorrectas.");
             }
 
-            
             if (usuario.IntentosFallidos > 0)
             {
                 await conn.ExecuteAsync("UPDATE Usuarios SET IntentosFallidos = 0 WHERE Id = @Id", new { Id = usuario.Id.ToString() });
             }
 
-            
             return new LoginResponse
             {
                 Id = usuario.Id,
@@ -139,13 +128,14 @@ namespace Users.Api.Services
                 Email = usuario.Email
             };
         }
+
         public async Task<BlockUserResponse> UpdateAsync(Guid id, BlockUserRequest request)
         {
             using var conn = CreateConnection();
             if (conn.State == ConnectionState.Closed) conn.Open();
 
             int nuevoEstadoActivo = request.BloqueoFraude == 1 ? 0 : 1;
-            int nuevosIntentos = request.BloqueoFraude == 1 ? 3 : 0; 
+            int nuevosIntentos = request.BloqueoFraude == 1 ? 3 : 0;
 
             string sql = @"
             UPDATE Usuarios 

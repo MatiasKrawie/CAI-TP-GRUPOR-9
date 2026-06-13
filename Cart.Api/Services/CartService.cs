@@ -68,7 +68,7 @@ namespace Cart.Api.Services
             using var transaction = conn.BeginTransaction();
             try
             {
-                var fechaActual = DateTime.UtcNow.ToString("o");
+                var fechaActual = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
                 await conn.ExecuteAsync(@"
                     INSERT INTO Carritos (UsuarioId, FechaActualizacion)
@@ -87,7 +87,7 @@ namespace Cart.Api.Services
             catch
             {
                 transaction.Rollback();
-                throw new DomainException("CRT-005", 500, "Error crítico interno al intentar guardar el ítem en la base de datos.");
+                throw new BusinessRuleException("CRT-005", "Error crítico interno al intentar guardar el ítem en la base de datos.", 500);
             }
 
             return await GetCartResponseInternalAsync(conn, userId);
@@ -121,7 +121,7 @@ namespace Cart.Api.Services
                 throw new NotFoundException("CRT-006", "El producto especificado no existe adentro de este carrito.");
 
             await conn.ExecuteAsync("UPDATE Carritos SET FechaActualizacion = @Fecha WHERE UsuarioId = @UserId",
-                new { Fecha = DateTime.UtcNow.ToString("o"), UserId = userId.ToString() });
+                new { Fecha = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"), UserId = userId.ToString() });
 
             return await GetCartResponseInternalAsync(conn, userId);
         }
@@ -145,7 +145,7 @@ namespace Cart.Api.Services
                 throw new NotFoundException("CRT-006", "El producto no se encontraba en el carrito.");
 
             await conn.ExecuteAsync("UPDATE Carritos SET FechaActualizacion = @Fecha WHERE UsuarioId = @UserId",
-                new { Fecha = DateTime.UtcNow.ToString("o"), UserId = userId.ToString() });
+                new { Fecha = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"), UserId = userId.ToString() });
         }
 
         public async Task ClearCartAsync(Guid userId)
@@ -170,7 +170,7 @@ namespace Cart.Api.Services
             catch
             {
                 transaction.Rollback();
-                throw new DomainException("CRT-005", 500, "Falla interna al intentar vaciar las tablas del carrito.");
+                throw new BusinessRuleException("CRT-005", "Falla interna al intentar vaciar las tablas del carrito.", 500);
             }
         }
 
@@ -184,7 +184,7 @@ namespace Cart.Api.Services
             }
             catch (Exception ex)
             {
-                throw new DomainException("CRT-007", 500, $"Falla de red al conectar con Products.API: {ex.Message}");
+                throw new BusinessRuleException("CRT-007", $"Falla de red al conectar con Products.API: {ex.Message}", 500);
             }
 
             if (!response.IsSuccessStatusCode)
@@ -192,7 +192,7 @@ namespace Cart.Api.Services
 
             var product = await response.Content.ReadFromJsonAsync<ProductDetailDto>();
             if (product == null)
-                throw new DomainException("CRT-008", 500, "Error al deserializar el catálogo de productos.");
+                throw new BusinessRuleException("CRT-008", "Error al deserializar el catálogo de productos.", 500);
 
             return product;
         }
@@ -208,7 +208,7 @@ namespace Cart.Api.Services
             }
             catch (Exception ex)
             {
-                throw new DomainException("CRT-009", 500, $"Falla de red al conectar con Users.API: {ex.Message}");
+                throw new BusinessRuleException("CRT-009", $"Falla de red al conectar con Users.API: {ex.Message}", 500);
             }
 
             if (!response.IsSuccessStatusCode)

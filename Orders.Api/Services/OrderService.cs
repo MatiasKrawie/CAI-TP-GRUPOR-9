@@ -43,9 +43,13 @@ namespace Orders.Api.Services
 
         public async Task<IEnumerable<OrderResponse>> GetAllAsync(Guid? usuarioId)
         {
+            if (usuarioId.HasValue)
+            {
+                await ValidateUserExistsAsync(usuarioId.Value);
+            }
+
             using var conn = CreateConnection();
             string sql = "SELECT Id, UsuarioId, Total, Estado, FechaCreacion FROM Ordenes";
-
             IEnumerable<Order> ordenes;
 
             if (usuarioId.HasValue)
@@ -56,6 +60,10 @@ namespace Orders.Api.Services
             else
             {
                 ordenes = await conn.QueryAsync<Order>(sql);
+            }
+            if (ordenes == null || !ordenes.Any())
+            {
+                throw new NotFoundException("ORD-001", "Orden no encontrada.");
             }
 
             var responses = new List<OrderResponse>();

@@ -39,7 +39,7 @@ namespace Notifications.Api.Services
 
             var tiposValidos = new[] { "Email", "SMS", "Push" };
             if (!tiposValidos.Contains(request.Tipo))
-                throw new ValidationException("NTF-002", "Tipo de notificación no reconocido.");
+                throw new ValidationException("NTF-002", "Los datos de la notificación son inválidos. Tipo no reconocido.");
 
             await ValidateUserExistsAsync(request.UsuarioId);
 
@@ -65,8 +65,7 @@ namespace Notifications.Api.Services
             }
             catch (Exception ex)
             {
-                if (ex is NotFoundException) throw;
-                throw new BusinessRuleException("NTF-004", $"Error interno de base de datos: {ex.Message}", 500);
+                throw new BusinessRuleException("NTF-004", $"Error interno al procesar y guardar la notificación: {ex.Message}", 500);
             }
         }
 
@@ -95,11 +94,13 @@ namespace Notifications.Api.Services
             }
             catch (Exception)
             {
-                throw new BusinessRuleException("NTF-005", "Falla de red al contactar Users.API", 500);
+                throw new BusinessRuleException("NTF-005", "Error de comunicación con Users.API.", 500);
             }
 
             if (!response.IsSuccessStatusCode)
-                throw new NotFoundException("NTF-001", $"El usuario {userId} no existe.");
+            {
+                throw new NotFoundException("NTF-001", $"El usuario con ID {userId} no existe en el sistema.");
+            }
         }
 
         public async Task<IEnumerable<NotificationResponse>> GetNotificationsByUserIdAsync(Guid userId)
@@ -109,6 +110,9 @@ namespace Notifications.Api.Services
             var notifications = await conn.QueryAsync<NotificationResponse>(
                 "SELECT Id, UsuarioId, Mensaje, Tipo, Estado, FechaEnvio FROM Notificaciones WHERE UsuarioId = @UserId",
                 new { UserId = userId.ToString() });
+
+            if (notifications == null || !notifications.Any())
+                throw new NotFoundException("NTF-003", "No se encontraron notificaciones para el usuario.");
 
             return notifications;
         }

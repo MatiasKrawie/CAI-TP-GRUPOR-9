@@ -29,6 +29,7 @@ namespace Products.API.Services
 
         private IDbConnection CreateConnection() => new SqliteConnection(_connectionString);
 
+        // GET /api/products con filtros dinámicos
         public async Task<IEnumerable<Product>> GetAllAsync(string? category, string? name)
         {
             using var conn = CreateConnection();
@@ -58,10 +59,10 @@ namespace Products.API.Services
                 {
                     Id = Guid.Parse((string)row.id),
                     Name = (string)row.name,
-                    Description = row.description?.ToString(), 
+                    Description = row.description?.ToString(),
                     Price = Convert.ToDouble(row.price),
                     Stock = Convert.ToInt32(row.stock),
-                    Category = row.category?.ToString(),       
+                    Category = row.category?.ToString(),
                     CreatedAt = (string)row.CreatedAt
                 });
             }
@@ -87,10 +88,10 @@ namespace Products.API.Services
             {
                 Id = Guid.Parse((string)row.id),
                 Name = (string)row.name,
-                Description = row.description?.ToString(), 
+                Description = row.description?.ToString(),
                 Price = Convert.ToDouble(row.price),
                 Stock = Convert.ToInt32(row.stock),
-                Category = row.category?.ToString(),      
+                Category = row.category?.ToString(),
                 CreatedAt = (string)row.CreatedAt
             };
         }
@@ -109,7 +110,7 @@ namespace Products.API.Services
             }
 
             var nuevoId = Guid.NewGuid();
-            var fechaActual = DateTime.UtcNow.ToString("o");
+            var fechaActual = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
 
             var parametros = new DynamicParameters();
             parametros.Add("Id", nuevoId.ToString());

@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Notifications.Api.Exceptions; 
+using Notifications.Api.Exceptions;
 using Serilog;
 using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,22 +13,17 @@ namespace Notifications.Api.ExceptionsHandlers
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {
-        private readonly IProblemDetailsService _problemDetailsService;
-
-        public GlobalExceptionHandler(IProblemDetailsService problemDetailsService)
-        {
-            _problemDetailsService = problemDetailsService;
-        }
 
         public async ValueTask<bool> TryHandleAsync(
             HttpContext httpContext,
             Exception exception,
             CancellationToken cancellationToken)
         {
-            string errorCode = "NTF-500";
+            string errorCode = "NTF-500"; 
             int statusCode = StatusCodes.Status500InternalServerError;
             string title = "Internal Server Error";
-            string message = exception.Message;
+            string detail = "No se puede procesar la solicitud.";
+            string errorMessage = exception.Message;
 
             var actualException = exception is AggregateException && exception.InnerException != null
                 ? exception.InnerException
@@ -36,7 +33,7 @@ namespace Notifications.Api.ExceptionsHandlers
             {
                 statusCode = ntfEx.StatusCode;
                 errorCode = ntfEx.ErrorCode;
-                message = ntfEx.Message;
+                errorMessage = ntfEx.Message;
 
                 title = ntfEx switch
                 {
@@ -46,7 +43,9 @@ namespace Notifications.Api.ExceptionsHandlers
                     _ => "Domain Error"
                 };
 
-                Log.Warning("Excepción de negocio en Notificaciones: {ErrorCode} - {Message}", errorCode, message);
+                if (statusCode == 422) title = "Unprocessable Entity";
+
+                Log.Warning("Excepción de negocio en Notificaciones: {ErrorCode} - {Message}", errorCode, errorMessage);
             }
             else
             {
@@ -58,26 +57,32 @@ namespace Notifications.Api.ExceptionsHandlers
                 correlationId = Guid.NewGuid().ToString();
             }
 
+            var problemDetails = new
+            {
+                type = statusCode switch
+                {
+                    404 => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    422 => "https://tools.ietf.org/html/rfc4918#section-11.2",
+                    400 => "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    409 => "https://tools.ietf.org/html/rfc7231#section-6.5.8",
+                    _ => "https://tools.ietf.org/html/rfc7231#section-6.6.1"
+                },
+                title = title,
+                status = statusCode,
+                detail = detail,
+                instance = httpContext.Request.Path.Value,
+                errorCode = errorCode,
+                errorMessage = errorMessage,
+                correlationId = correlationId.ToString()
+            };
+
             httpContext.Response.StatusCode = statusCode;
             httpContext.Response.ContentType = "application/problem+json";
 
-            return await _problemDetailsService.TryWriteAsync(new ProblemDetailsContext
-            {
-                HttpContext = httpContext,
-                Exception = actualException,
-                ProblemDetails = new ProblemDetails
-                {
-                    Status = statusCode,
-                    Title = title,
-                    Detail = message,
-                    Instance = httpContext.Request.Path,
-                    Extensions =
-                    {
-                        { "errorCode", errorCode },
-                        { "correlationId", correlationId.ToString() }
-                    }
-                }
-            });
+            var jsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            await httpContext.Response.WriteAsJsonAsync(problemDetails, jsonOptions, cancellationToken);
+
+            return true; 
         }
     }
 }
