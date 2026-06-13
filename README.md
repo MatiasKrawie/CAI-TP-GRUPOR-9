@@ -80,6 +80,5 @@ Para constatar que la interacción entre los 5 componentes es perfecta, seguí e
 5. **Auditoría de Notificaciones**: Verificá en la consola o logs de `Notifications.Api` cómo se procesa y registra la alerta de "Orden Creada Exitosamente" vinculada al ID del cliente.
 
 
-Diagrama de arquitectura.
-
+## DIAGRAMA DE ARQUITECTURA
 <img width="886" height="680" alt="image" src="https://github.com/user-attachments/assets/6d22780f-3f5d-4ab8-8f91-854647991112" />
