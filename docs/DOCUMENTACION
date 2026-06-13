@@ -1,0 +1,160 @@
+---
+
+# 📖 Documentación Técnica de APIs (Swagger / OpenAPI)
+
+Esta sección detalla la estrategia de exposición, estructura y contratos de las interfaces de programación (APIs) que componen el ecosistema distribuido del sistema E-Commerce.
+
+---
+
+## 🛠️ 1. Estándar Global de Documentación y Atributos
+
+Toda la solución se encuentra respaldada por la especificación **OpenAPI 3.0 / Swagger**, integrada de forma nativa en cada microservicio mediante el paquete `Swashbuckle.AspNetCore`. La clasificación unificada de los endpoints se gestiona mediante filtros de operación organizados por el dominio de negocio correspondiente, divididos en Gestión de Usuarios, Catálogo de Productos, Gestión de Carritos de Compra, Procesamiento de Órdenes y Servicio de Notificaciones. Para la seguridad y el seguimiento transaccional, el sistema implementa un esquema transversal que inyecta encabezados de trazabilidad Correlation ID en cada petición recibida.
+
+---
+
+## ⚠️ 2. Estructura Homogénea de Respuestas de Error (RFC 7231)
+
+Para garantizar la interoperabilidad, consistencia y facilidad en el consumo de APIs por parte de clientes externos, todas las respuestas de error para los códigos HTTP 4xx y 5xx implementan middlewares globales que capturan excepciones de negocio y de sistema, devolviendo un objeto JSON homogéneo basado en la especificación **RFC 7231**. El formato estándar del objeto de error expone los campos type para la URI de referencia técnica del error según el consorcio IETF, title para una breve descripción del estatus HTTP, status para el código numérico de estado, detail para la descripción contextual de la falla, instance para el endpoint específico donde ocurrió la excepción, errorCode para el identificador alfanumérico interno del sistema y errorMessage para el detalle de bajo nivel destinado al equipo de desarrollo y auditoría.
+
+---
+
+## 🚀 3. Catálogo y Contratos de Endpoints por Microservicio
+
+A continuación, se exponen los endpoints críticos de la arquitectura con sus respectivos modelos de petición, parámetros y códigos de respuesta típicos.
+
+### 🔔 3.1. Servicio de Notificaciones (`Notifications.Api`)
+
+Este componente procesa de forma asincrónica las alertas transaccionales del sistema mediante la ruta física POST /api/Notifications/send utilizando el tipo de contenido application/json.
+
+#### 📥 Request Body (Ejemplo de Entrada):
+```json
+{
+  "usuarioId": 5,
+  "mensaje": "Su compra ha sido procesada con éxito. Orden de compra N° GUID-832F.",
+  "tipo": "mail"
+}
+```
+
+#### 📤 Códigos de Respuesta Soportados (Responses):
+
+Cuando la notificación es validada, encolada y persistida en la base de datos de manera correcta, el sistema responde con un código HTTP 200 OK operando de forma exitosa y devolviendo el siguiente cuerpo:
+```json
+{
+  "id": 1042,
+  "usuarioId": 5,
+  "mensaje": "Su compra ha sido procesada con éxito. Orden de compra N° GUID-832F.",
+  "tipo": "mail",
+  "estado": "Enviado",
+  "fechaEnvio": "2026-06-13T03:24:34Z"
+}
+```
+
+Si los datos enviados no cumplen con las reglas de formato o la lógica del negocio, el sistema devuelve un código HTTP 400 Bad Request correspondiente a un error de validación, adjuntando la estructura controlada bajo el código interno NTF-002:
+```json
+{
+  "type": "[https://tools.ietf.org/html/rfc7231#section-6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1)",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "Ocurrió una excepción de negocio controlada en el servicio de notificaciones.",
+  "instance": "/api/Notifications/send",
+  "errorCode": "NTF-002",
+  "errorMessage": "Los datos de la notificación son inválidos. Tipo no reconocido."
+}
+```
+
+Ante una excepción no controlada del lado del servidor, como una falla en los motores SQLite o la pérdida transitoria de conectividad con Dapper, el servicio responde con un código HTTP 500 Internal Server Error mapeando la falla de infraestructura con el identificador NTF-004:
+```json
+{
+  "type": "[https://tools.ietf.org/html/rfc7231#section-6.6.1](https://tools.ietf.org/html/rfc7231#section-6.6.1)",
+  "title": "Internal Server Error",
+  "status": 500,
+  "detail": "Error interno al procesar y guardar la notificación.",
+  "instance": "/api/Notifications/send",
+  "errorCode": "NTF-004",
+  "errorMessage": "SQLite Error 1: no such column: Id_Inexistente in SELECT statement."
+}
+```
+
+---
+
+### 🛒 3.2. Servicio de Carrito (`Cart.Api`)
+
+Este componente gestiona el estado temporal de compras vinculando el ciclo de vida de los productos al identificador global del usuario mediante la ruta física POST /api/cart/{userId}/items, exigiendo el parámetro de ruta userId estructurado en formato GUID.
+
+#### 📥 Request Body (Ejemplo de Entrada):
+```json
+{
+  "productoId": "7b8e5c3e-90ab-4d1d-857e-fac22d4e5f7b",
+  "cantidad": 2
+}
+```
+
+#### 📤 Códigos de Respuesta Soportados (Responses):
+
+Al procesarse el alta de forma correcta, el servicio retorna un código HTTP 201 Created consolidando los identificadores relacionales, el listado de ítems y el cálculo del total temporal acumulado:
+```json
+{
+  "carritoId": "c01a923f-44b1-4104-99cf-5eac73d07a12",
+  "userId": "3a1c5d9e-11ab-4c2d-957e-abc11d4e5f7a",
+  "items": [
+    {
+      "productoId": "7b8e5c3e-90ab-4d1d-857e-fac22d4e5f7b",
+      "cantidad": 2,
+      "precioUnitario": 1450.50
+    }
+  ],
+  "totalTemporal": 2901.00
+}
+```
+
+Si se intenta agregar una cantidad negativa o nula, o si el identificador del producto no respeta el formato GUID válido, la API rechaza la solicitud con un código HTTP 400 Bad Request bajo el código de error CRT-001:
+```json
+{
+  "type": "[https://tools.ietf.org/html/rfc7231#section-6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1)",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "Error en la composición estructural del pedido.",
+  "instance": "/api/cart/3a1c5d9e-11ab-4c2d-957e-abc11d4e5f7a/items",
+  "errorCode": "CRT-001",
+  "errorMessage": "La cantidad especificada debe ser estrictamente mayor a cero."
+}
+```
+
+---
+
+### 📦 3.3. Servicio de Órdenes (`Orders.Api`)
+
+Este componente consolida el checkout transaccional transformando los carritos temporales en órdenes confirmadas de facturación mediante la ruta POST /api/orders/checkout utilizando el tipo de contenido application/json.
+
+#### 📥 Request Body (Ejemplo de Entrada):
+```json
+{
+  "userId": "3a1c5d9e-11ab-4c2d-957e-abc11d4e5f7a",
+  "metodoPago": "Tarjeta_Credito",
+  "direccionEnvio": "Av. Corrientes 1234, CABA"
+}
+```
+
+#### 📤 Códigos de Respuesta Soportados (Responses):
+
+Cuando el flujo de cierre finaliza de manera satisfactoria, el microservicio asienta la operación y devuelve un código HTTP 200 OK adjuntando los datos de control y la fecha de creación:
+```json
+{
+  "ordenId": "ff2414a3-7bda-453c-ba31-c9b3f4a4509d",
+  "status": "Procesada",
+  "montoTotal": 2901.00,
+  "fechaCreacion": "2026-06-13T00:15:00Z"
+}
+```
+
+Si al momento de impactar la orden el servicio detecta un quiebre de inventario físico tras comunicarse con el catálogo de productos, interrumpe el procesamiento y devuelve un código HTTP 400 Bad Request reportando la anomalía bajo el código de error ORD-003:
+```json
+{
+  "type": "[https://tools.ietf.org/html/rfc7231#section-6.5.1](https://tools.ietf.org/html/rfc7231#section-6.5.1)",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "No es posible procesar la solicitud debido a inconsistencias de stock.",
+  "instance": "/api/orders/checkout",
+  "errorCode": "ORD-003",
+  "errorMessage": "Stock insuficiente para el producto seleccionado en las capas relacionales inferiores."
+}
