@@ -79,4 +79,7 @@ Para constatar que la interacción entre los 5 componentes es perfecta, seguí e
 4. **Cierre de Orden**: Dirígete a `Orders.Api` para consolidar la compra impactando el carrito del usuario. Esto disparará internamente la lógica de negocio.
 5. **Auditoría de Notificaciones**: Verificá en la consola o logs de `Notifications.Api` cómo se procesa y registra la alerta de "Orden Creada Exitosamente" vinculada al ID del cliente.
 
+
+Diagrama de arquitectura.
+
 <img width="886" height="680" alt="image" src="https://github.com/user-attachments/assets/6d22780f-3f5d-4ab8-8f91-854647991112" />
