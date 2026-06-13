@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using System;
 using System.Threading.Tasks;
 using Users.Api.DTOs;
 
@@ -8,8 +8,7 @@ namespace Users.Api.Services
     {
         Task<UserResponse> RegisterAsync(RegisterRequest request);
         Task<LoginResponse> LoginAsync(LoginRequest request);
-        Task<BlockUserResponse> UpdateAsync(int id, BlockUserRequest request);
-
-        Task<UserResponse> GetByIdAsync(int id);
+        Task<BlockUserResponse> UpdateAsync(Guid id, BlockUserRequest request); 
+        Task<UserResponse> GetByIdAsync(Guid id); 
     }
 }

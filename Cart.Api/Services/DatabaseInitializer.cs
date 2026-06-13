@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
+using Serilog; 
+using System;
 
 namespace Cart.Api.Services
 {
@@ -14,30 +16,43 @@ namespace Cart.Api.Services
 
         public void Initialize()
         {
-            using var connection = new SqliteConnection(_connectionString);
-            connection.Open();
+            Log.Information("Iniciando la verificación e inicialización de la base de datos del Carrito...");
 
-            var createCartTable = @"
-                CREATE TABLE IF NOT EXISTS Carritos (
-                    UsuarioId INTEGER PRIMARY KEY,
-                    FechaActualizacion TEXT NOT NULL
-                );";
+            try
+            {
+                using var connection = new SqliteConnection(_connectionString);
+                connection.Open();
 
-            var createCartDetailsTable = @"
-                CREATE TABLE IF NOT EXISTS CarritoDetalles (
-                    UsuarioId INTEGER,
-                    ProductoId INTEGER,
-                    Cantidad INTEGER NOT NULL,
-                    PRIMARY KEY (UsuarioId, ProductoId),
-                    FOREIGN KEY (UsuarioId) REFERENCES Carritos(UsuarioId) ON DELETE CASCADE
-                );";
+                var createCartTable = @"
+                    CREATE TABLE IF NOT EXISTS Carritos (
+                        UsuarioId TEXT PRIMARY KEY,
+                        FechaActualizacion TEXT NOT NULL DEFAULT (datetime('now'))
+                    );";
 
-            using var command = connection.CreateCommand();
-            command.CommandText = createCartTable;
-            command.ExecuteNonQuery();
+                var createCartDetailsTable = @"
+                    CREATE TABLE IF NOT EXISTS CarritoDetalles (
+                        UsuarioId TEXT,
+                        ProductoId TEXT,
+                        Cantidad INTEGER NOT NULL,
+                        PRIMARY KEY (UsuarioId, ProductoId),
+                        FOREIGN KEY (UsuarioId) REFERENCES Carritos(UsuarioId) ON DELETE CASCADE
+                    );";
 
-            command.CommandText = createCartDetailsTable;
-            command.ExecuteNonQuery();
+                using var command = connection.CreateCommand();
+
+                command.CommandText = createCartTable;
+                command.ExecuteNonQuery();
+
+                command.CommandText = createCartDetailsTable;
+                command.ExecuteNonQuery();
+
+                Log.Information("Base de datos del Carrito inicializada correctamente con soporte para GUID.");
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Error crítico al intentar inicializar la base de datos de SQLite del Carrito.");
+                throw;
+            }
         }
     }
 }

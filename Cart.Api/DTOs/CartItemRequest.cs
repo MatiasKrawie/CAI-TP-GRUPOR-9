@@ -1,8 +1,10 @@
-﻿namespace Cart.Api.DTOs
+﻿using System;
+
+namespace Cart.Api.DTOs
 {
     public class CartItemRequest
     {
-        public int ProductoId { get; set; } 
+        public Guid ProductoId { get; set; } 
         public int Cantidad { get; set; }
     }
 }

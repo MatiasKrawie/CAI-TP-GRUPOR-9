@@ -1,5 +1,8 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Dapper;
+using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
+using Serilog;
+using System;
 
 namespace Users.Api.Services
 {
@@ -12,27 +15,37 @@ namespace Users.Api.Services
             _connectionString = configuration.GetConnectionString("DefaultConnection") ?? "Data Source=users.db";
         }
 
-        public void Initialize()
+       
+            public void Initialize()
         {
-            using var connection = new SqliteConnection(_connectionString);
-            connection.Open();
+            try
+            {
+                using var conn = new SqliteConnection(_connectionString);
+                conn.Open();
 
-            var createUsersTable = @"
-                CREATE TABLE IF NOT EXISTS Usuarios (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Nombre TEXT NOT NULL,
-                    Apellido TEXT NOT NULL,
-                    Email TEXT NOT NULL UNIQUE,
-                    PasswordHash TEXT NOT NULL,
-                    FechaRegistro TEXT NOT NULL,
-                    Activo INTEGER NOT NULL DEFAULT 1,
-                    IntentosFallidos INTEGER NOT NULL DEFAULT 0,
-                    BloqueoFraude INTEGER NOT NULL DEFAULT 0
-                );";
+                
+                conn.Execute(@"
+            CREATE TABLE IF NOT EXISTS Usuarios (
+                Id TEXT PRIMARY KEY, 
+                Nombre TEXT NOT NULL,
+                Apellido TEXT NOT NULL,
+                Email TEXT NOT NULL UNIQUE,
+                PasswordHash TEXT NOT NULL,
+                FechaRegistro TEXT NOT NULL,
+                Activo INTEGER NOT NULL DEFAULT 1,
+                IntentosFallidos INTEGER NOT NULL DEFAULT 0,
+                BloqueoFraude INTEGER NOT NULL DEFAULT 0
+            );
+        ");
+            }
+            catch (Exception ex)
+            {
+                
+                Log.Error(ex, "Error fatal al inicializar la base de datos de Usuarios: {Message}", ex.Message);
 
-            using var command = connection.CreateCommand();
-            command.CommandText = createUsersTable;
-            command.ExecuteNonQuery();
+                
+                throw;
+            }
         }
     }
 }

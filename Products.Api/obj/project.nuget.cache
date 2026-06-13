@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6SNYs6qP0ak=",
+  "dgSpecHash": "354/Cc2cZjQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Products.API\\Products.Api.csproj",
+  "projectFilePath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Products.API\\Products.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\krawi\\.nuget\\packages\\aspnetcore.healthchecks.ui\\9.0.0\\aspnetcore.healthchecks.ui.9.0.0.nupkg.sha512",
     "C:\\Users\\krawi\\.nuget\\packages\\aspnetcore.healthchecks.ui.client\\9.0.0\\aspnetcore.healthchecks.ui.client.9.0.0.nupkg.sha512",

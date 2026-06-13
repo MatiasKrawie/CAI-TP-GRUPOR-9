@@ -1,57 +1,58 @@
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Serilog;
-using Users.Api.ExceptionHandlers; 
-using Users.Api.Exceptions;
+using System;
 using Users.Api.Services;
+using Users.Api.ExceptionsHandlers; 
+using System.Text.Json;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Information()
-    .WriteTo.Console()
-    .WriteTo.File("logs/log-usuarios-.txt", rollingInterval: RollingInterval.Day) 
+    .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
 builder.Host.UseSerilog();
 
-
-builder.Services.AddHttpClient();
 builder.Services.AddControllers();
-
-
-builder.Services.AddTransient<DatabaseInitializer>();
-builder.Services.AddScoped<IUserService, UserService>();
-
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
-builder.Services.AddProblemDetails();
+builder.Services.AddProblemDetails(); 
 
+
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddHealthChecks()
-    .AddCheck<ApiStatusCheck>("api-status")
-    .AddCheck<SqliteHealthCheck>("sqlite-db");
-
-
-builder.Services.AddHealthChecksUI(setup =>
+builder.Services.AddSwaggerGen(options =>
 {
-    setup.AddHealthCheckEndpoint("API de Usuarios", "/health");
-    setup.SetEvaluationTimeInSeconds(5);
-}).AddInMemoryStorage();
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+    if (File.Exists(xmlPath))
+    {
+        options.IncludeXmlComments(xmlPath);
+    }
+});
+
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
+try 
+{
+    var initializer = new DatabaseInitializer(app.Configuration);
+    initializer.Initialize();
+    Log.Information("Base de datos de Usuarios inicializada con éxito.");
+}
+catch (Exception ex)
+{
+    Log.Error(ex, "Error crítico al correr el DatabaseInitializer de Usuarios.");
+}
+
+
 
 app.UseExceptionHandler();
-
-using (var scope = app.Services.CreateScope())
-{
-    var initializer = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
-    initializer.Initialize();
-}
 
 if (app.Environment.IsDevelopment())
 {
@@ -60,13 +61,22 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthorization();
 app.MapControllers();
 
-app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+app.MapHealthChecks("/health/live");
+app.MapHealthChecks("/health/ready");
+
+try
 {
-    ResponseWriter = HealthChecks.UI.Client.UIResponseWriter.WriteHealthCheckUIResponse
-});
-
-app.MapHealthChecksUI(options => options.UIPath = "/health-ui");
-
-app.Run();
+    Log.Information("Iniciando la API de Usuarios");
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "La API de Usuarios terminó inesperadamente.");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

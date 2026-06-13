@@ -2,85 +2,100 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
-using Users.Api.Exceptions; 
 using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Users.Api.ExceptionHandlers
+namespace Users.Api.ExceptionsHandlers
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {
-        public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+
+        public async ValueTask<bool> TryHandleAsync(
+            HttpContext httpContext,
+            Exception exception,
+            CancellationToken cancellationToken)
         {
-            var problemDetails = new ProblemDetails
+            string errorCode = "USR-500"; 
+            int statusCode = StatusCodes.Status500InternalServerError;
+            string title = "Internal Server Error";
+            string detail = "No se puede procesar la solicitud.";
+            string errorMessage = exception.Message;
+
+            var exType = exception.GetType().Name;
+
+            if (exType.Contains("NotFoundException") || exType.Contains("BusinessRuleException") || exType.Contains("ValidationException") || exType.Contains("UserException"))
             {
-                Instance = httpContext.Request.Path
-            };
-
-            
-            if (exception is NotFoundException userEx)
-            {
-                problemDetails.Status = userEx.StatusCode;
-
-                
-                problemDetails.Title = userEx.StatusCode switch
+                statusCode = exType switch
                 {
-                    400 => "Bad Request",
-                    401 => "Unauthorized",
-                    403 => "Forbidden",
-                    409 => "Conflict",
-                    422 => "Unprocessable Entity",
-                    _ => "Error"
+                    "NotFoundException" => StatusCodes.Status404NotFound,
+                    "BusinessRuleException" => StatusCodes.Status409Conflict,
+                    "ValidationException" => StatusCodes.Status400BadRequest,
+                    _ => StatusCodes.Status400BadRequest
                 };
 
-               
-                problemDetails.Type = userEx.StatusCode switch
+                title = exType switch
                 {
-                    401 => "https://tools.ietf.org/html/rfc7235#section-3.1",
-                    403 => "https://tools.ietf.org/html/rfc7231#section-6.5.3",
-                    409 => "https://tools.ietf.org/html/rfc7231#section-6.5.9",
-                    _ => "https://tools.ietf.org/html/rfc7231#section-6.5.1"
+                    "NotFoundException" => "Not Found",
+                    "BusinessRuleException" => "Business Rule Violation",
+                    "ValidationException" => "Bad Request",
+                    _ => "Domain Error"
                 };
 
-               
-                problemDetails.Detail = userEx.StatusCode switch
+                var statusCodeProp = exception.GetType().GetProperty("StatusCode");
+                if (statusCodeProp != null)
                 {
-                    400 => "Los datos provistos son inválidos o están incompletos.",
-                    401 => "Las credenciales no son válidas.",
-                    403 => "El acceso está prohibido.",
-                    409 => "Ya existe un recurso con esos datos.",
-                    _ => "Ocurrió un error al procesar la solicitud de usuario."
-                };
+                    var customStatus = statusCodeProp.GetValue(exception);
+                    if (customStatus != null) statusCode = (int)customStatus;
+                }
 
-                
-                problemDetails.Extensions["errorCode"] = userEx.ErrorCode;
-                problemDetails.Extensions["errorMessage"] = userEx.Message;
+                if (statusCode == 422) title = "Unprocessable Entity";
 
-                
-                Log.Warning("Error de catálogo de usuarios ({ErrorCode}): {Message}", userEx.ErrorCode, userEx.Message);
+                var errorCodeProp = exception.GetType().GetProperty("ErrorCode");
+                if (errorCodeProp != null)
+                {
+                    errorCode = errorCodeProp.GetValue(exception)?.ToString() ?? "USR-400";
+                }
+
+                Log.Warning("Excepción de negocio capturada en Usuarios: {ErrorCode} - {Message}", errorCode, errorMessage);
             }
             else
             {
-               
-                problemDetails.Status = StatusCodes.Status500InternalServerError;
-                problemDetails.Title = "Internal Server Error";
-                problemDetails.Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1";
-                problemDetails.Detail = "Ocurrió un error inesperado en el servidor.";
-
-                problemDetails.Extensions["errorCode"] = "USR-006";
-                problemDetails.Extensions["errorMessage"] = "Error interno al procesar el usuario.";
-
-                
-                Log.Error(exception, "Error crítico de infraestructura en Users.API (USR-006): {Message}", exception.Message);
+                Log.Error(exception, "Excepción no controlada capturada en Usuarios.");
             }
 
-            
-            httpContext.Response.StatusCode = problemDetails.Status.Value;
+            string currentCorrelationId = httpContext.Response.Headers["X-Correlation-ID"].ToString();
+            if (string.IsNullOrEmpty(currentCorrelationId))
+            {
+                currentCorrelationId = Guid.NewGuid().ToString();
+            }
+
+            var problemDetails = new
+            {
+                type = statusCode switch
+                {
+                    404 => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    422 => "https://tools.ietf.org/html/rfc4918#section-11.2",
+                    400 => "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    409 => "https://tools.ietf.org/html/rfc7231#section-6.5.8",
+                    _ => "https://tools.ietf.org/html/rfc7231#section-6.6.1"
+                },
+                title = title,
+                status = statusCode,
+                detail = detail,
+                instance = httpContext.Request.Path.Value,
+                errorCode = errorCode,
+                errorMessage = errorMessage,
+                correlationId = currentCorrelationId
+            };
+
+            httpContext.Response.StatusCode = statusCode;
             httpContext.Response.ContentType = "application/problem+json";
 
-           
-            await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
+            var jsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            await httpContext.Response.WriteAsJsonAsync(problemDetails, jsonOptions, cancellationToken);
 
             return true; 
         }

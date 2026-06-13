@@ -23,6 +23,12 @@ namespace Orders.Api.Services
         private readonly string _notificationUrl;
         private readonly string _usersUrl;
 
+        // 🚀 El TypeHandler garantiza que cuando Dapper LEE un string de SQLite, lo transforme en Guid para tus DTOs automáticamente
+        static OrderService()
+        {
+            SqlMapper.AddTypeHandler(new GuidTypeHandler());
+        }
+
         public OrderService(IConfiguration configuration, IHttpClientFactory clientFactory)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection") ?? "Data Source=orders.db";
@@ -35,21 +41,29 @@ namespace Orders.Api.Services
 
         private IDbConnection CreateConnection() => new SqliteConnection(_connectionString);
 
-        public async Task<IEnumerable<OrderResponse>> GetAllAsync(int? usuarioId)
+        public async Task<IEnumerable<OrderResponse>> GetAllAsync(Guid? usuarioId)
         {
+            if (usuarioId.HasValue)
+            {
+                await ValidateUserExistsAsync(usuarioId.Value);
+            }
+
             using var conn = CreateConnection();
             string sql = "SELECT Id, UsuarioId, Total, Estado, FechaCreacion FROM Ordenes";
-
             IEnumerable<Order> ordenes;
 
             if (usuarioId.HasValue)
             {
                 sql += " WHERE UsuarioId = @UsuarioId";
-                ordenes = await conn.QueryAsync<Order>(sql, new { UsuarioId = usuarioId.Value });
+                ordenes = await conn.QueryAsync<Order>(sql, new { UsuarioId = usuarioId.Value.ToString() });
             }
             else
             {
                 ordenes = await conn.QueryAsync<Order>(sql);
+            }
+            if (ordenes == null || !ordenes.Any())
+            {
+                throw new NotFoundException("ORD-001", "Orden no encontrada.");
             }
 
             var responses = new List<OrderResponse>();
@@ -67,7 +81,7 @@ namespace Orders.Api.Services
 
                 var detalles = await conn.QueryAsync<OrderItemResponse>(
                     "SELECT ProductoId, Cantidad, PrecioUnitario FROM OrdenDetalles WHERE OrdenId = @OrdenId",
-                    new { OrdenId = ord.Id });
+                    new { OrdenId = ord.Id.ToString() });
 
                 response.Items = detalles.ToList();
                 responses.Add(response);
@@ -76,16 +90,16 @@ namespace Orders.Api.Services
             return responses;
         }
 
-        public async Task<OrderResponse> GetByIdAsync(int id)
+        public async Task<OrderResponse> GetByIdAsync(Guid id)
         {
             using var conn = CreateConnection();
 
             var ord = await conn.QueryFirstOrDefaultAsync<Order>(
                 "SELECT Id, UsuarioId, Total, Estado, FechaCreacion FROM Ordenes WHERE Id = @Id",
-                new { Id = id });
+                new { Id = id.ToString() });
 
             if (ord == null)
-                throw new NotFoundException("ORD-001", 404, "Orden no encontrada.");
+                throw new NotFoundException("ORD-001", "La orden solicitada no existe.");
 
             var response = new OrderResponse
             {
@@ -98,104 +112,95 @@ namespace Orders.Api.Services
 
             var detalles = await conn.QueryAsync<OrderItemResponse>(
                 "SELECT ProductoId, Cantidad, PrecioUnitario FROM OrdenDetalles WHERE OrdenId = @OrdenId",
-                new { OrdenId = ord.Id });
+                new { OrdenId = id.ToString() });
 
             response.Items = detalles.ToList();
 
             return response;
         }
 
-        public async Task<bool> HasOrdersAsync(int productoId)
+        public async Task<bool> HasOrdersAsync(Guid productoId)
         {
             using var conn = CreateConnection();
-            if (conn.State == ConnectionState.Closed) conn.Open();
-
-            
             string sql = "SELECT COUNT(1) FROM OrdenDetalles WHERE ProductoId = @ProductoId;";
-            int conteo = await conn.ExecuteScalarAsync<int>(sql, new { ProductoId = productoId });
+            int conteo = await conn.ExecuteScalarAsync<int>(sql, new { ProductoId = productoId.ToString() });
 
             return conteo > 0;
         }
 
-        //  POST 
         public async Task<OrderResponse> CreateAsync(OrderRequest request)
         {
-            var client = _clientFactory.CreateClient();
-
-           
             await ValidateUserExistsAsync(request.UsuarioId);
 
-            
+            var cartClient = _clientFactory.CreateClient("CartClient");
             HttpResponseMessage cartRes;
             try
             {
-                cartRes = await client.GetAsync($"{_cartUrl}/api/cart/{request.UsuarioId}");
+                cartRes = await cartClient.GetAsync($"{_cartUrl}/api/cart/{request.UsuarioId}");
             }
-            catch
+            catch (Exception ex)
             {
-                throw new NotFoundException("ORD-007", 500, "Error de comunicación con Cart.API al recuperar el carrito.");
+                throw new BusinessRuleException("ORD-007", $"Error de comunicación de red con Cart.API: {ex.Message}", 500);
             }
 
             if (!cartRes.IsSuccessStatusCode)
-                throw new NotFoundException("ORD-002", 404, $"No se encontró un carrito activo para el usuario {request.UsuarioId}.");
+                throw new NotFoundException("ORD-002", $"No se encontró un carrito activo para el usuario {request.UsuarioId}.");
 
-            
             var carrito = await cartRes.Content.ReadFromJsonAsync<CartResponse>();
 
             if (carrito == null || carrito.Items == null || !carrito.Items.Any())
-                throw new NotFoundException("ORD-002", 400, "El carrito del usuario está vacío. No se puede generar una orden.");
+                throw new ValidationException("ORD-003", "El carrito del usuario está vacío. No se puede generar una orden.");
 
             decimal totalAmount = 0;
             var productosActualizados = new List<(ProductDetailDto Prod, int CantidadAComprar)>();
             var detallesParaGuardar = new List<OrderItemResponse>();
 
-            
+            var productClient = _clientFactory.CreateClient("ProductsClient");
+
             foreach (var item in carrito.Items)
             {
-                var productRes = await client.GetAsync($"{_productUrl}/api/products/{item.ProductoId}");
+                var productRes = await productClient.GetAsync($"{_productUrl}/api/products/{item.ProductoId}");
                 if (!productRes.IsSuccessStatusCode)
-                    throw new NotFoundException("ORD-004", 404, $"Producto {item.ProductoId} no encontrado al crear la orden.");
+                    throw new NotFoundException("ORD-004", $"Producto {item.ProductoId} no encontrado en el catálogo maestro.");
 
                 var product = await productRes.Content.ReadFromJsonAsync<ProductDetailDto>();
                 if (product == null)
-                    throw new NotFoundException("ORD-004", 404, "Producto no encontrado al crear la orden.");
+                    throw new NotFoundException("ORD-004", "Error al deserializar la información del producto.");
 
                 if (product.Stock < item.Cantidad)
-                    throw new NotFoundException("ORD-005", 422, $"Stock insuficiente para uno o más productos. Producto: {product.Name}");
+                    throw new BusinessRuleException("ORD-005", $"Stock insuficiente en el inventario para el producto: {product.Name}");
 
-                totalAmount += (product.Price * item.Cantidad);
+                totalAmount += (decimal)(product.Price * item.Cantidad);
                 productosActualizados.Add((product, item.Cantidad));
 
                 detallesParaGuardar.Add(new OrderItemResponse
                 {
                     ProductoId = product.Id,
                     Cantidad = item.Cantidad,
-                    PrecioUnitario = product.Price
+                    PrecioUnitario = (decimal)product.Price
                 });
             }
 
-            int nuevaOrdenId;
-            var fechaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            Guid nuevaOrdenId = Guid.NewGuid();
+            var fechaActual = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
 
-            
             using var conn = CreateConnection();
-            if (conn.State == ConnectionState.Closed) conn.Open();
+            conn.Open(); 
             using var transaction = conn.BeginTransaction();
 
             try
             {
                 string sqlOrden = @"
-                    INSERT INTO Ordenes (UsuarioId, Total, Estado, FechaCreacion) 
-                    VALUES (@UsuarioId, @Total, 'Pendiente', @FechaCreacion);";
+                    INSERT INTO Ordenes (Id, UsuarioId, Total, Estado, FechaCreacion) 
+                    VALUES (@Id, @UsuarioId, @Total, 'Pendiente', @FechaCreacion);";
 
                 await conn.ExecuteAsync(sqlOrden, new
                 {
-                    UsuarioId = request.UsuarioId,
+                    Id = nuevaOrdenId.ToString(),
+                    UsuarioId = request.UsuarioId.ToString(),
                     Total = totalAmount,
                     FechaCreacion = fechaActual
                 }, transaction);
-
-                nuevaOrdenId = await conn.QuerySingleAsync<int>("SELECT last_insert_rowid();", transaction: transaction);
 
                 string sqlDetalle = @"
                     INSERT INTO OrdenDetalles (OrdenId, ProductoId, Cantidad, PrecioUnitario) 
@@ -205,8 +210,8 @@ namespace Orders.Api.Services
                 {
                     await conn.ExecuteAsync(sqlDetalle, new
                     {
-                        OrdenId = nuevaOrdenId,
-                        ProductoId = detalle.ProductoId,
+                        OrdenId = nuevaOrdenId.ToString(),
+                        ProductoId = detalle.ProductoId.ToString(),
                         Cantidad = detalle.Cantidad,
                         PrecioUnitario = detalle.PrecioUnitario
                     }, transaction);
@@ -217,61 +222,63 @@ namespace Orders.Api.Services
             catch (Exception ex)
             {
                 transaction.Rollback();
-                throw new NotFoundException("ORD-007", 500, $"Error real en base de datos: {ex.Message} -> {ex.InnerException?.Message}");
+                throw new BusinessRuleException("ORD-007", $"Error transaccional en la base de datos de Órdenes: {ex.Message}", 500);
             }
 
-            
+            // Actualización de stock 
             foreach (var prodInfo in productosActualizados)
             {
                 int stockRestante = prodInfo.Prod.Stock - prodInfo.CantidadAComprar;
-
-                var updateStockRes = await client.PutAsJsonAsync($"{_productUrl}/api/products/{prodInfo.Prod.Id}/stock", stockRestante);
+                var updateStockRes = await productClient.PatchAsJsonAsync(
+                    $"{_productUrl}/api/products/{prodInfo.Prod.Id}/stock",
+                    new { NuevoStock = stockRestante }
+                );
 
                 if (!updateStockRes.IsSuccessStatusCode)
-                    throw new NotFoundException("ORD-007", 500, $"Error interno. No se pudo actualizar el stock del producto {prodInfo.Prod.Id}.");
+                    throw new BusinessRuleException("ORD-007", $"Falla crítica al intentar descontar stock del producto {prodInfo.Prod.Id}.", 500);
             }
 
-            
-            await client.DeleteAsync($"{_cartUrl}/api/cart/{request.UsuarioId}");
+            await cartClient.DeleteAsync($"{_cartUrl}/api/cart/{request.UsuarioId}");
 
-            
+            var genericClient = _clientFactory.CreateClient();
             var dataNotificacion = new
             {
                 UsuarioId = request.UsuarioId,
-                Mensaje = $"Su orden #{nuevaOrdenId} fue confirmada.",
+                Mensaje = $"Su orden #{nuevaOrdenId} fue confirmada de manera exitosa.",
                 Tipo = "Email"
             };
 
-            var respuestaNotification = await client.PostAsJsonAsync($"{_notificationUrl}/api/notifications/send", dataNotificacion);
-
-            if (!respuestaNotification.IsSuccessStatusCode)
+            try
             {
-                var contenidoError = await respuestaNotification.Content.ReadAsStringAsync();
-                throw new NotFoundException("ORD-007", 500, $"Falla al notificar. Código HTTP: {respuestaNotification.StatusCode} -> Cuerpo: {contenidoError}");
+                await genericClient.PostAsJsonAsync($"{_notificationUrl}/api/notifications/send", dataNotificacion);
+            }
+            catch
+            {
+                Serilog.Log.Warning("No se pudo enviar la notificación saliente para la orden {OrdenId}", nuevaOrdenId);
             }
 
             return await GetByIdAsync(nuevaOrdenId);
         }
 
-        private async Task ValidateUserExistsAsync(int userId)
+        private async Task ValidateUserExistsAsync(Guid userId)
         {
-            var client = _clientFactory.CreateClient();
+            var client = _clientFactory.CreateClient("UsersClient");
             HttpResponseMessage response;
 
             try
             {
                 response = await client.GetAsync($"{_usersUrl}/api/users/{userId}");
             }
-            catch
+            catch (Exception ex)
             {
-                throw new NotFoundException("CRT-005", 500, "Error de comunicación con Users.API.");
+                throw new BusinessRuleException("ORD-007", $"Falla de comunicación de red con Users.API: {ex.Message}", 500);
             }
 
             if (!response.IsSuccessStatusCode)
-                throw new NotFoundException("CRT-001", 404, $"El usuario con ID {userId} no existe en el sistema.");
+                throw new NotFoundException("ORD-008", $"El usuario con ID {userId} no existe en los registros maestros.");
         }
 
-        public async Task<OrderResponse> UpdateStatusAsync(int id, string nuevoEstado)
+        public async Task<OrderResponse> UpdateStatusAsync(Guid id, string nuevoEstado)
         {
             var ordenActual = await GetByIdAsync(id);
             string estadoViejo = ordenActual.Estado;
@@ -280,7 +287,7 @@ namespace Orders.Api.Services
 
             if (!estadosValidos.Contains(nuevoEstado))
             {
-                throw new NotFoundException("ORD-006", 409, $"El estado '{nuevoEstado}' no es un estado válido del sistema. Los estados permitidos son: Pendiente, Confirmada, Cancelada, Entregada.");
+                throw new ValidationException("ORD-006", $"El estado '{nuevoEstado}' no es válido. Permitidos: Pendiente, Confirmada, Cancelada, Entregada.");
             }
 
             if (estadoViejo == nuevoEstado)
@@ -293,29 +300,23 @@ namespace Orders.Api.Services
 
             if (estadoViejo == "Pendiente")
             {
-                if (nuevoEstado == "Confirmada" || nuevoEstado == "Cancelada")
-                {
-                    esTransicionValida = true;
-                }
+                if (nuevoEstado == "Confirmada" || nuevoEstado == "Cancelada") esTransicionValida = true;
                 else if (nuevoEstado == "Entregada")
                 {
-                    mensajeErrorCustom = "Una orden en estado 'Pendiente' no puede pasar directamente a 'Entregada' sin ser primero 'Confirmada'.";
+                    mensajeErrorCustom = "Una orden en estado 'Pendiente' no puede pasar directo a 'Entregada' sin ser 'Confirmada'.";
                 }
             }
             else if (estadoViejo == "Confirmada")
             {
-                if (nuevoEstado == "Entregada")
-                {
-                    esTransicionValida = true;
-                }
+                if (nuevoEstado == "Entregada") esTransicionValida = true;
                 else if (nuevoEstado == "Pendiente" || nuevoEstado == "Cancelada")
                 {
-                    mensajeErrorCustom = $"Una orden en estado 'Confirmada' no puede volver a '{nuevoEstado}'.";
+                    mensajeErrorCustom = $"Una orden en estado 'Confirmada' no puede mutar a '{nuevoEstado}'.";
                 }
             }
             else if (estadoViejo == "Entregada" || estadoViejo == "Cancelada")
             {
-                mensajeErrorCustom = $"La orden ya se encuentra en el estado final '{estadoViejo}' y no puede ser modificada.";
+                mensajeErrorCustom = $"La orden se encuentra en el estado final '{estadoViejo}' and ya es inmutable.";
             }
 
             if (!esTransicionValida)
@@ -324,15 +325,20 @@ namespace Orders.Api.Services
                     ? $"Transición de estado inválida de '{estadoViejo}' a '{nuevoEstado}'."
                     : mensajeErrorCustom;
 
-                throw new NotFoundException("ORD-006", 409, errorFinal);
+                throw new BusinessRuleException("ORD-006", errorFinal);
             }
 
             using var conn = CreateConnection();
-            if (conn.State == ConnectionState.Closed) conn.Open();
-
-            await conn.ExecuteAsync("UPDATE Ordenes SET Estado = @Estado WHERE Id = @Id", new { Estado = nuevoEstado, Id = id });
+            await conn.ExecuteAsync("UPDATE Ordenes SET Estado = @Estado WHERE Id = @Id",
+                new { Estado = nuevoEstado, Id = id.ToString() });
 
             return await GetByIdAsync(id);
+        }
+
+        public class GuidTypeHandler : SqlMapper.TypeHandler<Guid>
+        {
+            public override void SetValue(IDbDataParameter parameter, Guid value) => parameter.Value = value.ToString();
+            public override Guid Parse(object value) => Guid.Parse((string)value);
         }
     }
 }

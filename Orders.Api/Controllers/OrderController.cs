@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Orders.Api.DTOs;
-using Orders.Api.Exceptions;
 using Orders.Api.Services;
 using System;
 using System.Collections.Generic;
@@ -8,12 +8,16 @@ using System.Threading.Tasks;
 
 namespace Orders.Api.Controllers
 {
+    public class UpdateStatusRequest
+    {
+        public string NuevoEstado { get; set; } = string.Empty;
+    }
+
     [ApiController]
-    [Route("api/[controller]")] 
+    [Route("api/[controller]")]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
-
 
         public OrdersController(IOrderService orderService)
         {
@@ -21,76 +25,44 @@ namespace Orders.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrderResponse>>> GetAll([FromQuery] int? usuarioId)
+        public async Task<ActionResult<IEnumerable<OrderResponse>>> GetAll([FromQuery] Guid? usuarioId)
         {
             var ordenes = await _orderService.GetAllAsync(usuarioId);
             return Ok(ordenes);
         }
 
-        [HttpGet("{id:int}")] 
-        public async Task<ActionResult<OrderResponse>> GetById(int id)
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<OrderResponse>> GetById(Guid id)
         {
-            
             var orden = await _orderService.GetByIdAsync(id);
             return Ok(orden);
         }
 
-        [HttpGet("internal/check-product/{productoId}")]
-        [ApiExplorerSettings(IgnoreApi = true)] 
-        public async Task<IActionResult> CheckProductHasOrders(int productoId)
+        [HttpGet("internal/check-product/{productoId:guid}")]
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public async Task<IActionResult> CheckProductHasOrders(Guid productoId)
         {
             bool tieneOrdenes = await _orderService.HasOrdersAsync(productoId);
             return Ok(tieneOrdenes);
         }
 
-
-
-
         [HttpPost]
         public async Task<ActionResult<OrderResponse>> Create([FromBody] OrderRequest request)
         {
-            
             var nuevaOrden = await _orderService.CreateAsync(request);
-
-           
             return CreatedAtAction(nameof(GetById), new { id = nuevaOrden.Id }, nuevaOrden);
         }
 
-
-        [HttpPut("{id:int}/status")]
-        public async Task<ActionResult<OrderResponse>> UpdateStatus(int id, [FromBody] StatusUpdateRequest request)
+        [HttpPut("{id:guid}/status")]
+        public async Task<ActionResult<OrderResponse>> UpdateStatus(Guid id, [FromBody] UpdateStatusRequest request)
         {
             if (request == null || string.IsNullOrWhiteSpace(request.NuevoEstado))
             {
                 return BadRequest(new { Error = "El campo nuevoEstado es obligatorio." });
             }
 
-            try
-            {
-                var ordenActualizada = await _orderService.UpdateStatusAsync(id, request.NuevoEstado);
-                return Ok(ordenActualizada);
-            }
-            catch (NotFoundException ex) when (ex.ErrorCode == "ORD-006")
-            {
-                var problemDetails = new ProblemDetails
-                {
-                    Type = "https://tools.ietf.org/html/rfc7231#section-6.5.9",
-                    Title = "Conflict",
-                    Status = StatusCodes.Status409Conflict,
-                    Detail = "No se puede modificar el estado.",
-                    Instance = HttpContext.Request.Path 
-                };
-
-                problemDetails.Extensions["errorCode"] = ex.ErrorCode;
-                problemDetails.Extensions["errorMessage"] = ex.Message; 
-
-                return StatusCode(StatusCodes.Status409Conflict, problemDetails);
-            }
+            var ordenActualizada = await _orderService.UpdateStatusAsync(id, request.NuevoEstado);
+            return Ok(ordenActualizada);
         }
-    }
-
-    public class StatusUpdateRequest
-    {
-        public string NuevoEstado { get; set; } = string.Empty;
     }
 }

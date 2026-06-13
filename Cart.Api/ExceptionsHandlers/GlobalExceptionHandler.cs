@@ -2,64 +2,102 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
-using Cart.Api.Exceptions;
 using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cart.Api.ExceptionHandlers
+namespace Cart.Api.ExceptionsHandlers
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {
-        public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+       
+        public async ValueTask<bool> TryHandleAsync(
+            HttpContext httpContext,
+            Exception exception,
+            CancellationToken cancellationToken)
         {
-            var problemDetails = new ProblemDetails
-            {
-                Instance = httpContext.Request.Path
-            };
+            string errorCode = "CRT-500"; 
+            int statusCode = StatusCodes.Status500InternalServerError;
+            string title = "Internal Server Error";
+            string detail = "No se puede procesar la solicitud.";
+            string errorMessage = exception.Message;
 
-            if (exception is NotFoundException cartEx)
+            var exType = exception.GetType().Name;
+
+            if (exType.Contains("NotFoundException") || exType.Contains("BusinessRuleException") || exType.Contains("ValidationException") || exType.Contains("CartException"))
             {
-                problemDetails.Status = cartEx.StatusCode;
-                problemDetails.Title = cartEx.StatusCode switch
+                statusCode = exType switch
                 {
-                    400 => "Bad Request",
-                    404 => "Not Found",
-                    422 => "Unprocessable Entity",
-                    _ => "Error"
+                    "NotFoundException" => StatusCodes.Status404NotFound,
+                    "BusinessRuleException" => StatusCodes.Status409Conflict,
+                    "ValidationException" => StatusCodes.Status400BadRequest,
+                    _ => StatusCodes.Status400BadRequest
                 };
 
-                problemDetails.Type = cartEx.StatusCode switch
+                title = exType switch
                 {
-                    404 => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
-                    422 => "https://tools.ietf.org/html/rfc4918#section-11.2",
-                    _ => "https://tools.ietf.org/html/rfc7231#section-6.5.1"
+                    "NotFoundException" => "Not Found",
+                    "BusinessRuleException" => "Business Rule Violation",
+                    "ValidationException" => "Bad Request",
+                    _ => "Domain Error"
                 };
 
-                problemDetails.Detail = "Ocurrió una falla de validación o recurso no encontrado en el carrito.";
-                problemDetails.Extensions["errorCode"] = cartEx.ErrorCode;
-                problemDetails.Extensions["errorMessage"] = cartEx.Message;
+                var statusCodeProp = exception.GetType().GetProperty("StatusCode");
+                if (statusCodeProp != null)
+                {
+                    var customStatus = statusCodeProp.GetValue(exception);
+                    if (customStatus != null) statusCode = (int)customStatus;
+                }
 
-                Log.Warning("Error de catálogo de carrito ({ErrorCode}): {Message}", cartEx.ErrorCode, cartEx.Message);
+                if (statusCode == 422) title = "Unprocessable Entity";
+
+                var errorCodeProp = exception.GetType().GetProperty("ErrorCode");
+                if (errorCodeProp != null)
+                {
+                    errorCode = errorCodeProp.GetValue(exception)?.ToString() ?? "CRT-400";
+                }
+
+                Log.Warning("Excepción de negocio capturada en Carrito: {ErrorCode} - {Message}", errorCode, errorMessage);
             }
             else
             {
-                problemDetails.Status = StatusCodes.Status500InternalServerError;
-                problemDetails.Title = "Internal Server Error";
-                problemDetails.Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1";
-                problemDetails.Detail = "Ocurrió un error inesperado en el servidor.";
-
-                problemDetails.Extensions["errorCode"] = "CRT-005";
-                problemDetails.Extensions["errorMessage"] = "Error interno al procesar el carrito.";
-
-                Log.Error(exception, "Error crítico en Cart.API (CRT-005): {Message}", exception.Message);
+                Log.Error(exception, "Excepción no controlada capturada en Carrito.");
             }
 
-            httpContext.Response.StatusCode = problemDetails.Status.Value;
+            string currentCorrelationId = httpContext.Response.Headers["X-Correlation-ID"].ToString();
+            if (string.IsNullOrEmpty(currentCorrelationId))
+            {
+                currentCorrelationId = Guid.NewGuid().ToString();
+            }
+
+            var problemDetails = new
+            {
+                type = statusCode switch
+                {
+                    404 => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    422 => "https://tools.ietf.org/html/rfc4918#section-11.2",
+                    400 => "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    409 => "https://tools.ietf.org/html/rfc7231#section-6.5.8",
+                    _ => "https://tools.ietf.org/html/rfc7231#section-6.6.1"
+                },
+                title = title,
+                status = statusCode,
+                detail = detail,
+                instance = httpContext.Request.Path.Value,
+                errorCode = errorCode,
+                errorMessage = errorMessage,
+                correlationId = currentCorrelationId
+            };
+
+            httpContext.Response.StatusCode = statusCode;
             httpContext.Response.ContentType = "application/problem+json";
 
-            await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
-            return true;
+            var jsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            await httpContext.Response.WriteAsJsonAsync(problemDetails, jsonOptions, cancellationToken);
+
+            return true; 
         }
     }
 }

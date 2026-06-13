@@ -605,20 +605,20 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Http/10.0.9": {
+      "Microsoft.Extensions.Http/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net10.0/_._": {
+          "lib/net8.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net10.0/_._": {
+          "lib/net8.0/_._": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net8.0/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.IdentityModel.Abstractions/7.1.2": {
@@ -2282,31 +2282,32 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Http/10.0.9": {
-      "sha512": "5jdmuLRg1HO7x/v8McOf6ndhkMQWImkRBtJpXM8+xIocXNdLqCItyyFLKusdILc62TDzHuLlqaWoxtOA5FFOPg==",
+    "Microsoft.Extensions.Http/8.0.0": {
+      "sha512": "cWz4caHwvx0emoYe7NkHPxII/KkTI8R/LC9qdqJqnKv2poTJ4e2qqPGQqvRoQ5kaSA4FU5IV3qFAuLuOhoqULQ==",
       "type": "package",
-      "path": "microsoft.extensions.http/10.0.9",
+      "path": "microsoft.extensions.http/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.Http.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Http.targets",
-        "lib/net10.0/Microsoft.Extensions.Http.dll",
-        "lib/net10.0/Microsoft.Extensions.Http.xml",
         "lib/net462/Microsoft.Extensions.Http.dll",
         "lib/net462/Microsoft.Extensions.Http.xml",
+        "lib/net6.0/Microsoft.Extensions.Http.dll",
+        "lib/net6.0/Microsoft.Extensions.Http.xml",
+        "lib/net7.0/Microsoft.Extensions.Http.dll",
+        "lib/net7.0/Microsoft.Extensions.Http.xml",
         "lib/net8.0/Microsoft.Extensions.Http.dll",
         "lib/net8.0/Microsoft.Extensions.Http.xml",
-        "lib/net9.0/Microsoft.Extensions.Http.dll",
-        "lib/net9.0/Microsoft.Extensions.Http.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
-        "microsoft.extensions.http.10.0.9.nupkg.sha512",
+        "microsoft.extensions.http.8.0.0.nupkg.sha512",
         "microsoft.extensions.http.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3033,7 +3034,7 @@
       "IdentityModel >= 5.2.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.9",
       "Microsoft.Data.Sqlite >= 10.0.9",
-      "Microsoft.Extensions.Http >= 10.0.9",
+      "Microsoft.Extensions.Http >= 8.0.0",
       "Serilog.AspNetCore >= 10.0.0",
       "Serilog.Sinks.File >= 7.0.0",
       "Swashbuckle.AspNetCore >= 10.2.1"
@@ -3046,11 +3047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Orders.Api.csproj",
+      "projectUniqueName": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Orders.Api\\Orders.Api.csproj",
       "projectName": "Orders.Api",
-      "projectPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\Orders.Api.csproj",
+      "projectPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Orders.Api\\Orders.Api.csproj",
       "packagesPath": "C:\\Users\\krawi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Orders.Api\\obj\\",
+      "outputPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Orders.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3121,7 +3122,7 @@
           },
           "Microsoft.Extensions.Http": {
             "target": "Package",
-            "version": "[10.0.9, )"
+            "version": "[8.0.0, )"
           },
           "Serilog.AspNetCore": {
             "target": "Package",

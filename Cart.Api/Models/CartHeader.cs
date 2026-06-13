@@ -1,8 +1,10 @@
-﻿namespace Cart.Api.Models
+﻿using System;
+
+namespace Cart.Api.Models
 {
     public class CartHeader
     {
-        public int UsuarioId { get; set; } 
+        public Guid UsuarioId { get; set; } // Cambiado a Guid
         public string FechaActualizacion { get; set; } = string.Empty;
     }
 }

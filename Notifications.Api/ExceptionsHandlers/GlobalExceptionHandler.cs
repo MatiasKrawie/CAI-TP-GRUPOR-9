@@ -1,63 +1,88 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Serilog;
 using Notifications.Api.Exceptions;
+using Serilog;
 using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Notifications.Api.ExceptionHandlers
+namespace Notifications.Api.ExceptionsHandlers
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {
-        public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+
+        public async ValueTask<bool> TryHandleAsync(
+            HttpContext httpContext,
+            Exception exception,
+            CancellationToken cancellationToken)
         {
-            var problemDetails = new ProblemDetails
-            {
-                Instance = httpContext.Request.Path
-            };
+            string errorCode = "NTF-500"; 
+            int statusCode = StatusCodes.Status500InternalServerError;
+            string title = "Internal Server Error";
+            string detail = "No se puede procesar la solicitud.";
+            string errorMessage = exception.Message;
 
-            if (exception is NotFoundException ntfEx)
+            var actualException = exception is AggregateException && exception.InnerException != null
+                ? exception.InnerException
+                : exception;
+
+            if (actualException is NotificationException ntfEx)
             {
-                problemDetails.Status = ntfEx.StatusCode;
-                problemDetails.Title = ntfEx.StatusCode switch
+                statusCode = ntfEx.StatusCode;
+                errorCode = ntfEx.ErrorCode;
+                errorMessage = ntfEx.Message;
+
+                title = ntfEx switch
                 {
-                    400 => "Bad Request",
-                    404 => "Not Found",
-                    _ => "Error"
+                    NotFoundException => "Not Found",
+                    BusinessRuleException => "Business Rule Violation",
+                    ValidationException => "Bad Request",
+                    _ => "Domain Error"
                 };
 
-                problemDetails.Type = ntfEx.StatusCode switch
-                {
-                    404 => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
-                    _ => "https://tools.ietf.org/html/rfc7231#section-6.5.1"
-                };
+                if (statusCode == 422) title = "Unprocessable Entity";
 
-                problemDetails.Detail = "Ocurrió una excepción de negocio controlada en el servicio de notificaciones.";
-                problemDetails.Extensions["errorCode"] = ntfEx.ErrorCode;
-                problemDetails.Extensions["errorMessage"] = ntfEx.Message;
-
-                Log.Warning("Error de catálogo de notificaciones ({ErrorCode}): {Message}", ntfEx.ErrorCode, ntfEx.Message);
+                Log.Warning("Excepción de negocio en Notificaciones: {ErrorCode} - {Message}", errorCode, errorMessage);
             }
             else
             {
-                problemDetails.Status = StatusCodes.Status500InternalServerError;
-                problemDetails.Title = "Internal Server Error";
-                problemDetails.Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1";
-                problemDetails.Detail = "Ocurrió un error inesperado en el servidor.";
-
-                problemDetails.Extensions["errorCode"] = "NTF-004";
-                problemDetails.Extensions["errorMessage"] = "Error interno al procesar la notificación.";
-
-                Log.Error(exception, "Error crítico de infraestructura en Notifications.API (NTF-004): {Message}", exception.Message);
+                Log.Error(actualException, "Excepción técnica no controlada en Notificaciones.");
             }
 
-            httpContext.Response.StatusCode = problemDetails.Status.Value;
+            if (!httpContext.Request.Headers.TryGetValue("X-Correlation-Id", out var correlationId))
+            {
+                correlationId = Guid.NewGuid().ToString();
+            }
+
+            var problemDetails = new
+            {
+                type = statusCode switch
+                {
+                    404 => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    422 => "https://tools.ietf.org/html/rfc4918#section-11.2",
+                    400 => "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    409 => "https://tools.ietf.org/html/rfc7231#section-6.5.8",
+                    _ => "https://tools.ietf.org/html/rfc7231#section-6.6.1"
+                },
+                title = title,
+                status = statusCode,
+                detail = detail,
+                instance = httpContext.Request.Path.Value,
+                errorCode = errorCode,
+                errorMessage = errorMessage,
+                correlationId = correlationId.ToString()
+            };
+
+            httpContext.Response.StatusCode = statusCode;
             httpContext.Response.ContentType = "application/problem+json";
 
-            await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
-            return true;
+            var jsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            await httpContext.Response.WriteAsJsonAsync(problemDetails, jsonOptions, cancellationToken);
+
+            return true; 
         }
     }
 }

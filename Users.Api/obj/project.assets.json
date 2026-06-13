@@ -2824,11 +2824,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Users.Api.csproj",
+      "projectUniqueName": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Users.Api\\Users.Api.csproj",
       "projectName": "Users.Api",
-      "projectPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\Users.Api.csproj",
+      "projectPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Users.Api\\Users.Api.csproj",
       "packagesPath": "C:\\Users\\krawi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Users.Api\\obj\\",
+      "outputPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Users.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

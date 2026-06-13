@@ -19,8 +19,8 @@ namespace Notifications.Api.Services
 
             var createNotificationsTable = @"
                 CREATE TABLE IF NOT EXISTS Notificaciones (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    UsuarioId INTEGER NOT NULL,
+                    Id TEXT PRIMARY KEY,
+                    UsuarioId TEXT NOT NULL,
                     Mensaje TEXT NOT NULL,
                     Tipo TEXT NOT NULL,
                     Estado TEXT NOT NULL,

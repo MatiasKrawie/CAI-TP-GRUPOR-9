@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 using Users.Api.DTOs;
 using Users.Api.Services;
@@ -21,7 +22,6 @@ namespace Users.Api.Controllers
         public async Task<ActionResult<UserResponse>> Register([FromBody] RegisterRequest request)
         {
             var usuarioCreado = await _userService.RegisterAsync(request);
-            
             return StatusCode(201, usuarioCreado);
         }
 
@@ -30,26 +30,22 @@ namespace Users.Api.Controllers
         public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginRequest request)
         {
             var loginExitoso = await _userService.LoginAsync(request);
-            
             return Ok(loginExitoso);
         }
 
-        //PUT
-        [HttpPut("{id}/block")]
-        public async Task<IActionResult> BlockUser(int id, [FromBody] BlockUserRequest request)
+        // PUT /api/users/{id}/block
+        [HttpPut("{id:guid}/block")]
+        public async Task<IActionResult> BlockUser(Guid id, [FromBody] BlockUserRequest request)
         {
             var resultado = await _userService.UpdateAsync(id, request);
             return Ok(resultado);
         }
 
-        //GET /api/users/id
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        // GET /api/users/{id}
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetById(Guid id)
         {
-            
             var usuario = await _userService.GetByIdAsync(id);
-
-            
             return Ok(usuario);
         }
     }

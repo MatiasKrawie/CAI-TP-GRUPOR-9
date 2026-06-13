@@ -1,16 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace Orders.Api.DTOs
 {
     public class OrderRequest
     {
-        public int UsuarioId { get; set; }
-       
-    }
-
-    public class OrderItemRequest
-    {
-        public int ProductoId { get; set; }
-        public int Cantidad { get; set; }
+        public Guid UsuarioId { get; set; } 
     }
 }

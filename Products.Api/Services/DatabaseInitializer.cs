@@ -25,17 +25,17 @@ namespace Products.API.Services
                 using var connection = new SqliteConnection(_connectionString);
                 connection.Open();
 
-               
+
                 connection.Execute(@"
-                    CREATE TABLE IF NOT EXISTS products (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        name TEXT NOT NULL,
-                        description TEXT,
-                        price REAL NOT NULL,
-                        stock INTEGER NOT NULL,
-                        category TEXT,
-                        created_at DATE DEFAULT (datetime('now'))
-                    );");
+            CREATE TABLE IF NOT EXISTS products (
+                id TEXT PRIMARY KEY, 
+                name TEXT NOT NULL,
+                description TEXT,
+                price REAL NOT NULL,
+                stock INTEGER NOT NULL,
+                category TEXT,
+                created_at DATE DEFAULT (datetime('now'))
+            );");
 
 
                 Log.Information("Base de datos inicializada correctamente.");

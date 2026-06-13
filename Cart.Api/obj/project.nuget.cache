@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FLnne5PCGpg=",
+  "dgSpecHash": "lB0Eo8ZmHJw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Cart.Api.csproj",
+  "projectFilePath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Cart.Api\\Cart.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\krawi\\.nuget\\packages\\aspnetcore.healthchecks.ui\\9.0.0\\aspnetcore.healthchecks.ui.9.0.0.nupkg.sha512",
     "C:\\Users\\krawi\\.nuget\\packages\\aspnetcore.healthchecks.ui.client\\9.0.0\\aspnetcore.healthchecks.ui.client.9.0.0.nupkg.sha512",
@@ -65,9 +65,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.Extensions.Http no se eliminará. Considere la posibilidad de quitar este paquete de las dependencias, ya que es probable que no sea necesario.",
-      "projectPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Cart.Api.csproj",
+      "projectPath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Cart.Api\\Cart.Api.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-Owen\\CAI-TP-GRUPOR-9-Owen\\Cart.Api\\Cart.Api.csproj",
+      "filePath": "C:\\Users\\krawi\\Downloads\\CAI-TP-GRUPOR-9-owen-3\\CAI-TP-GRUPOR-9-owen-3\\Cart.Api\\Cart.Api.csproj",
       "libraryId": "Microsoft.Extensions.Http",
       "targetGraphs": [
         "net10.0"
